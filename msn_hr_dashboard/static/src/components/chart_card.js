@@ -5,7 +5,7 @@ import { Component, onMounted, onWillUnmount, useRef, useEffect } from "@odoo/ow
 /* global Chart */
 
 export class ChartCard extends Component {
-    static template = "hr_dashboard.ChartCard";
+    static template = "msn_hr_dashboard.ChartCard";
     static props = {
         title: String,
         subtitle: { type: String, optional: true },
@@ -34,7 +34,7 @@ export class ChartCard extends Component {
     }
 
     _getCssColor(varName) {
-        const root = this.canvasRef.el ? this.canvasRef.el.closest(".hr_dashboard") : null;
+        const root = this.canvasRef.el ? this.canvasRef.el.closest(".msn_hr_dashboard") : null;
         if (!root) return "#6366F1";
         const v = getComputedStyle(root).getPropertyValue(varName).trim();
         return v || "#6366F1";

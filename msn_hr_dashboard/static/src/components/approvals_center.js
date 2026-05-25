@@ -6,7 +6,7 @@ import { useService } from "@web/core/utils/hooks";
 import { _t } from "@web/core/l10n/translation";
 
 export class ApprovalsCenter extends Component {
-    static template = "hr_dashboard.ApprovalsCenter";
+    static template = "msn_hr_dashboard.ApprovalsCenter";
     static props = {
         onApproved: { type: Function, optional: true },
     };
@@ -37,7 +37,7 @@ export class ApprovalsCenter extends Component {
     async _loadApprovals() {
         this.state.loading = true;
         try {
-            this.state.data = await rpc("/hr_dashboard/pending_approvals", { limit: 20 });
+            this.state.data = await rpc("/msn_hr_dashboard/pending_approvals", { limit: 20 });
         } catch (e) {
             console.error("approvals fetch failed", e);
             this.notification.add(_t("Could not load pending approvals"), { type: "danger" });
@@ -53,7 +53,7 @@ export class ApprovalsCenter extends Component {
     async onApproveLeave(leaveId) {
         this.state.processingId = `leave-${leaveId}`;
         try {
-            const result = await rpc("/hr_dashboard/approve_leave", { leave_id: leaveId });
+            const result = await rpc("/msn_hr_dashboard/approve_leave", { leave_id: leaveId });
             this._handleResult(result, "approved");
         } catch (e) {
             console.error(e);
@@ -66,7 +66,7 @@ export class ApprovalsCenter extends Component {
     async onRefuseLeave(leaveId) {
         this.state.processingId = `leave-${leaveId}`;
         try {
-            const result = await rpc("/hr_dashboard/refuse_leave", { leave_id: leaveId });
+            const result = await rpc("/msn_hr_dashboard/refuse_leave", { leave_id: leaveId });
             this._handleResult(result, "refused");
         } catch (e) {
             console.error(e);
@@ -79,7 +79,7 @@ export class ApprovalsCenter extends Component {
     async onApproveExpense(sheetId) {
         this.state.processingId = `expense-${sheetId}`;
         try {
-            const result = await rpc("/hr_dashboard/approve_expense_sheet", { sheet_id: sheetId });
+            const result = await rpc("/msn_hr_dashboard/approve_expense_sheet", { sheet_id: sheetId });
             this._handleResult(result, "approved");
         } catch (e) {
             console.error(e);
@@ -92,7 +92,7 @@ export class ApprovalsCenter extends Component {
     async onRefuseExpense(sheetId) {
         this.state.processingId = `expense-${sheetId}`;
         try {
-            const result = await rpc("/hr_dashboard/refuse_expense_sheet", {
+            const result = await rpc("/msn_hr_dashboard/refuse_expense_sheet", {
                 sheet_id: sheetId,
                 reason: "Refused from dashboard",
             });
@@ -160,7 +160,7 @@ export class ApprovalsCenter extends Component {
     async onApproveAppraisal(appraisalId) {
         this.state.processingId = `appraisal-${appraisalId}`;
         try {
-            const result = await rpc("/hr_dashboard/approve_appraisal", { appraisal_id: appraisalId });
+            const result = await rpc("/msn_hr_dashboard/approve_appraisal", { appraisal_id: appraisalId });
             this._handleResult(result, "completed");
         } catch (e) {
             console.error(e);
@@ -173,7 +173,7 @@ export class ApprovalsCenter extends Component {
     async onCancelAppraisal(appraisalId) {
         this.state.processingId = `appraisal-${appraisalId}`;
         try {
-            const result = await rpc("/hr_dashboard/cancel_appraisal", { appraisal_id: appraisalId });
+            const result = await rpc("/msn_hr_dashboard/cancel_appraisal", { appraisal_id: appraisalId });
             this._handleResult(result, "cancelled");
         } catch (e) {
             console.error(e);

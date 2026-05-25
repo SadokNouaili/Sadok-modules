@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <templates xml:space="preserve">
 
-    <t t-name="hr_dashboard.ApprovalsCenter">
+    <t t-name="msn_hr_dashboard.ApprovalsCenter">
         <section class="hr-approvals glass">
             <div class="hr-approvals-glow"/>
 

@@ -3,7 +3,7 @@
 import { Component, useState, onMounted, useRef } from "@odoo/owl";
 
 export class KpiCard extends Component {
-    static template = "hr_dashboard.KpiCard";
+    static template = "msn_hr_dashboard.KpiCard";
     static props = {
         label: String,
         value: { type: [Number, String], optional: true },

@@ -11,7 +11,7 @@ import { EmployeeSpotlight } from "./employee_spotlight";
 import { ApprovalsCenter } from "./approvals_center";
 
 export class HRDashboard extends Component {
-    static template = "hr_dashboard.Dashboard";
+    static template = "msn_hr_dashboard.Dashboard";
     static components = { KpiCard, ChartCard, EmployeeSpotlight, ApprovalsCenter };
 
     setup() {
@@ -107,7 +107,7 @@ export class HRDashboard extends Component {
      * on the dashboard root element. This is critical for child charts to see the
      * right colors — `t-att-style` is applied DURING render, before any child
      * onMounted fires, so when ChartCard reads getComputedStyle on its closest
-     * .hr_dashboard ancestor, the configured colors are already there.
+     * .msn_hr_dashboard ancestor, the configured colors are already there.
      *
      * Using a getter (not a stored value) means it re-evaluates whenever the
      * component re-renders, so config changes apply automatically on refresh.
@@ -143,7 +143,7 @@ export class HRDashboard extends Component {
     async _loadData() {
         this.state.loading = true;
         try {
-            const result = await rpc("/hr_dashboard/data", {
+            const result = await rpc("/msn_hr_dashboard/data", {
                 date_from: this.state.dateFrom,
                 date_to: this.state.dateTo,
             });
@@ -165,10 +165,10 @@ export class HRDashboard extends Component {
     _applyThemeFromConfig(cfg) {
         if (!cfg) return;
         // Critical: CSS variables follow inheritance. The SCSS declares defaults inside
-        // the `.hr_dashboard { ... }` selector, which means any descendant of .hr_dashboard
+        // the `.msn_hr_dashboard { ... }` selector, which means any descendant of .msn_hr_dashboard
         // resolves --hr-* from that scope FIRST, shadowing values we set on :root.
         //
-        // The fix is to set the variables ON the .hr_dashboard element itself (via inline
+        // The fix is to set the variables ON the .msn_hr_dashboard element itself (via inline
         // style), which has higher precedence than the SCSS-declared values on the same
         // selector. We also set them on documentElement as a fallback for any elements
         // rendered outside the dashboard subtree (popovers, dialogs, etc.).
@@ -421,4 +421,4 @@ export class HRDashboard extends Component {
     }
 }
 
-registry.category("actions").add("hr_dashboard.dashboard", HRDashboard);
+registry.category("actions").add("msn_hr_dashboard.dashboard", HRDashboard);

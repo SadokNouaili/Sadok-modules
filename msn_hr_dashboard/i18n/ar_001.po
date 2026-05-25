@@ -1,0 +1,925 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* msn_hr_dashboard
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0+e-20260329\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-05-25 13:31+0000\n"
+"PO-Revision-Date: 2026-05-25 13:31+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: msn_hr_dashboard
+#: model:ir.model.fields,field_description:msn_hr_dashboard.field_msn_hr_dashboard_config__accent_color
+msgid "Accent Color"
+msgstr "لون التمييز"
+
+#. module: msn_hr_dashboard
+#: model:ir.model.fields,field_description:msn_hr_dashboard.field_msn_hr_dashboard_config__active
+msgid "Active"
+msgstr "نشط"
+
+#. module: msn_hr_dashboard
+#. odoo-javascript
+#: code:addons/msn_hr_dashboard/static/src/components/approvals_center.xml:0
+msgid "All caught up — no pending leave requests."
+msgstr "كل شيء مكتمل — لا توجد طلبات إجازة معلقة."
+
+#. module: msn_hr_dashboard
+#. odoo-javascript
+#: code:addons/msn_hr_dashboard/static/src/components/approvals_center.xml:0
+msgid "Appraisals"
+msgstr "التقييمات"
+
+#. module: msn_hr_dashboard
+#. odoo-javascript
+#: code:addons/msn_hr_dashboard/static/src/components/approvals_center.js:0
+msgid "Approval failed"
+msgstr "فشل الاعتماد"
+
+#. module: msn_hr_dashboard
+#. odoo-javascript
+#: code:addons/msn_hr_dashboard/static/src/components/approvals_center.xml:0
+#: code:addons/msn_hr_dashboard/static/src/components/dashboard.xml:0
+msgid "Approvals Center"
+msgstr "مركز الاعتمادات"
+
+#. module: msn_hr_dashboard
+#. odoo-javascript
+#: code:addons/msn_hr_dashboard/static/src/components/approvals_center.xml:0
+msgid "Approve"
+msgstr "اعتماد"
+
+#. module: msn_hr_dashboard
+#. odoo-javascript
+#: code:addons/msn_hr_dashboard/static/src/components/approvals_center.xml:0
+msgid "Approve or refuse pending requests from your team"
+msgstr "اعتماد أو رفض الطلبات المعلقة من فريقك"
+
+#. module: msn_hr_dashboard
+#. odoo-javascript
+#: code:addons/msn_hr_dashboard/static/src/components/dashboard.js:0
+msgid "Approved Leaves"
+msgstr "الإجازات المعتمدة"
+
+#. module: msn_hr_dashboard
+#. odoo-javascript
+#: code:addons/msn_hr_dashboard/static/src/components/employee_spotlight.js:0
+#: code:addons/msn_hr_dashboard/static/src/components/employee_spotlight.xml:0
+msgid "Attendances"
+msgstr "الحضور"
+
+#. module: msn_hr_dashboard
+#. odoo-javascript
+#: code:addons/msn_hr_dashboard/static/src/components/employee_spotlight.xml:0
+msgid "Back to list"
+msgstr "العودة إلى القائمة"
+
+#. module: msn_hr_dashboard
+#: model_terms:ir.ui.view,arch_db:msn_hr_dashboard.view_msn_hr_dashboard_config_form
+msgid "Background Gradient"
+msgstr "تدرج الخلفية"
+
+#. module: msn_hr_dashboard
+#: model:ir.model.fields,field_description:msn_hr_dashboard.field_msn_hr_dashboard_config__bg_gradient_end
+msgid "Background Gradient End"
+msgstr "نهاية تدرج الخلفية"
+
+#. module: msn_hr_dashboard
+#: model:ir.model.fields,field_description:msn_hr_dashboard.field_msn_hr_dashboard_config__bg_gradient_mid
+msgid "Background Gradient Middle"
+msgstr "وسط تدرج الخلفية"
+
+#. module: msn_hr_dashboard
+#: model:ir.model.fields,field_description:msn_hr_dashboard.field_msn_hr_dashboard_config__bg_gradient_start
+msgid "Background Gradient Start"
+msgstr "بداية تدرج الخلفية"
+
+#. module: msn_hr_dashboard
+#: model:ir.model.fields,field_description:msn_hr_dashboard.field_msn_hr_dashboard_config__blur_intensity
+msgid "Blur Intensity (px)"
+msgstr "شدة التمويه (بكسل)"
+
+#. module: msn_hr_dashboard
+#: model:ir.model.fields,field_description:msn_hr_dashboard.field_msn_hr_dashboard_config__border_radius
+msgid "Border Radius (px)"
+msgstr "نصف قطر الحدود (بكسل)"
+
+#. module: msn_hr_dashboard
+#: model_terms:ir.ui.view,arch_db:msn_hr_dashboard.view_msn_hr_dashboard_config_form
+msgid "Brand Colors"
+msgstr "ألوان العلامة التجارية"
+
+#. module: msn_hr_dashboard
+#: model_terms:ir.ui.view,arch_db:msn_hr_dashboard.view_msn_hr_dashboard_config_form
+msgid "Branding"
+msgstr "الهوية البصرية"
+
+#. module: msn_hr_dashboard
+#. odoo-javascript
+#: code:addons/msn_hr_dashboard/static/src/components/approvals_center.js:0
+msgid "Cancellation failed"
+msgstr "فشل الإلغاء"
+
+#. module: msn_hr_dashboard
+#: model:ir.model.fields,field_description:msn_hr_dashboard.field_msn_hr_dashboard_config__card_color_1
+msgid "Card Color 1 (Employees)"
+msgstr "لون البطاقة 1 (الموظفون)"
+
+#. module: msn_hr_dashboard
+#: model:ir.model.fields,field_description:msn_hr_dashboard.field_msn_hr_dashboard_config__card_color_2
+msgid "Card Color 2 (Attendance)"
+msgstr "لون البطاقة 2 (الحضور)"
+
+#. module: msn_hr_dashboard
+#: model:ir.model.fields,field_description:msn_hr_dashboard.field_msn_hr_dashboard_config__card_color_3
+msgid "Card Color 3 (Leaves)"
+msgstr "لون البطاقة 3 (الإجازات)"
+
+#. module: msn_hr_dashboard
+#: model:ir.model.fields,field_description:msn_hr_dashboard.field_msn_hr_dashboard_config__card_color_4
+msgid "Card Color 4 (Payroll)"
+msgstr "لون البطاقة 4 (الرواتب)"
+
+#. module: msn_hr_dashboard
+#: model:ir.model.fields,field_description:msn_hr_dashboard.field_msn_hr_dashboard_config__card_color_5
+msgid "Card Color 5 (Expenses)"
+msgstr "لون البطاقة 5 (النفقات)"
+
+#. module: msn_hr_dashboard
+#: model:ir.model.fields,field_description:msn_hr_dashboard.field_msn_hr_dashboard_config__card_color_6
+msgid "Card Color 6 (Contracts)"
+msgstr "لون البطاقة 6 (العقود)"
+
+#. module: msn_hr_dashboard
+#: model_terms:ir.ui.view,arch_db:msn_hr_dashboard.view_msn_hr_dashboard_config_form
+msgid "Card Colors"
+msgstr "ألوان البطاقات"
+
+#. module: msn_hr_dashboard
+#. odoo-javascript
+#: code:addons/msn_hr_dashboard/static/src/components/dashboard.js:0
+msgid "Completed Appraisals"
+msgstr "التقييمات المكتملة"
+
+#. module: msn_hr_dashboard
+#: model:ir.ui.menu,name:msn_hr_dashboard.menu_msn_hr_dashboard_config_root
+msgid "Configuration"
+msgstr "الإعدادات"
+
+#. module: msn_hr_dashboard
+#: model:ir.model.fields,field_description:msn_hr_dashboard.field_msn_hr_dashboard_config__name
+msgid "Configuration Name"
+msgstr "اسم الإعداد"
+
+#. module: msn_hr_dashboard
+#. odoo-javascript
+#: code:addons/msn_hr_dashboard/static/src/components/approvals_center.xml:0
+msgid "Confirm"
+msgstr "تأكيد"
+
+#. module: msn_hr_dashboard
+#. odoo-javascript
+#: code:addons/msn_hr_dashboard/static/src/components/dashboard.js:0
+msgid "Could not load dashboard data"
+msgstr "تعذر تحميل بيانات لوحة التحكم"
+
+#. module: msn_hr_dashboard
+#. odoo-javascript
+#: code:addons/msn_hr_dashboard/static/src/components/employee_spotlight.js:0
+msgid "Could not load employee data"
+msgstr "تعذر تحميل بيانات الموظف"
+
+#. module: msn_hr_dashboard
+#. odoo-javascript
+#: code:addons/msn_hr_dashboard/static/src/components/employee_spotlight.js:0
+msgid "Could not load employees"
+msgstr "تعذر تحميل قائمة الموظفين"
+
+#. module: msn_hr_dashboard
+#. odoo-javascript
+#: code:addons/msn_hr_dashboard/static/src/components/approvals_center.js:0
+msgid "Could not load pending approvals"
+msgstr "تعذر تحميل الاعتمادات المعلقة"
+
+#. module: msn_hr_dashboard
+#. odoo-javascript
+#: code:addons/msn_hr_dashboard/static/src/components/employee_spotlight.js:0
+msgid "Could not print payslip"
+msgstr "تعذر طباعة قسيمة الراتب"
+
+#. module: msn_hr_dashboard
+#: model:ir.model.fields,field_description:msn_hr_dashboard.field_msn_hr_dashboard_config__create_uid
+msgid "Created by"
+msgstr "أُنشئ بواسطة"
+
+#. module: msn_hr_dashboard
+#: model:ir.model.fields,field_description:msn_hr_dashboard.field_msn_hr_dashboard_config__create_date
+msgid "Created on"
+msgstr "أُنشئ في"
+
+#. module: msn_hr_dashboard
+#. odoo-javascript
+#: code:addons/msn_hr_dashboard/static/src/components/employee_spotlight.xml:0
+msgid "Current HR Version"
+msgstr "نسخة الموارد البشرية الحالية"
+
+#. module: msn_hr_dashboard
+#: model:ir.ui.menu,name:msn_hr_dashboard.menu_msn_hr_dashboard_main
+msgid "Dashboard"
+msgstr "لوحة التحكم"
+
+#. module: msn_hr_dashboard
+#: model_terms:ir.ui.view,arch_db:msn_hr_dashboard.view_msn_hr_dashboard_config_form
+msgid "Dashboard Configuration"
+msgstr "إعدادات لوحة التحكم"
+
+#. module: msn_hr_dashboard
+#: model:ir.actions.act_window,name:msn_hr_dashboard.action_msn_hr_dashboard_config
+#: model_terms:ir.ui.view,arch_db:msn_hr_dashboard.view_msn_hr_dashboard_config_list
+msgid "Dashboard Configurations"
+msgstr "إعدادات لوحات التحكم"
+
+#. module: msn_hr_dashboard
+#: model:ir.model.fields,field_description:msn_hr_dashboard.field_msn_hr_dashboard_config__logo
+msgid "Dashboard Logo"
+msgstr "شعار لوحة التحكم"
+
+#. module: msn_hr_dashboard
+#: model:ir.ui.menu,name:msn_hr_dashboard.menu_msn_hr_dashboard_config
+msgid "Dashboard Theme"
+msgstr "مظهر لوحة التحكم"
+
+#. module: msn_hr_dashboard
+#: model:ir.model.fields,field_description:msn_hr_dashboard.field_msn_hr_dashboard_config__dashboard_title
+msgid "Dashboard Title"
+msgstr "عنوان لوحة التحكم"
+
+#. module: msn_hr_dashboard
+#. odoo-javascript
+#: code:addons/msn_hr_dashboard/static/src/components/dashboard.js:0
+msgid "Dashboard refreshed"
+msgstr "تم تحديث لوحة التحكم"
+
+#. module: msn_hr_dashboard
+#: model:ir.model.fields,field_description:msn_hr_dashboard.field_msn_hr_dashboard_config__display_name
+msgid "Display Name"
+msgstr "الاسم الظاهر"
+
+#. module: msn_hr_dashboard
+#. odoo-javascript
+#: code:addons/msn_hr_dashboard/static/src/components/dashboard.xml:0
+msgid "Drill into an individual employee's profile, contract & payslips"
+msgstr "استعرض ملف الموظف الفردي وعقده وقسائم راتبه"
+
+#. module: msn_hr_dashboard
+#. odoo-javascript
+#: code:addons/msn_hr_dashboard/static/src/components/approvals_center.xml:0
+msgid "Due:"
+msgstr "تاريخ الاستحقاق:"
+
+#. module: msn_hr_dashboard
+#: model_terms:ir.ui.view,arch_db:msn_hr_dashboard.view_msn_hr_dashboard_config_form
+msgid "Effects"
+msgstr "التأثيرات"
+
+#. module: msn_hr_dashboard
+#. odoo-javascript
+#: code:addons/msn_hr_dashboard/static/src/components/dashboard.xml:0
+#: code:addons/msn_hr_dashboard/static/src/components/employee_spotlight.xml:0
+msgid "Employee Spotlight"
+msgstr "بطاقة الموظف"
+
+#. module: msn_hr_dashboard
+#. odoo-javascript
+#: code:addons/msn_hr_dashboard/static/src/components/dashboard.js:0
+#: code:addons/msn_hr_dashboard/static/src/components/employee_spotlight.js:0
+msgid "Employee Versions"
+msgstr "نسخ الموظفين"
+
+#. module: msn_hr_dashboard
+#. odoo-javascript
+#: code:addons/msn_hr_dashboard/static/src/components/dashboard.js:0
+msgid "Employees"
+msgstr "الموظفون"
+
+#. module: msn_hr_dashboard
+#: model:ir.model.fields,field_description:msn_hr_dashboard.field_msn_hr_dashboard_config__enable_animations
+msgid "Enable Animations"
+msgstr "تفعيل الحركات"
+
+#. module: msn_hr_dashboard
+#. odoo-javascript
+#: code:addons/msn_hr_dashboard/static/src/components/employee_spotlight.xml:0
+msgid "Ends"
+msgstr "ينتهي في"
+
+#. module: msn_hr_dashboard
+#. odoo-javascript
+#: code:addons/msn_hr_dashboard/static/src/components/approvals_center.xml:0
+#: code:addons/msn_hr_dashboard/static/src/components/employee_spotlight.js:0
+#: code:addons/msn_hr_dashboard/static/src/components/employee_spotlight.xml:0
+msgid "Expenses"
+msgstr "النفقات"
+
+#. module: msn_hr_dashboard
+#. odoo-javascript
+#: code:addons/msn_hr_dashboard/static/src/components/dashboard.js:0
+msgid "Expenses Needing Review"
+msgstr "النفقات التي تحتاج للمراجعة"
+
+#. module: msn_hr_dashboard
+#: model:ir.model.fields,field_description:msn_hr_dashboard.field_msn_hr_dashboard_config__glass_opacity
+msgid "Glass Opacity"
+msgstr "شفافية الزجاج"
+
+#. module: msn_hr_dashboard
+#: model:ir.actions.client,name:msn_hr_dashboard.action_msn_hr_dashboard
+#: model:ir.ui.menu,name:msn_hr_dashboard.menu_msn_hr_dashboard_root
+msgid "HR Dashboard"
+msgstr "لوحة الموارد البشرية"
+
+#. module: msn_hr_dashboard
+#: model:ir.model,name:msn_hr_dashboard.model_msn_hr_dashboard_config
+msgid "HR Dashboard Configuration"
+msgstr "إعدادات لوحة الموارد البشرية"
+
+#. module: msn_hr_dashboard
+#. odoo-javascript
+#: code:addons/msn_hr_dashboard/static/src/components/dashboard.xml:0
+msgid "HR Dashboard · Odoo 19"
+msgstr "لوحة الموارد البشرية · أودو 19"
+
+#. module: msn_hr_dashboard
+#: model:ir.model.fields,field_description:msn_hr_dashboard.field_msn_hr_dashboard_config__id
+msgid "ID"
+msgstr "المعرّف"
+
+#. module: msn_hr_dashboard
+#. odoo-javascript
+#: code:addons/msn_hr_dashboard/static/src/components/employee_spotlight.xml:0
+msgid "In selected range"
+msgstr "في الفترة المحددة"
+
+#. module: msn_hr_dashboard
+#: model:ir.model.fields,field_description:msn_hr_dashboard.field_msn_hr_dashboard_config__write_uid
+msgid "Last Updated by"
+msgstr "آخر تعديل بواسطة"
+
+#. module: msn_hr_dashboard
+#: model:ir.model.fields,field_description:msn_hr_dashboard.field_msn_hr_dashboard_config__write_date
+msgid "Last Updated on"
+msgstr "آخر تعديل في"
+
+#. module: msn_hr_dashboard
+#. odoo-javascript
+#: code:addons/msn_hr_dashboard/static/src/components/employee_spotlight.xml:0
+msgid "Latest Payslip"
+msgstr "آخر قسيمة راتب"
+
+#. module: msn_hr_dashboard
+#. odoo-javascript
+#: code:addons/msn_hr_dashboard/static/src/components/approvals_center.xml:0
+#: code:addons/msn_hr_dashboard/static/src/components/employee_spotlight.js:0
+msgid "Leaves"
+msgstr "الإجازات"
+
+#. module: msn_hr_dashboard
+#. odoo-javascript
+#: code:addons/msn_hr_dashboard/static/src/components/dashboard.xml:0
+msgid "Loading dashboard…"
+msgstr "جاري تحميل لوحة التحكم…"
+
+#. module: msn_hr_dashboard
+#. odoo-javascript
+#: code:addons/msn_hr_dashboard/static/src/components/employee_spotlight.xml:0
+msgid "Loading employees…"
+msgstr "جاري تحميل الموظفين…"
+
+#. module: msn_hr_dashboard
+#. odoo-javascript
+#: code:addons/msn_hr_dashboard/static/src/components/approvals_center.xml:0
+#: code:addons/msn_hr_dashboard/static/src/components/employee_spotlight.xml:0
+msgid "Loading…"
+msgstr "جاري التحميل…"
+
+#. module: msn_hr_dashboard
+#: model:ir.model.fields,field_description:msn_hr_dashboard.field_msn_hr_dashboard_config__logo_filename
+msgid "Logo Filename"
+msgstr "اسم ملف الشعار"
+
+#. module: msn_hr_dashboard
+#. odoo-javascript
+#: code:addons/msn_hr_dashboard/static/src/components/approvals_center.xml:0
+msgid "Manager:"
+msgstr "المدير:"
+
+#. module: msn_hr_dashboard
+#. odoo-javascript
+#: code:addons/msn_hr_dashboard/static/src/components/approvals_center.xml:0
+msgid "Mark Done"
+msgstr "اعتماد نهائي"
+
+#. module: msn_hr_dashboard
+#: model:ir.model.fields,field_description:msn_hr_dashboard.field_msn_hr_dashboard_config__text_muted_color
+msgid "Muted Text Color"
+msgstr "لون النص الثانوي"
+
+#. module: msn_hr_dashboard
+#. odoo-javascript
+#: code:addons/msn_hr_dashboard/static/src/components/employee_spotlight.xml:0
+msgid "Net"
+msgstr "الصافي"
+
+#. module: msn_hr_dashboard
+#. odoo-javascript
+#: code:addons/msn_hr_dashboard/static/src/components/dashboard.js:0
+msgid "New Hires"
+msgstr "التعيينات الجديدة"
+
+#. module: msn_hr_dashboard
+#. odoo-javascript
+#: code:addons/msn_hr_dashboard/static/src/components/employee_spotlight.xml:0
+msgid "No employees found."
+msgstr "لم يتم العثور على موظفين."
+
+#. module: msn_hr_dashboard
+#. odoo-javascript
+#: code:addons/msn_hr_dashboard/static/src/components/approvals_center.xml:0
+msgid "No expense reports awaiting approval."
+msgstr "لا توجد نفقات بانتظار الاعتماد."
+
+#. module: msn_hr_dashboard
+#. odoo-javascript
+#: code:addons/msn_hr_dashboard/static/src/components/employee_spotlight.js:0
+msgid "No payslip available to print"
+msgstr "لا توجد قسيمة راتب للطباعة"
+
+#. module: msn_hr_dashboard
+#. odoo-javascript
+#: code:addons/msn_hr_dashboard/static/src/components/employee_spotlight.xml:0
+msgid "No payslips on file for this employee."
+msgstr "لا توجد قسائم رواتب مسجلة لهذا الموظف."
+
+#. module: msn_hr_dashboard
+#. odoo-javascript
+#: code:addons/msn_hr_dashboard/static/src/components/approvals_center.xml:0
+msgid "No pending appraisals — all caught up."
+msgstr "لا توجد تقييمات معلقة — كل شيء مكتمل."
+
+#. module: msn_hr_dashboard
+#. odoo-javascript
+#: code:addons/msn_hr_dashboard/static/src/components/employee_spotlight.xml:0
+msgid "No version data on file for this employee."
+msgstr "لا توجد بيانات نسخة مسجلة لهذا الموظف."
+
+#. module: msn_hr_dashboard
+#. odoo-javascript
+#: code:addons/msn_hr_dashboard/static/src/components/employee_spotlight.xml:0
+msgid "Open full profile"
+msgstr "فتح الملف الكامل"
+
+#. module: msn_hr_dashboard
+#. odoo-javascript
+#: code:addons/msn_hr_dashboard/static/src/components/approvals_center.js:0
+msgid "Operation failed"
+msgstr "فشلت العملية"
+
+#. module: msn_hr_dashboard
+#. odoo-javascript
+#: code:addons/msn_hr_dashboard/static/src/components/employee_spotlight.xml:0
+msgid "Payroll not installed"
+msgstr "تطبيق الرواتب غير مثبّت"
+
+#. module: msn_hr_dashboard
+#. odoo-javascript
+#: code:addons/msn_hr_dashboard/static/src/components/employee_spotlight.js:0
+msgid "Payslip report not available"
+msgstr "تقرير قسيمة الراتب غير متوفر"
+
+#. module: msn_hr_dashboard
+#. odoo-javascript
+#: code:addons/msn_hr_dashboard/static/src/components/dashboard.js:0
+#: code:addons/msn_hr_dashboard/static/src/components/employee_spotlight.js:0
+#: code:addons/msn_hr_dashboard/static/src/components/employee_spotlight.xml:0
+msgid "Payslips"
+msgstr "قسائم الرواتب"
+
+#. module: msn_hr_dashboard
+#. odoo-javascript
+#: code:addons/msn_hr_dashboard/static/src/components/dashboard.js:0
+msgid "Pending Appraisals"
+msgstr "التقييمات المعلقة"
+
+#. module: msn_hr_dashboard
+#. odoo-javascript
+#: code:addons/msn_hr_dashboard/static/src/components/dashboard.js:0
+msgid "Pending Leave Requests"
+msgstr "طلبات الإجازة المعلقة"
+
+#. module: msn_hr_dashboard
+#. odoo-javascript
+#: code:addons/msn_hr_dashboard/static/src/components/employee_spotlight.xml:0
+msgid "Pending Leaves"
+msgstr "الإجازات المعلقة"
+
+#. module: msn_hr_dashboard
+#: model:ir.model.fields,field_description:msn_hr_dashboard.field_msn_hr_dashboard_config__primary_color
+msgid "Primary Color"
+msgstr "اللون الأساسي"
+
+#. module: msn_hr_dashboard
+#. odoo-javascript
+#: code:addons/msn_hr_dashboard/static/src/components/employee_spotlight.xml:0
+msgid "Print Payslip"
+msgstr "طباعة قسيمة الراتب"
+
+#. module: msn_hr_dashboard
+#. odoo-javascript
+#: code:addons/msn_hr_dashboard/static/src/components/dashboard.xml:0
+msgid "Refresh"
+msgstr "تحديث"
+
+#. module: msn_hr_dashboard
+#. odoo-javascript
+#: code:addons/msn_hr_dashboard/static/src/components/approvals_center.js:0
+msgid "Refusal failed"
+msgstr "فشل الرفض"
+
+#. module: msn_hr_dashboard
+#. odoo-javascript
+#: code:addons/msn_hr_dashboard/static/src/components/approvals_center.xml:0
+msgid "Refuse"
+msgstr "رفض"
+
+#. module: msn_hr_dashboard
+#. odoo-javascript
+#: code:addons/msn_hr_dashboard/static/src/components/employee_spotlight.xml:0
+msgid "Reports to"
+msgstr "يرفع تقاريره إلى"
+
+#. module: msn_hr_dashboard
+#. odoo-javascript
+#: code:addons/msn_hr_dashboard/static/src/components/approvals_center.js:0
+msgid "Request ${"
+msgstr "الطلب ${"
+
+#. module: msn_hr_dashboard
+#. odoo-javascript
+#: code:addons/msn_hr_dashboard/static/src/components/approvals_center.xml:0
+msgid "Reset"
+msgstr "إعادة تعيين"
+
+#. module: msn_hr_dashboard
+#. odoo-javascript
+#: code:addons/msn_hr_dashboard/static/src/components/dashboard.xml:0
+msgid "Review and approve pending leave & expense requests"
+msgstr "راجع واعتمد طلبات الإجازة والنفقات المعلقة"
+
+#. module: msn_hr_dashboard
+#. odoo-javascript
+#: code:addons/msn_hr_dashboard/static/src/components/employee_spotlight.xml:0
+msgid "Schedule"
+msgstr "الجدول"
+
+#. module: msn_hr_dashboard
+#. odoo-javascript
+#: code:addons/msn_hr_dashboard/static/src/components/employee_spotlight.xml:0
+msgid "Search by name, job, or department…"
+msgstr "ابحث بالاسم أو الوظيفة أو القسم…"
+
+#. module: msn_hr_dashboard
+#: model:ir.model.fields,field_description:msn_hr_dashboard.field_msn_hr_dashboard_config__secondary_color
+msgid "Secondary Color"
+msgstr "اللون الثانوي"
+
+#. module: msn_hr_dashboard
+#. odoo-javascript
+#: code:addons/msn_hr_dashboard/static/src/components/employee_spotlight.xml:0
+msgid "Select an employee to view their data, contract version & requests"
+msgstr "اختر موظفًا لعرض بياناته ونسخة عقده وطلباته"
+
+#. module: msn_hr_dashboard
+#: model:ir.model.fields,field_description:msn_hr_dashboard.field_msn_hr_dashboard_config__show_logo
+msgid "Show Logo"
+msgstr "إظهار الشعار"
+
+#. module: msn_hr_dashboard
+#. odoo-javascript
+#: code:addons/msn_hr_dashboard/static/src/components/dashboard.xml:0
+msgid "Showing data from"
+msgstr "عرض بيانات من"
+
+#. module: msn_hr_dashboard
+#. odoo-javascript
+#: code:addons/msn_hr_dashboard/static/src/components/employee_spotlight.xml:0
+msgid "Started"
+msgstr "بدأ في"
+
+#. module: msn_hr_dashboard
+#. odoo-javascript
+#: code:addons/msn_hr_dashboard/static/src/components/employee_spotlight.xml:0
+msgid "State:"
+msgstr "الحالة:"
+
+#. module: msn_hr_dashboard
+#: model:ir.model.fields,field_description:msn_hr_dashboard.field_msn_hr_dashboard_config__dashboard_subtitle
+msgid "Subtitle"
+msgstr "العنوان الفرعي"
+
+#. module: msn_hr_dashboard
+#: model_terms:ir.ui.view,arch_db:msn_hr_dashboard.view_msn_hr_dashboard_config_form
+msgid "Text"
+msgstr "النص"
+
+#. module: msn_hr_dashboard
+#: model:ir.model.fields,field_description:msn_hr_dashboard.field_msn_hr_dashboard_config__text_color
+msgid "Text Color"
+msgstr "لون النص"
+
+#. module: msn_hr_dashboard
+#. odoo-javascript
+#: code:addons/msn_hr_dashboard/static/src/components/approvals_center.xml:0
+msgid "The Appraisals module is not installed."
+msgstr "تطبيق التقييمات غير مثبّت."
+
+#. module: msn_hr_dashboard
+#. odoo-javascript
+#: code:addons/msn_hr_dashboard/static/src/components/approvals_center.xml:0
+msgid "The Expenses module is not installed."
+msgstr "تطبيق النفقات غير مثبّت."
+
+#. module: msn_hr_dashboard
+#. odoo-javascript
+#: code:addons/msn_hr_dashboard/static/src/components/employee_spotlight.xml:0
+msgid "The Payroll app is not installed."
+msgstr "تطبيق الرواتب غير مثبّت."
+
+#. module: msn_hr_dashboard
+#: model_terms:ir.ui.view,arch_db:msn_hr_dashboard.view_msn_hr_dashboard_config_form
+msgid "Theme Colors"
+msgstr "ألوان المظهر"
+
+#. module: msn_hr_dashboard
+#. odoo-javascript
+#: code:addons/msn_hr_dashboard/static/src/components/dashboard.js:0
+msgid "Today's Attendance"
+msgstr "حضور اليوم"
+
+#. module: msn_hr_dashboard
+#. odoo-javascript
+#: code:addons/msn_hr_dashboard/static/src/components/employee_spotlight.xml:0
+msgid "Type"
+msgstr "النوع"
+
+#. module: msn_hr_dashboard
+#. odoo-javascript
+#: code:addons/msn_hr_dashboard/static/src/components/employee_spotlight.xml:0
+msgid "Version Date"
+msgstr "تاريخ النسخة"
+
+#. module: msn_hr_dashboard
+#. odoo-javascript
+#: code:addons/msn_hr_dashboard/static/src/components/employee_spotlight.xml:0
+msgid "View all"
+msgstr "عرض الكل"
+
+#. module: msn_hr_dashboard
+#. odoo-javascript
+#: code:addons/msn_hr_dashboard/static/src/components/employee_spotlight.xml:0
+msgid "Viewing data for"
+msgstr "عرض بيانات"
+
+#. module: msn_hr_dashboard
+#. odoo-javascript
+#: code:addons/msn_hr_dashboard/static/src/components/employee_spotlight.xml:0
+msgid "Wage"
+msgstr "الأجر"
+
+#. module: msn_hr_dashboard
+#. odoo-javascript
+#: code:addons/msn_hr_dashboard/static/src/components/employee_spotlight.xml:0
+msgid "Wage Type"
+msgstr "نوع الأجر"
+
+#. module: msn_hr_dashboard
+#. odoo-javascript
+#: code:addons/msn_hr_dashboard/static/src/components/employee_spotlight.xml:0
+msgid "approved"
+msgstr "معتمدة"
+
+#. module: msn_hr_dashboard
+#. odoo-javascript
+#: code:addons/msn_hr_dashboard/static/src/components/approvals_center.xml:0
+msgid "day(s)"
+msgstr "يوم/أيام"
+
+#. module: msn_hr_dashboard
+#. odoo-javascript
+#: code:addons/msn_hr_dashboard/static/src/components/employee_spotlight.xml:0
+msgid "in range"
+msgstr "في الفترة"
+
+#. module: msn_hr_dashboard
+#. odoo-javascript
+#: code:addons/msn_hr_dashboard/static/src/components/approvals_center.xml:0
+msgid "line(s)"
+msgstr "بند/بنود"
+
+#. module: msn_hr_dashboard
+#. odoo-javascript
+#: code:addons/msn_hr_dashboard/static/src/components/dashboard.xml:0
+msgid "logo"
+msgstr "شعار"
+
+#. module: msn_hr_dashboard
+#. odoo-javascript
+#: code:addons/msn_hr_dashboard/static/src/components/employee_spotlight.xml:0
+msgid "pending"
+msgstr "معلقة"
+
+#. module: msn_hr_dashboard
+#. odoo-javascript
+#: code:addons/msn_hr_dashboard/static/src/components/dashboard.xml:0
+msgid "to"
+msgstr "إلى"
+
+#. module: msn_hr_dashboard
+#. odoo-javascript
+#: code:addons/msn_hr_dashboard/static/src/components/dashboard.js:0
+msgid "Total Employees"
+msgstr "إجمالي الموظفين"
+
+#. module: msn_hr_dashboard
+#. odoo-javascript
+#: code:addons/msn_hr_dashboard/static/src/components/dashboard.js:0
+msgid "Present Today"
+msgstr "الحاضرون اليوم"
+
+#. module: msn_hr_dashboard
+#. odoo-javascript
+#: code:addons/msn_hr_dashboard/static/src/components/dashboard.js:0
+msgid "new"
+msgstr "جديد"
+
+#. module: msn_hr_dashboard
+#. odoo-javascript
+#: code:addons/msn_hr_dashboard/static/src/components/dashboard.js:0
+msgid "Live"
+msgstr "مباشر"
+
+#. module: msn_hr_dashboard
+#. odoo-javascript
+#: code:addons/msn_hr_dashboard/static/src/components/dashboard.js:0
+msgid "approved total"
+msgstr "إجمالي المعتمدة"
+
+#. module: msn_hr_dashboard
+#. odoo-javascript
+#: code:addons/msn_hr_dashboard/static/src/components/dashboard.js:0
+msgid "In range"
+msgstr "في الفترة"
+
+#. module: msn_hr_dashboard
+#. odoo-javascript
+#: code:addons/msn_hr_dashboard/static/src/components/dashboard.js:0
+msgid "draft"
+msgstr "مسودة"
+
+#. module: msn_hr_dashboard
+#. odoo-javascript
+#: code:addons/msn_hr_dashboard/static/src/components/dashboard.js:0
+msgid "submitted"
+msgstr "مُرسلة"
+
+#. module: msn_hr_dashboard
+#. odoo-javascript
+#: code:addons/msn_hr_dashboard/static/src/components/dashboard.js:0
+msgid "upcoming"
+msgstr "قادمة"
+
+#. module: msn_hr_dashboard
+#. odoo-javascript
+#: code:addons/msn_hr_dashboard/static/src/components/dashboard.js:0
+msgid "done"
+msgstr "مكتملة"
+
+#. module: msn_hr_dashboard
+#. odoo-javascript
+#: code:addons/msn_hr_dashboard/static/src/components/dashboard.js:0
+msgid "Net Wage Total"
+msgstr "إجمالي صافي الأجر"
+
+#. module: msn_hr_dashboard
+#. odoo-javascript
+#: code:addons/msn_hr_dashboard/static/src/components/dashboard.js:0
+msgid "Attendance Trend"
+msgstr "اتجاه الحضور"
+
+#. module: msn_hr_dashboard
+#. odoo-javascript
+#: code:addons/msn_hr_dashboard/static/src/components/dashboard.js:0
+msgid "Last 14 days"
+msgstr "آخر 14 يومًا"
+
+#. module: msn_hr_dashboard
+#. odoo-javascript
+#: code:addons/msn_hr_dashboard/static/src/components/dashboard.js:0
+msgid "Gender Distribution"
+msgstr "توزيع الجنس"
+
+#. module: msn_hr_dashboard
+#. odoo-javascript
+#: code:addons/msn_hr_dashboard/static/src/components/dashboard.js:0
+msgid "Active employees"
+msgstr "الموظفون النشطون"
+
+#. module: msn_hr_dashboard
+#. odoo-javascript
+#: code:addons/msn_hr_dashboard/static/src/components/dashboard.js:0
+msgid "Employees by Department"
+msgstr "الموظفون حسب القسم"
+
+#. module: msn_hr_dashboard
+#. odoo-javascript
+#: code:addons/msn_hr_dashboard/static/src/components/dashboard.js:0
+msgid "Top 8 departments"
+msgstr "أعلى 8 أقسام"
+
+#. module: msn_hr_dashboard
+#. odoo-javascript
+#: code:addons/msn_hr_dashboard/static/src/components/dashboard.js:0
+msgid "Leaves by Type"
+msgstr "الإجازات حسب النوع"
+
+#. module: msn_hr_dashboard
+#. odoo-javascript
+#: code:addons/msn_hr_dashboard/static/src/components/dashboard.js:0
+msgid "Employee Growth"
+msgstr "نمو عدد الموظفين"
+
+#. module: msn_hr_dashboard
+#. odoo-javascript
+#: code:addons/msn_hr_dashboard/static/src/components/dashboard.js:0
+msgid "Last 6 months"
+msgstr "آخر 6 أشهر"
+
+#. module: msn_hr_dashboard
+#. odoo-javascript
+#: code:addons/msn_hr_dashboard/static/src/components/dashboard.js:0
+msgid "Expenses by Category"
+msgstr "النفقات حسب الفئة"
+
+#. module: msn_hr_dashboard
+#. odoo-javascript
+#: code:addons/msn_hr_dashboard/static/src/components/dashboard.js:0
+msgid "Top 6"
+msgstr "أعلى 6"
+
+#. module: msn_hr_dashboard
+#. odoo-javascript
+#: code:addons/msn_hr_dashboard/static/src/components/dashboard.js:0
+msgid "Appraisals by Status"
+msgstr "التقييمات حسب الحالة"
+
+#. module: msn_hr_dashboard
+#. odoo-javascript
+#: code:addons/msn_hr_dashboard/static/src/components/dashboard.js:0
+msgid "Performance review pipeline"
+msgstr "مسار مراجعة الأداء"
+
+#. module: msn_hr_dashboard
+#. odoo-javascript
+#: code:addons/msn_hr_dashboard/static/src/components/dashboard.js:0
+msgid "Appraisal Distribution"
+msgstr "توزيع التقييمات"
+
+#. module: msn_hr_dashboard
+#. odoo-javascript
+#: code:addons/msn_hr_dashboard/static/src/components/dashboard.js:0
+msgid "Current snapshot"
+msgstr "الحالة الراهنة"
+
+#. module: msn_hr_dashboard
+#. odoo-javascript
+#: code:addons/msn_hr_dashboard/static/src/components/dashboard.js:0
+msgid "Male"
+msgstr "ذكر"
+
+#. module: msn_hr_dashboard
+#. odoo-javascript
+#: code:addons/msn_hr_dashboard/static/src/components/dashboard.js:0
+msgid "Female"
+msgstr "أنثى"
+
+#. module: msn_hr_dashboard
+#. odoo-javascript
+#: code:addons/msn_hr_dashboard/static/src/components/dashboard.js:0
+msgid "Other"
+msgstr "أخرى"

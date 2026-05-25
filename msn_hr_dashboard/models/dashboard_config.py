@@ -13,9 +13,9 @@ def _safe(fn, default, label=None):
         return fn()
     except Exception as e:
         if label:
-            _logger.warning("hr_dashboard: section '%s' failed: %s", label, e)
+            _logger.warning("msn_hr_dashboard: section '%s' failed: %s", label, e)
         else:
-            _logger.warning("hr_dashboard: section failed: %s", e)
+            _logger.warning("msn_hr_dashboard: section failed: %s", e)
         return default
 
 
@@ -82,7 +82,7 @@ class HRDashboardConfig(models.Model):
         try:
             return self.env[model_name].sudo().search_count(domain)
         except Exception as e:
-            _logger.warning("hr_dashboard: count on %s failed (%s): %s", model_name, label or domain, e)
+            _logger.warning("msn_hr_dashboard: count on %s failed (%s): %s", model_name, label or domain, e)
             return 0
 
     # -------- main data endpoint --------
@@ -425,7 +425,7 @@ class HRDashboardConfig(models.Model):
                 e.pop('department_id', None)
             return employees
         except Exception as e:
-            _logger.warning("hr_dashboard: employee list failed: %s", e)
+            _logger.warning("msn_hr_dashboard: employee list failed: %s", e)
             return []
 
     @api.model
@@ -492,7 +492,7 @@ class HRDashboardConfig(models.Model):
                         'resource_calendar': (getattr(v, 'resource_calendar_id', None) and v.resource_calendar_id.name) or '',
                     }
             except Exception as e:
-                _logger.warning("hr_dashboard: version info failed: %s", e)
+                _logger.warning("msn_hr_dashboard: version info failed: %s", e)
 
         # KPIs for this employee
         kpis = {
@@ -583,7 +583,7 @@ class HRDashboardConfig(models.Model):
                         'net_wage': float(getattr(s, net_field, 0) or 0) if net_field else 0.0,
                     }
             except Exception as e:
-                _logger.warning("hr_dashboard: payslip info failed: %s", e)
+                _logger.warning("msn_hr_dashboard: payslip info failed: %s", e)
 
         return {
             'profile': profile,
@@ -614,7 +614,7 @@ class HRDashboardConfig(models.Model):
                     action['context'] = action.get('context') or {}
                     return action
         except Exception as e:
-            _logger.warning("hr_dashboard: payslip print failed: %s", e)
+            _logger.warning("msn_hr_dashboard: payslip print failed: %s", e)
         # Fallback — open the payslip form so the user can use the Action menu
         return {
             'type': 'ir.actions.act_window',
@@ -660,7 +660,7 @@ class HRDashboardConfig(models.Model):
                         'department': lv.department_id.name if getattr(lv, 'department_id', False) else '',
                     })
             except Exception as e:
-                _logger.warning("hr_dashboard: pending leaves fetch failed: %s", e)
+                _logger.warning("msn_hr_dashboard: pending leaves fetch failed: %s", e)
 
         # Pending expenses — show drafts + submitted (matches the dashboard KPI definition).
         # In Odoo 19, the 'submitted' state is often skipped entirely in auto-approve workflows,
@@ -697,7 +697,7 @@ class HRDashboardConfig(models.Model):
                         'create_date': str(exp.create_date)[:10] if exp.create_date else '',
                     })
             except Exception as e:
-                _logger.warning("hr_dashboard: pending expenses fetch failed: %s", e)
+                _logger.warning("msn_hr_dashboard: pending expenses fetch failed: %s", e)
 
         # Pending appraisals (Odoo 19 Enterprise)
         if 'hr.appraisal' in self.env:
@@ -705,7 +705,7 @@ class HRDashboardConfig(models.Model):
                 appraisal_data = self._get_appraisal_data(limit=limit)
                 result['appraisals'] = appraisal_data.get('pending_list', [])
             except Exception as e:
-                _logger.warning("hr_dashboard: pending appraisals fetch failed: %s", e)
+                _logger.warning("msn_hr_dashboard: pending appraisals fetch failed: %s", e)
 
         return result
 
@@ -721,7 +721,7 @@ class HRDashboardConfig(models.Model):
                 leave.action_validate()
             return {'ok': True, 'message': f'Leave for {leave.employee_id.name} approved'}
         except Exception as e:
-            _logger.warning("hr_dashboard: approve_leave failed: %s", e)
+            _logger.warning("msn_hr_dashboard: approve_leave failed: %s", e)
             return {'ok': False, 'error': str(e)}
 
     @api.model
@@ -733,7 +733,7 @@ class HRDashboardConfig(models.Model):
             leave.action_refuse()
             return {'ok': True, 'message': f'Leave for {leave.employee_id.name} refused'}
         except Exception as e:
-            _logger.warning("hr_dashboard: refuse_leave failed: %s", e)
+            _logger.warning("msn_hr_dashboard: refuse_leave failed: %s", e)
             return {'ok': False, 'error': str(e)}
 
     @api.model
@@ -771,7 +771,7 @@ class HRDashboardConfig(models.Model):
                             submitted = True
                             break
                         except Exception as e:
-                            _logger.info("hr_dashboard: %s failed: %s", method_name, e)
+                            _logger.info("msn_hr_dashboard: %s failed: %s", method_name, e)
                             continue
                 if not submitted:
                     # Fallback: direct write
@@ -788,7 +788,7 @@ class HRDashboardConfig(models.Model):
                         approved = True
                         break
                     except Exception as e:
-                        _logger.info("hr_dashboard: %s failed: %s", method_name, e)
+                        _logger.info("msn_hr_dashboard: %s failed: %s", method_name, e)
                         continue
             if not approved:
                 exp.sudo().write({'state': 'approved'})
@@ -796,7 +796,7 @@ class HRDashboardConfig(models.Model):
             exp.invalidate_recordset(['state'])
             return {'ok': True, 'message': f'{name} approved'}
         except Exception as e:
-            _logger.warning("hr_dashboard: approve expense failed: %s", e)
+            _logger.warning("msn_hr_dashboard: approve expense failed: %s", e)
             return {'ok': False, 'error': str(e)}
 
     @api.model
@@ -821,14 +821,14 @@ class HRDashboardConfig(models.Model):
                         refused = True
                         break
                     except Exception as e:
-                        _logger.info("hr_dashboard: %s failed: %s", method_name, e)
+                        _logger.info("msn_hr_dashboard: %s failed: %s", method_name, e)
                         continue
             if not refused:
                 exp.sudo().write({'state': 'refused'})
 
             return {'ok': True, 'message': f'{name} refused'}
         except Exception as e:
-            _logger.warning("hr_dashboard: refuse expense failed: %s", e)
+            _logger.warning("msn_hr_dashboard: refuse expense failed: %s", e)
             return {'ok': False, 'error': str(e)}
 
     # ============ Appraisals (Odoo 19 Enterprise) ============
@@ -902,7 +902,7 @@ class HRDashboardConfig(models.Model):
                         'department': (getattr(a, 'department_id', False) and a.department_id.name) or '',
                     })
             except Exception as e:
-                _logger.warning("hr_dashboard: appraisal pending list failed: %s", e)
+                _logger.warning("msn_hr_dashboard: appraisal pending list failed: %s", e)
 
             # Chart: appraisals by state
             by_state = []
@@ -919,7 +919,7 @@ class HRDashboardConfig(models.Model):
                 'by_state': by_state,
             }
         except Exception as e:
-            _logger.warning("hr_dashboard: appraisal section failed: %s", e)
+            _logger.warning("msn_hr_dashboard: appraisal section failed: %s", e)
             return {}
 
     @api.model
@@ -984,7 +984,7 @@ class HRDashboardConfig(models.Model):
                     try:
                         result = a.action_done()
                     except Exception as e:
-                        _logger.warning("hr_dashboard: action_done failed: %s; falling back to direct write", e)
+                        _logger.warning("msn_hr_dashboard: action_done failed: %s; falling back to direct write", e)
                         a.sudo().write({'state': '3_done'})
 
                 # Verify state actually changed (action_done can silently filter)
@@ -997,7 +997,7 @@ class HRDashboardConfig(models.Model):
 
             return {'ok': False, 'error': f'Unexpected state: {current}'}
         except Exception as e:
-            _logger.warning("hr_dashboard: approve_appraisal failed: %s", e)
+            _logger.warning("msn_hr_dashboard: approve_appraisal failed: %s", e)
             return {'ok': False, 'error': str(e)}
 
     @api.model
@@ -1026,5 +1026,5 @@ class HRDashboardConfig(models.Model):
                 a.sudo().write({'state': '1_new', 'assessment_note': False})
             return {'ok': True, 'message': f'Appraisal for {emp_name} reset to Draft'}
         except Exception as e:
-            _logger.warning("hr_dashboard: cancel_appraisal failed: %s", e)
+            _logger.warning("msn_hr_dashboard: cancel_appraisal failed: %s", e)
             return {'ok': False, 'error': str(e)}

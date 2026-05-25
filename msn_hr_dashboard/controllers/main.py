@@ -26,18 +26,18 @@ def _empty_payload():
 
 class HRDashboardController(http.Controller):
 
-    @http.route('/hr_dashboard/data', type='json', auth='user')
+    @http.route('/msn_hr_dashboard/data', type='json', auth='user')
     def get_dashboard_data(self, date_from=None, date_to=None):
         try:
             config = request.env['hr.dashboard.config'].sudo().get_active_config()
         except Exception as e:
-            _logger.exception("hr_dashboard: could not load config: %s", e)
+            _logger.exception("msn_hr_dashboard: could not load config: %s", e)
             config = None
 
         try:
             data = request.env['hr.dashboard.config'].sudo().get_dashboard_data(date_from, date_to)
         except Exception as e:
-            _logger.exception("hr_dashboard: data aggregation failed: %s", e)
+            _logger.exception("msn_hr_dashboard: data aggregation failed: %s", e)
             data = _empty_payload()
             data['error'] = str(e)
 
@@ -83,86 +83,86 @@ class HRDashboardController(http.Controller):
         return data
 
     # ============ Employee Spotlight endpoints ============
-    @http.route('/hr_dashboard/employees', type='json', auth='user')
+    @http.route('/msn_hr_dashboard/employees', type='json', auth='user')
     def get_employee_list(self):
         try:
             return request.env['hr.dashboard.config'].sudo().get_employee_list()
         except Exception as e:
-            _logger.exception("hr_dashboard: employee_list endpoint failed: %s", e)
+            _logger.exception("msn_hr_dashboard: employee_list endpoint failed: %s", e)
             return []
 
-    @http.route('/hr_dashboard/employee_spotlight', type='json', auth='user')
+    @http.route('/msn_hr_dashboard/employee_spotlight', type='json', auth='user')
     def get_employee_spotlight(self, employee_id, date_from=None, date_to=None):
         try:
             return request.env['hr.dashboard.config'].sudo().get_employee_spotlight(
                 employee_id, date_from, date_to
             )
         except Exception as e:
-            _logger.exception("hr_dashboard: spotlight endpoint failed: %s", e)
+            _logger.exception("msn_hr_dashboard: spotlight endpoint failed: %s", e)
             return {'error': str(e)}
 
-    @http.route('/hr_dashboard/print_payslip', type='json', auth='user')
+    @http.route('/msn_hr_dashboard/print_payslip', type='json', auth='user')
     def print_payslip(self, payslip_id):
         try:
             return request.env['hr.dashboard.config'].sudo().print_employee_payslip(payslip_id)
         except Exception as e:
-            _logger.exception("hr_dashboard: print_payslip failed: %s", e)
+            _logger.exception("msn_hr_dashboard: print_payslip failed: %s", e)
             return {}
 
     # ============ Approvals Center endpoints ============
-    @http.route('/hr_dashboard/pending_approvals', type='json', auth='user')
+    @http.route('/msn_hr_dashboard/pending_approvals', type='json', auth='user')
     def pending_approvals(self, limit=10):
         try:
             return request.env['hr.dashboard.config'].sudo().get_pending_approvals(limit)
         except Exception as e:
-            _logger.exception("hr_dashboard: pending_approvals failed: %s", e)
+            _logger.exception("msn_hr_dashboard: pending_approvals failed: %s", e)
             return {'leaves': [], 'expense_sheets': [], 'has_expense_module': False, 'has_leave_module': False}
 
-    @http.route('/hr_dashboard/approve_leave', type='json', auth='user')
+    @http.route('/msn_hr_dashboard/approve_leave', type='json', auth='user')
     def approve_leave(self, leave_id):
         try:
             # Approval methods need real user context (not sudo) for proper validation
             return request.env['hr.dashboard.config'].approve_leave(leave_id)
         except Exception as e:
-            _logger.exception("hr_dashboard: approve_leave failed: %s", e)
+            _logger.exception("msn_hr_dashboard: approve_leave failed: %s", e)
             return {'ok': False, 'error': str(e)}
 
-    @http.route('/hr_dashboard/refuse_leave', type='json', auth='user')
+    @http.route('/msn_hr_dashboard/refuse_leave', type='json', auth='user')
     def refuse_leave(self, leave_id):
         try:
             return request.env['hr.dashboard.config'].refuse_leave(leave_id)
         except Exception as e:
-            _logger.exception("hr_dashboard: refuse_leave failed: %s", e)
+            _logger.exception("msn_hr_dashboard: refuse_leave failed: %s", e)
             return {'ok': False, 'error': str(e)}
 
-    @http.route('/hr_dashboard/approve_expense_sheet', type='json', auth='user')
+    @http.route('/msn_hr_dashboard/approve_expense_sheet', type='json', auth='user')
     def approve_expense_sheet(self, sheet_id):
         try:
             return request.env['hr.dashboard.config'].approve_expense_sheet(sheet_id)
         except Exception as e:
-            _logger.exception("hr_dashboard: approve_expense_sheet failed: %s", e)
+            _logger.exception("msn_hr_dashboard: approve_expense_sheet failed: %s", e)
             return {'ok': False, 'error': str(e)}
 
-    @http.route('/hr_dashboard/refuse_expense_sheet', type='json', auth='user')
+    @http.route('/msn_hr_dashboard/refuse_expense_sheet', type='json', auth='user')
     def refuse_expense_sheet(self, sheet_id, reason='Refused from dashboard'):
         try:
             return request.env['hr.dashboard.config'].refuse_expense_sheet(sheet_id, reason)
         except Exception as e:
-            _logger.exception("hr_dashboard: refuse_expense_sheet failed: %s", e)
+            _logger.exception("msn_hr_dashboard: refuse_expense_sheet failed: %s", e)
             return {'ok': False, 'error': str(e)}
 
-    @http.route('/hr_dashboard/approve_appraisal', type='json', auth='user')
+    @http.route('/msn_hr_dashboard/approve_appraisal', type='json', auth='user')
     def approve_appraisal(self, appraisal_id):
         try:
             return request.env['hr.dashboard.config'].approve_appraisal(appraisal_id)
         except Exception as e:
-            _logger.exception("hr_dashboard: approve_appraisal failed: %s", e)
+            _logger.exception("msn_hr_dashboard: approve_appraisal failed: %s", e)
             return {'ok': False, 'error': str(e)}
 
-    @http.route('/hr_dashboard/cancel_appraisal', type='json', auth='user')
+    @http.route('/msn_hr_dashboard/cancel_appraisal', type='json', auth='user')
     def cancel_appraisal(self, appraisal_id):
         try:
             return request.env['hr.dashboard.config'].cancel_appraisal(appraisal_id)
         except Exception as e:
-            _logger.exception("hr_dashboard: cancel_appraisal failed: %s", e)
+            _logger.exception("msn_hr_dashboard: cancel_appraisal failed: %s", e)
             return {'ok': False, 'error': str(e)}

@@ -6,7 +6,7 @@ import { useService } from "@web/core/utils/hooks";
 import { _t } from "@web/core/l10n/translation";
 
 export class EmployeeSpotlight extends Component {
-    static template = "hr_dashboard.EmployeeSpotlight";
+    static template = "msn_hr_dashboard.EmployeeSpotlight";
     static props = {
         dateFrom: String,
         dateTo: String,
@@ -33,7 +33,7 @@ export class EmployeeSpotlight extends Component {
     async _loadEmployees() {
         this.state.loading = true;
         try {
-            this.state.employees = await rpc("/hr_dashboard/employees", {});
+            this.state.employees = await rpc("/msn_hr_dashboard/employees", {});
         } catch (e) {
             console.error("employee list failed", e);
             this.notification.add(_t("Could not load employees"), { type: "danger" });
@@ -56,7 +56,7 @@ export class EmployeeSpotlight extends Component {
         this.state.selectedId = empId;
         this.state.loadingDetail = true;
         try {
-            this.state.spotlight = await rpc("/hr_dashboard/employee_spotlight", {
+            this.state.spotlight = await rpc("/msn_hr_dashboard/employee_spotlight", {
                 employee_id: empId,
                 date_from: this.props.dateFrom,
                 date_to: this.props.dateTo,
@@ -175,7 +175,7 @@ export class EmployeeSpotlight extends Component {
             return;
         }
         try {
-            const action = await rpc("/hr_dashboard/print_payslip", { payslip_id: slip.id });
+            const action = await rpc("/msn_hr_dashboard/print_payslip", { payslip_id: slip.id });
             if (action && action.type) {
                 await this.action.doAction(action);
             } else {

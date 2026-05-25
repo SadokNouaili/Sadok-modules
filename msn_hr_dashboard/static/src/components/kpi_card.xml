@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <templates xml:space="preserve">
 
-    <t t-name="hr_dashboard.KpiCard">
+    <t t-name="msn_hr_dashboard.KpiCard">
         <div class="hr-kpi-card glass" t-ref="card"
              t-att-style="'--card-accent: var(' + props.colorVar + ');'"
              t-on-click="() => props.onClick and props.onClick()">

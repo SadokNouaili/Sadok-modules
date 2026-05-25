@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-    'name': 'HR Dashboard',
+    'name': 'Msn HR Dashboard',
     'version': '19.0.1.0.0',
     'category': 'Human Resources',
     'summary': 'Interactive HR dashboard with glassmorphism design, customizable colors and logo',
@@ -41,10 +41,10 @@ Covers: Employees, Attendance, Leaves, Expenses, Departments, Versions (contract
     ],
     'assets': {
         'web.assets_backend': [
-            'hr_dashboard/static/lib/chart.umd.min.js',
-            'hr_dashboard/static/src/scss/dashboard.scss',
-            'hr_dashboard/static/src/components/**/*.js',
-            'hr_dashboard/static/src/components/**/*.xml',
+            'msn_hr_dashboard/static/lib/chart.umd.min.js',
+            'msn_hr_dashboard/static/src/scss/dashboard.scss',
+            'msn_hr_dashboard/static/src/components/**/*.js',
+            'msn_hr_dashboard/static/src/components/**/*.xml',
         ],
     },
     'images': ['static/description/banner.png'],

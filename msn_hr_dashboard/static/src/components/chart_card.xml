@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <templates xml:space="preserve">
 
-    <t t-name="hr_dashboard.ChartCard">
+    <t t-name="msn_hr_dashboard.ChartCard">
         <div t-att-class="'hr-chart-card glass hr-size-' + (props.size or 'md')">
             <div class="hr-chart-glow"/>
             <div class="hr-chart-head">

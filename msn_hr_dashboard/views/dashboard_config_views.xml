@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <record id="view_hr_dashboard_config_form" model="ir.ui.view">
+    <record id="view_msn_hr_dashboard_config_form" model="ir.ui.view">
         <field name="name">hr.dashboard.config.form</field>
         <field name="model">hr.dashboard.config</field>
         <field name="arch" type="xml">
@@ -61,7 +61,7 @@
         </field>
     </record>
 
-    <record id="view_hr_dashboard_config_list" model="ir.ui.view">
+    <record id="view_msn_hr_dashboard_config_list" model="ir.ui.view">
         <field name="name">hr.dashboard.config.list</field>
         <field name="model">hr.dashboard.config</field>
         <field name="arch" type="xml">
@@ -73,7 +73,7 @@
         </field>
     </record>
 
-    <record id="action_hr_dashboard_config" model="ir.actions.act_window">
+    <record id="action_msn_hr_dashboard_config" model="ir.actions.act_window">
         <field name="name">Dashboard Configurations</field>
         <field name="res_model">hr.dashboard.config</field>
         <field name="view_mode">list,form</field>

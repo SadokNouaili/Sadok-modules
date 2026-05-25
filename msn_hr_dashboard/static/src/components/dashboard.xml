@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <templates xml:space="preserve">
 
-    <t t-name="hr_dashboard.Dashboard">
-        <div class="hr_dashboard" t-ref="root" t-att-style="themeStyle">
+    <t t-name="msn_hr_dashboard.Dashboard">
+        <div class="msn_hr_dashboard" t-ref="root" t-att-style="themeStyle">
 
             <!-- Animated background blobs -->
             <div class="hr-bg-blobs">

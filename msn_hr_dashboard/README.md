@@ -81,9 +81,9 @@ The dashboard degrades gracefully when optional modules are not installed — Pa
 
 ## Installation
 
-1. Copy the `hr_dashboard` directory into your Odoo `addons` path:
+1. Copy the `msn_hr_dashboard` directory into your Odoo `addons` path:
    ```
-   cp -r hr_dashboard /path/to/odoo/addons/
+   cp -r msn_hr_dashboard /path/to/odoo/addons/
    ```
 2. Restart the Odoo server:
    ```
@@ -93,7 +93,7 @@ The dashboard degrades gracefully when optional modules are not installed — Pa
 
 Alternatively, install directly from the command line:
 ```
-./odoo-bin -d <database> -i hr_dashboard --stop-after-init
+./odoo-bin -d <database> -i msn_hr_dashboard --stop-after-init
 ```
 
 After installation, the **HR Dashboard** application appears in the main app menu.
@@ -188,7 +188,7 @@ You can create multiple configuration records (e.g. for different companies, the
 
 ### File Layout
 ```
-hr_dashboard/
+msn_hr_dashboard/
 ├── __manifest__.py
 ├── controllers/
 │   └── main.py                          JSON-RPC endpoints for dashboard data
@@ -219,7 +219,7 @@ hr_dashboard/
 ```
 
 ### Data Flow
-The dashboard component loads on app open and calls the JSON endpoint `/hr_dashboard/data` with the active date range. The endpoint returns a single payload containing all KPI counts, chart datasets, sparkline series, and module-availability flags. The component renders synchronously from this payload. User actions (approval, refresh, date change) call narrow endpoints that return only the affected slice and trigger a partial re-render.
+The dashboard component loads on app open and calls the JSON endpoint `/msn_hr_dashboard/data` with the active date range. The endpoint returns a single payload containing all KPI counts, chart datasets, sparkline series, and module-availability flags. The component renders synchronously from this payload. User actions (approval, refresh, date change) call narrow endpoints that return only the affected slice and trigger a partial re-render.
 
 ### Defensive Patterns
 All data fetching is wrapped in try/except blocks with structured logging. Per-feature checks (`'hr.appraisal' in self.env`, `_has_field`) detect optional modules at runtime, allowing the same module to install cleanly on databases with or without Payroll and Appraisal. Field name candidates are tried in order (e.g. `total_amount` → `total_amount_currency` → `untaxed_amount`) to accommodate minor variations across Odoo localizations.
@@ -230,7 +230,7 @@ All data fetching is wrapped in try/except blocks with structured logging. Per-f
 1. Go to **Settings → Translations → Languages** and activate Arabic (Standard)
 2. Upgrade the module to load translations:
    ```
-   ./odoo-bin -u hr_dashboard
+   ./odoo-bin -u msn_hr_dashboard
    ```
 3. In your user preferences, set Language to Arabic and refresh
 
@@ -241,7 +241,7 @@ Create a new file at `i18n/<language_code>.po` (for example `fr_FR.po` for Frenc
 
 ## Troubleshooting
 
-**Dashboard loads but shows no data.** Confirm the date range covers a period with actual records. Use the developer console to check for failed RPC calls to `/hr_dashboard/data`.
+**Dashboard loads but shows no data.** Confirm the date range covers a period with actual records. Use the developer console to check for failed RPC calls to `/msn_hr_dashboard/data`.
 
 **KPI shows 0 when records exist.** The metric counts records in specific workflow states (e.g. Pending Leaves counts `confirm` and `validate1` only). If all your leaves are already in `validate` state, "Pending Leaves" is correctly zero — check "Approved Leaves total" in the subtitle for the full picture.
 

@@ -1,17 +1,17 @@
 // HR Dashboard — glassmorphism theme
-// Defaults; overridden at runtime from config via CSS vars on .hr_dashboard
+// Defaults; overridden at runtime from config via CSS vars on .msn_hr_dashboard
 // (Fonts use system stack — Odoo's SCSS compiler cannot fetch remote @import urls.)
 
 // Make the client-action wrapper a true flex container so our dashboard can fill it
 .o_action_manager > .o_action {
-    &:has(.hr_dashboard) {
+    &:has(.msn_hr_dashboard) {
         display: flex;
         flex-direction: column;
         overflow: hidden;
     }
 }
 
-.hr_dashboard {
+.msn_hr_dashboard {
     // Earthy harvest palette — olive, evergreen, cornsilk, caramel, copper.
     // Light cornsilk base; warm browns/greens carry the data. Glass surfaces
     // become deep-tinted instead of frosted-white.
@@ -1342,7 +1342,7 @@
 // Odoo automatically sets dir="rtl" on the document for RTL languages (Arabic, Hebrew, etc.).
 // Most of the dashboard layout uses flexbox/grid which handles RTL automatically.
 // This section overrides the few directional properties and visual details that need flipping.
-[dir="rtl"] .hr_dashboard {
+[dir="rtl"] .msn_hr_dashboard {
     // Cancel letter-spacing tweaks that don't suit Arabic typography
     .hr-title, .hr-chart-title, .hr-kpi-value, .hr-section-title { letter-spacing: 0; }
 
