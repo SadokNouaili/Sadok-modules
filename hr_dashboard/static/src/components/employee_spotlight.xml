@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+
+    <t t-name="hr_dashboard.EmployeeSpotlight">
+        <section class="hr-spotlight glass">
+            <div class="hr-spotlight-glow"/>
+
+            <header class="hr-spotlight-head">
+                <div class="hr-spotlight-title-block">
+                    <h3 class="hr-spotlight-title">
+                        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="8" r="4"/>
+                            <path d="M20 21a8 8 0 1 0-16 0"/>
+                        </svg>
+                        Employee Spotlight
+                    </h3>
+                    <p class="hr-spotlight-sub" t-if="!state.spotlight">
+                        Select an employee to view their data, contract version &amp; requests
+                    </p>
+                    <p class="hr-spotlight-sub" t-if="state.spotlight">
+                        Viewing data for <strong t-esc="state.spotlight.profile.name"/>
+                    </p>
+                </div>
+                <button t-if="state.spotlight" class="hr-spotlight-back" t-on-click="onClearSelection">
+                    <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M19 12H5M12 19l-7-7 7-7"/>
+                    </svg>
+                    Back to list
+                </button>
+            </header>
+
+            <!-- ============ Picker Mode ============ -->
+            <div t-if="!state.spotlight" class="hr-spotlight-picker">
+                <div class="hr-spotlight-search">
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"/>
+                        <path d="M21 21l-4.35-4.35"/>
+                    </svg>
+                    <input type="text" placeholder="Search by name, job, or department…"
+                           t-att-value="state.search"
+                           t-on-input="onSearchInput"/>
+                </div>
+
+                <div t-if="state.loading" class="hr-spotlight-empty">Loading employees…</div>
+
+                <div t-elif="filteredEmployees.length === 0" class="hr-spotlight-empty">
+                    No employees found.
+                </div>
+
+                <div t-else="" class="hr-spotlight-emp-grid">
+                    <div t-foreach="filteredEmployees" t-as="emp" t-key="emp.id"
+                         class="hr-spotlight-emp-card"
+                         t-on-click="() => this.onSelectEmployee(emp.id)">
+                        <img class="hr-emp-avatar"
+                             t-att-src="'/web/image/hr.employee/' + emp.id + '/avatar_128'"
+                             t-att-alt="emp.name"/>
+                        <div class="hr-emp-meta">
+                            <div class="hr-emp-name" t-esc="emp.name"/>
+                            <div class="hr-emp-job" t-esc="emp.job_title || emp.department || '—'"/>
+                        </div>
+                        <svg class="hr-emp-arrow" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M9 18l6-6-6-6"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ============ Detail Mode ============ -->
+            <div t-if="state.spotlight" class="hr-spotlight-detail">
+
+                <div t-if="state.loadingDetail" class="hr-spotlight-empty">Loading…</div>
+
+                <div t-if="!state.loadingDetail and state.spotlight.profile" class="hr-detail-inner">
+
+                    <!-- Profile card -->
+                    <div class="hr-profile-card">
+                        <img class="hr-profile-avatar"
+                             t-att-src="state.spotlight.profile.avatar"
+                             t-att-alt="state.spotlight.profile.name"/>
+                        <div class="hr-profile-info">
+                            <h4 class="hr-profile-name" t-esc="state.spotlight.profile.name"/>
+                            <div class="hr-profile-job">
+                                <t t-esc="state.spotlight.profile.job_title || state.spotlight.profile.job_id_name || '—'"/>
+                                <span t-if="state.spotlight.profile.department"> · <t t-esc="state.spotlight.profile.department"/></span>
+                            </div>
+                            <div class="hr-profile-tags">
+                                <span t-if="state.spotlight.profile.employee_type" class="hr-tag" t-esc="state.spotlight.profile.employee_type"/>
+                                <span t-if="state.spotlight.profile.gender" class="hr-tag" t-esc="state.spotlight.profile.gender"/>
+                                <span t-if="state.spotlight.profile.work_location" class="hr-tag" t-esc="state.spotlight.profile.work_location"/>
+                            </div>
+                            <div class="hr-profile-contact">
+                                <span t-if="state.spotlight.profile.work_email" class="hr-contact-item">
+                                    <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                        <path d="M22 6l-10 7L2 6"/>
+                                    </svg>
+                                    <t t-esc="state.spotlight.profile.work_email"/>
+                                </span>
+                                <span t-if="state.spotlight.profile.work_phone or state.spotlight.profile.mobile_phone" class="hr-contact-item">
+                                    <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0 1 22 16.92z"/>
+                                    </svg>
+                                    <t t-esc="state.spotlight.profile.work_phone or state.spotlight.profile.mobile_phone"/>
+                                </span>
+                                <span t-if="state.spotlight.profile.manager" class="hr-contact-item">
+                                    <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                                        <circle cx="12" cy="7" r="4"/>
+                                    </svg>
+                                    Reports to <t t-esc="state.spotlight.profile.manager"/>
+                                </span>
+                            </div>
+                        </div>
+                        <button class="hr-profile-open" t-on-click="openEmployeeForm">
+                            Open full profile
+                            <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M7 17L17 7M17 7H7M17 7v10"/>
+                            </svg>
+                        </button>
+                    </div>
+
+                    <!-- KPI strip -->
+                    <div class="hr-spot-kpis">
+                        <div class="hr-spot-kpi" t-on-click="openLeaves" style="--ck: var(--hr-card-3);">
+                            <div class="hr-spot-kpi-label">Pending Leaves</div>
+                            <div class="hr-spot-kpi-value" t-esc="state.spotlight.kpis.pending_leaves"/>
+                            <div class="hr-spot-kpi-sub">
+                                <t t-esc="state.spotlight.kpis.approved_leaves"/> approved
+                            </div>
+                        </div>
+                        <div class="hr-spot-kpi" t-on-click="openAttendances" style="--ck: var(--hr-card-2);">
+                            <div class="hr-spot-kpi-label">Attendances</div>
+                            <div class="hr-spot-kpi-value" t-esc="state.spotlight.kpis.attendances"/>
+                            <div class="hr-spot-kpi-sub">In selected range</div>
+                        </div>
+                        <div class="hr-spot-kpi" t-on-click="openExpenses" style="--ck: var(--hr-card-5);">
+                            <div class="hr-spot-kpi-label">Expenses</div>
+                            <div class="hr-spot-kpi-value">
+                                <t t-esc="fmtCurrency(state.spotlight.kpis.expense_total)"/>
+                            </div>
+                            <div class="hr-spot-kpi-sub">
+                                <t t-esc="state.spotlight.kpis.pending_expenses"/> pending
+                            </div>
+                        </div>
+                        <div class="hr-spot-kpi"
+                             t-att-class="{'hr-spot-kpi-disabled': !state.spotlight.payroll_installed}"
+                             t-on-click="openPayslips" style="--ck: var(--hr-card-4);">
+                            <div class="hr-spot-kpi-label">Payslips</div>
+                            <div class="hr-spot-kpi-value" t-esc="state.spotlight.kpis.payslip_count"/>
+                            <div class="hr-spot-kpi-sub" t-if="state.spotlight.payroll_installed">
+                                <t t-esc="fmtCurrency(state.spotlight.kpis.payslip_total)"/> in range
+                            </div>
+                            <div class="hr-spot-kpi-sub" t-if="!state.spotlight.payroll_installed">
+                                Payroll not installed
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Version / Contract panel + Last payslip -->
+                    <div class="hr-detail-row">
+                        <div class="hr-version-card" t-if="state.spotlight.version and state.spotlight.version.name">
+                            <div class="hr-card-head">
+                                <h5>
+                                    <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                                        <path d="M14 2v6h6"/>
+                                    </svg>
+                                    Current HR Version
+                                </h5>
+                                <button class="hr-link-btn" t-on-click="openVersions">View all
+                                    <svg viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                                </button>
+                            </div>
+                            <div class="hr-version-grid">
+                                <div t-if="state.spotlight.version.wage"><span>Wage</span><strong t-esc="fmtCurrency(state.spotlight.version.wage)"/></div>
+                                <div t-if="state.spotlight.version.contract_type"><span>Type</span><strong t-esc="state.spotlight.version.contract_type"/></div>
+                                <div t-if="state.spotlight.version.wage_type"><span>Wage Type</span><strong t-esc="state.spotlight.version.wage_type"/></div>
+                                <div t-if="state.spotlight.version.schedule_pay"><span>Schedule</span><strong t-esc="state.spotlight.version.schedule_pay"/></div>
+                                <div t-if="state.spotlight.version.date_start"><span>Started</span><strong t-esc="state.spotlight.version.date_start"/></div>
+                                <div t-if="state.spotlight.version.date_end"><span>Ends</span><strong t-esc="state.spotlight.version.date_end"/></div>
+                                <div t-if="state.spotlight.version.date_version"><span>Version Date</span><strong t-esc="state.spotlight.version.date_version"/></div>
+                                <div t-if="state.spotlight.version.resource_calendar"><span>Schedule</span><strong t-esc="state.spotlight.version.resource_calendar"/></div>
+                            </div>
+                        </div>
+
+                        <div class="hr-version-card" t-if="!state.spotlight.version or !state.spotlight.version.name">
+                            <div class="hr-card-head">
+                                <h5>Current HR Version</h5>
+                            </div>
+                            <p class="hr-empty-text">No version data on file for this employee.</p>
+                        </div>
+
+                        <!-- Last payslip -->
+                        <div class="hr-payslip-card">
+                            <div class="hr-card-head">
+                                <h5>
+                                    <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2">
+                                        <rect x="3" y="4" width="18" height="18" rx="2"/>
+                                        <path d="M16 2v4M8 2v4M3 10h18"/>
+                                    </svg>
+                                    Latest Payslip
+                                </h5>
+                                <button t-if="state.spotlight.last_payslip and state.spotlight.last_payslip.id"
+                                        class="hr-link-btn" t-on-click="openPayslips">View all
+                                    <svg viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                                </button>
+                            </div>
+                            <div t-if="state.spotlight.last_payslip and state.spotlight.last_payslip.id" class="hr-payslip-body">
+                                <div class="hr-payslip-meta">
+                                    <div class="hr-payslip-number" t-esc="state.spotlight.last_payslip.number || '—'"/>
+                                    <div class="hr-payslip-period">
+                                        <t t-esc="state.spotlight.last_payslip.date_from"/>
+                                        →
+                                        <t t-esc="state.spotlight.last_payslip.date_to"/>
+                                    </div>
+                                    <div class="hr-payslip-state">
+                                        State: <strong t-esc="state.spotlight.last_payslip.state"/>
+                                    </div>
+                                </div>
+                                <div class="hr-payslip-net">
+                                    <span>Net</span>
+                                    <strong t-esc="fmtCurrency(state.spotlight.last_payslip.net_wage)"/>
+                                </div>
+                                <button class="hr-print-btn" t-on-click="printPayslip">
+                                    <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M6 9V2h12v7M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/>
+                                        <rect x="6" y="14" width="12" height="8"/>
+                                    </svg>
+                                    Print Payslip
+                                </button>
+                            </div>
+                            <div t-if="!state.spotlight.last_payslip or !state.spotlight.last_payslip.id" class="hr-payslip-body">
+                                <p class="hr-empty-text" t-if="state.spotlight.payroll_installed">No payslips on file for this employee.</p>
+                                <p class="hr-empty-text" t-if="!state.spotlight.payroll_installed">
+                                    The Payroll app is not installed.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </t>
+
+</templates>

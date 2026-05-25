@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+
+    <t t-name="hr_dashboard.Dashboard">
+        <div class="hr_dashboard" t-ref="root" t-att-style="themeStyle">
+
+            <!-- Animated background blobs -->
+            <div class="hr-bg-blobs">
+                <div class="blob blob-1"/>
+                <div class="blob blob-2"/>
+                <div class="blob blob-3"/>
+                <div class="blob blob-4"/>
+            </div>
+            <div class="hr-grid-overlay"/>
+
+            <!-- Loading state -->
+            <div t-if="state.loading" class="hr-loader">
+                <div class="hr-loader-ring"/>
+                <div class="hr-loader-text">Loading dashboard…</div>
+            </div>
+
+            <div t-if="!state.loading and state.data" class="hr-dash-inner">
+
+                <!-- Header -->
+                <header class="hr-header">
+                    <div class="hr-header-left">
+                        <div t-if="state.data.config.show_logo and state.data.config.logo" class="hr-logo">
+                            <img t-att-src="state.data.config.logo" alt="logo"/>
+                        </div>
+                        <div t-else="" class="hr-logo hr-logo-fallback">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M3 3h7v7H3zM14 3h7v7h-7zM14 14h7v7h-7zM3 14h7v7H3z"/>
+                            </svg>
+                        </div>
+                        <div class="hr-title-block">
+                            <h1 class="hr-title"><t t-esc="state.data.config.dashboard_title"/></h1>
+                            <p class="hr-subtitle"><t t-esc="state.data.config.dashboard_subtitle"/></p>
+                        </div>
+                    </div>
+
+                    <div class="hr-header-right">
+                        <!-- Date presets -->
+                        <div class="hr-preset-group">
+                            <button t-foreach="[['7d','7D'],['30d','30D'],['90d','90D'],['ytd','YTD'],['1y','1Y']]"
+                                    t-as="preset" t-key="preset[0]"
+                                    t-att-class="{'hr-chip': true, 'active': state.preset === preset[0]}"
+                                    t-on-click="() => this.onPresetClick(preset[0])">
+                                <t t-esc="preset[1]"/>
+                            </button>
+                        </div>
+
+                        <!-- Date pickers -->
+                        <div class="hr-date-group">
+                            <input type="date" class="hr-date-input"
+                                   t-att-value="state.dateFrom"
+                                   t-on-change="(ev) => this.onDateChange('dateFrom', ev)"/>
+                            <span class="hr-date-sep">→</span>
+                            <input type="date" class="hr-date-input"
+                                   t-att-value="state.dateTo"
+                                   t-on-change="(ev) => this.onDateChange('dateTo', ev)"/>
+                        </div>
+
+                        <button class="hr-refresh-btn" t-on-click="onRefresh" title="Refresh">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M23 4v6h-6M1 20v-6h6"/>
+                                <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/>
+                            </svg>
+                        </button>
+                    </div>
+                </header>
+
+                <!-- ============ Employee Spotlight Toggle ============ -->
+                <div class="hr-spotlight-toggle-bar">
+                    <div class="hr-spotlight-toggle-info">
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="8" r="4"/>
+                            <path d="M20 21a8 8 0 1 0-16 0"/>
+                        </svg>
+                        <span class="hr-toggle-label">Employee Spotlight</span>
+                        <span class="hr-toggle-hint">Drill into an individual employee's profile, contract &amp; payslips</span>
+                    </div>
+                    <label class="hr-switch">
+                        <input type="checkbox" t-att-checked="state.showSpotlight" t-on-change="onToggleSpotlight"/>
+                        <span class="hr-switch-slider"/>
+                    </label>
+                </div>
+
+                <!-- Employee Spotlight Section -->
+                <EmployeeSpotlight t-if="state.showSpotlight"
+                                   dateFrom="state.dateFrom"
+                                   dateTo="state.dateTo"/>
+
+                <!-- ============ Approvals Center Toggle ============ -->
+                <div class="hr-spotlight-toggle-bar">
+                    <div class="hr-spotlight-toggle-info">
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                            <path d="M22 4L12 14.01l-3-3"/>
+                        </svg>
+                        <span class="hr-toggle-label">Approvals Center</span>
+                        <span class="hr-toggle-hint">Review and approve pending leave &amp; expense requests</span>
+                    </div>
+                    <label class="hr-switch">
+                        <input type="checkbox" t-att-checked="state.showApprovals" t-on-change="onToggleApprovals"/>
+                        <span class="hr-switch-slider"/>
+                    </label>
+                </div>
+
+                <!-- Approvals Center Section -->
+                <ApprovalsCenter t-if="state.showApprovals"
+                                 onApproved="() => this.onApprovalDone()"/>
+
+                <!-- KPI Cards -->
+                <section class="hr-kpi-grid">
+                    <KpiCard label="labels.totalEmployees" value="state.data.kpis.total_employees"
+                            icon="'users'" colorVar="'--hr-card-1'"
+                            sparkline="state.data.sparklines.employees"
+                            trend="'+'+state.data.kpis.new_hires+' '+labels.trendNew"
+                            onClick="() => this.openEmployees()"/>
+
+                    <KpiCard label="labels.presentToday" value="state.data.kpis.present_today"
+                            icon="'check'" colorVar="'--hr-card-2'"
+                            sparkline="state.data.sparklines.attendance"
+                            trend="labels.trendLive"
+                            onClick="() => this.openAttendance()"/>
+
+                    <KpiCard label="labels.pendingLeaves" value="state.data.kpis.pending_leaves"
+                            icon="'calendar'" colorVar="'--hr-card-3'"
+                            trend="state.data.kpis.total_approved_leaves+' '+labels.trendApprovedTotal"
+                            onClick="() => this.openPendingLeaves()"/>
+
+                    <KpiCard label="labels.newHires" value="state.data.kpis.new_hires"
+                            icon="'user-plus'" colorVar="'--hr-card-4'"
+                            trend="labels.trendInRange"
+                            onClick="() => this.openNewHires()"/>
+
+                    <KpiCard label="labels.pendingExpenses" value="state.data.kpis.pending_expenses"
+                            icon="'wallet'" colorVar="'--hr-card-5'"
+                            trend="state.data.kpis.draft_expenses+' '+labels.trendDraft+' · '+state.data.kpis.submitted_expenses+' '+labels.trendSubmitted+' · '+state.data.kpis.approved_expenses+' '+labels.trendApproved"
+                            onClick="() => this.openExpenses()"/>
+
+                    <KpiCard label="labels.employeeVersions" value="state.data.kpis.active_contracts"
+                            icon="'file'" colorVar="'--hr-card-6'"
+                            trend="labels.trendActive"
+                            onClick="() => this.openContracts()"/>
+
+                    <KpiCard t-if="state.data.has_appraisal_module"
+                            label="labels.pendingAppraisals" value="state.data.kpis.pending_appraisals"
+                            icon="'star'" colorVar="'--hr-primary'"
+                            trend="state.data.kpis.upcoming_appraisals+' '+labels.trendUpcoming"
+                            onClick="() => this.openAppraisals()"/>
+
+                    <KpiCard t-if="state.data.has_appraisal_module"
+                            label="labels.completedAppraisals" value="state.data.kpis.done_appraisals"
+                            icon="'check'" colorVar="'--hr-secondary'"
+                            trend="labels.trendInRange"
+                            onClick="() => this.openDoneAppraisals()"/>
+
+                    <KpiCard t-if="state.data.has_payroll_module"
+                            label="labels.payslips" value="state.data.kpis.payslip_count"
+                            icon="'wallet'" colorVar="'--hr-card-1'"
+                            trend="state.data.kpis.payslip_draft+' '+labels.trendDraft+' · '+state.data.kpis.payslip_done+' '+labels.trendDone"
+                            onClick="() => this.openPayslips()"/>
+
+                    <KpiCard t-if="state.data.has_payroll_module"
+                            label="labels.netWageTotal" value="state.data.kpis.payslip_total"
+                            icon="'wallet'" colorVar="'--hr-card-5'"
+                            trend="labels.trendInRange"
+                            onClick="() => this.openPayslips()"/>
+                </section>
+
+                <!-- Charts row 1: line + doughnut -->
+                <section class="hr-charts-row">
+                    <ChartCard title="labels.chartAttendanceTrend" subtitle="labels.chartLast14Days"
+                               type="'line'" data="state.data.charts.attendance_trend"
+                               labelKey="'date'" valueKey="'count'" colorVar="'--hr-primary'"
+                               size="'lg'"/>
+
+                    <ChartCard title="labels.chartGenderDistribution" subtitle="labels.chartActiveEmployees"
+                               type="'doughnut'"
+                               data="[
+                                   {'name':labels.genderMale,'count':state.data.charts.gender.male},
+                                   {'name':labels.genderFemale,'count':state.data.charts.gender.female},
+                                   {'name':labels.genderOther,'count':state.data.charts.gender.other}
+                               ]"
+                               labelKey="'name'" valueKey="'count'"
+                               size="'md'"/>
+                </section>
+
+                <!-- Charts row 2: bar + pie -->
+                <section class="hr-charts-row">
+                    <ChartCard title="labels.chartEmployeesByDept" subtitle="labels.chartTop8Depts"
+                               type="'bar'" data="state.data.charts.departments"
+                               labelKey="'name'" valueKey="'count'" colorVar="'--hr-secondary'"
+                               size="'lg'"
+                               onBarClick="(label) => this.openDepartmentEmployees(label)"/>
+
+                    <ChartCard title="labels.chartLeavesByType" subtitle="labels.chartInSelectedRange"
+                               type="'pie'" data="state.data.charts.leaves"
+                               labelKey="'name'" valueKey="'count'"
+                               size="'md'"/>
+                </section>
+
+                <!-- Charts row 3: growth + expenses -->
+                <section class="hr-charts-row">
+                    <ChartCard title="labels.chartEmployeeGrowth" subtitle="labels.chartLast6Months"
+                               type="'line'" data="state.data.charts.growth"
+                               labelKey="'month'" valueKey="'count'" colorVar="'--hr-accent'"
+                               size="'lg'" fill="true"/>
+
+                    <ChartCard title="labels.chartExpensesByCategory" subtitle="labels.chartTop6"
+                               type="'bar'" data="state.data.charts.expenses_by_category"
+                               labelKey="'name'" valueKey="'amount'" colorVar="'--hr-card-5'"
+                               size="'md'" horizontal="true"/>
+                </section>
+
+                <!-- Charts row 4: appraisals (only if module installed and has data) -->
+                <section t-if="state.data.has_appraisal_module and state.data.charts.appraisals_by_state.length"
+                         class="hr-charts-row">
+                    <ChartCard title="labels.chartAppraisalsByStatus" subtitle="labels.chartPerformancePipeline"
+                               type="'bar'" data="state.data.charts.appraisals_by_state"
+                               labelKey="'name'" valueKey="'count'" colorVar="'--hr-primary'"
+                               size="'lg'"/>
+
+                    <ChartCard title="labels.chartAppraisalDistribution" subtitle="labels.chartCurrentSnapshot"
+                               type="'doughnut'" data="state.data.charts.appraisals_by_state"
+                               labelKey="'name'" valueKey="'count'"
+                               size="'md'"/>
+                </section>
+
+                <footer class="hr-footer">
+                    <span>Showing data from <strong t-esc="state.dateFrom"/> to <strong t-esc="state.dateTo"/></span>
+                    <span>HR Dashboard · Odoo 19</span>
+                </footer>
+            </div>
+        </div>
+    </t>
+
+</templates>

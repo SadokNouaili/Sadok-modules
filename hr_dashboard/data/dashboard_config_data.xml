@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+    <record id="default_dashboard_config" model="hr.dashboard.config">
+        <field name="name">Default</field>
+        <field name="dashboard_title">HR Analytics</field>
+        <field name="dashboard_subtitle">Human Resources Overview</field>
+
+        <!-- Earthy harvest palette: Olive Leaf / Black Forest / Cornsilk / Light Caramel / Copper -->
+        <field name="primary_color">#606C38</field>
+        <field name="secondary_color">#BC6C25</field>
+        <field name="accent_color">#DDA15E</field>
+
+        <!-- Light cornsilk gradient background -->
+        <field name="bg_gradient_start">#FEFAE0</field>
+        <field name="bg_gradient_mid">#F5EFC9</field>
+        <field name="bg_gradient_end">#E9D9A8</field>
+
+        <!-- Card accents — all warm earth tones -->
+        <field name="card_color_1">#606C38</field>
+        <field name="card_color_2">#283618</field>
+        <field name="card_color_3">#DDA15E</field>
+        <field name="card_color_4">#BC6C25</field>
+        <field name="card_color_5">#A0522D</field>
+        <field name="card_color_6">#8B7355</field>
+
+        <field name="text_color">#283618</field>
+        <field name="text_muted_color">#606C38</field>
+
+        <field name="glass_opacity">0.55</field>
+        <field name="blur_intensity">18</field>
+        <field name="border_radius">18</field>
+        <field name="enable_animations">True</field>
+    </record>
+</odoo>

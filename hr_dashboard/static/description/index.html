@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>HR Dashboard for Odoo 19 Enterprise</title>
+</head>
+<body style="font-family:'Segoe UI',Roboto,Helvetica,Arial,sans-serif; color:#283618; margin:0; padding:0; line-height:1.55;">
+
+<!-- ============ HERO ============ -->
+<section style="background:linear-gradient(135deg,#FEFAE0 0%,#F5EFC9 45%,#E9D9A8 100%); padding:80px 30px; text-align:center; border-bottom:1px solid rgba(40,54,24,0.08);">
+    <div style="display:inline-block; background:rgba(96,108,56,0.12); color:#606C38; padding:6px 16px; border-radius:999px; font-size:12px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; margin-bottom:20px;">For Odoo 19 Enterprise</div>
+    <h1 style="font-size:54px; font-weight:800; margin:0 0 18px; letter-spacing:-0.02em; color:#283618;">HR Dashboard</h1>
+    <p style="font-size:20px; color:#606C38; max-width:760px; margin:0 auto 32px; font-weight:400;">A modern, interactive analytics dashboard for your Human Resources team — built natively on Odoo 19's OWL framework with full theme customization, inline approval workflows, and Arabic RTL support.</p>
+    <div style="display:inline-flex; gap:12px; flex-wrap:wrap; justify-content:center;">
+        <div style="background:#606C38; color:#FEFAE0; padding:14px 28px; border-radius:10px; font-weight:600; font-size:14px;">Glassmorphism Theme</div>
+        <div style="background:#BC6C25; color:#FEFAE0; padding:14px 28px; border-radius:10px; font-weight:600; font-size:14px;">Inline Approvals</div>
+        <div style="background:#283618; color:#FEFAE0; padding:14px 28px; border-radius:10px; font-weight:600; font-size:14px;">RTL + Arabic</div>
+    </div>
+</section>
+
+<!-- ============ HERO SCREENSHOT ============ -->
+<section style="background:#FEFAE0; padding:40px 30px; text-align:center;">
+    <img src="screenshot_main_dashboard.png" alt="Main HR Dashboard with KPI cards and charts" style="max-width:1100px; width:100%; border-radius:16px; box-shadow:0 20px 60px -20px rgba(40,54,24,0.25); border:1px solid rgba(40,54,24,0.08);"/>
+</section>
+
+<!-- ============ KEY VALUE ============ -->
+<section style="padding:80px 30px; background:#FEFAE0;">
+    <div style="max-width:1100px; margin:0 auto; text-align:center;">
+        <h2 style="font-size:36px; font-weight:700; margin:0 0 20px; color:#283618;">Built for HR Managers Who Run Real Operations</h2>
+        <p style="font-size:17px; color:#606C38; max-width:780px; margin:0 auto 60px;">Stop jumping between Employees, Attendance, Time Off, Expenses, Payroll, and Appraisals just to check the pulse of your workforce. This dashboard pulls everything into one screen and lets you act on it without leaving.</p>
+
+        <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:24px; text-align:left;">
+            <div style="background:rgba(255,255,255,0.55); border:1px solid rgba(40,54,24,0.08); border-radius:16px; padding:28px; backdrop-filter:blur(18px);">
+                <div style="width:44px; height:44px; background:#606C38; border-radius:10px; display:flex; align-items:center; justify-content:center; color:#FEFAE0; font-size:22px; font-weight:700; margin-bottom:16px;">10</div>
+                <h3 style="margin:0 0 8px; font-size:18px; font-weight:700; color:#283618;">Real-Time KPIs</h3>
+                <p style="margin:0; color:#606C38; font-size:14px;">Ten interactive metric cards covering Employees, Attendance, Leaves, New Hires, Expenses, Versions, Appraisals, and Payslips. Every card click opens the underlying filtered list.</p>
+            </div>
+            <div style="background:rgba(255,255,255,0.55); border:1px solid rgba(40,54,24,0.08); border-radius:16px; padding:28px; backdrop-filter:blur(18px);">
+                <div style="width:44px; height:44px; background:#BC6C25; border-radius:10px; display:flex; align-items:center; justify-content:center; color:#FEFAE0; font-size:22px; font-weight:700; margin-bottom:16px;">8</div>
+                <h3 style="margin:0 0 8px; font-size:18px; font-weight:700; color:#283618;">Interactive Charts</h3>
+                <p style="margin:0; color:#606C38; font-size:14px;">Eight Chart.js visualizations — attendance trends, gender distribution, department breakdowns, leave types, growth, expenses by category, and appraisal status. Click bars to drill through.</p>
+            </div>
+            <div style="background:rgba(255,255,255,0.55); border:1px solid rgba(40,54,24,0.08); border-radius:16px; padding:28px; backdrop-filter:blur(18px);">
+                <div style="width:44px; height:44px; background:#DDA15E; border-radius:10px; display:flex; align-items:center; justify-content:center; color:#FEFAE0; font-size:22px; font-weight:700; margin-bottom:16px;">3</div>
+                <h3 style="margin:0 0 8px; font-size:18px; font-weight:700; color:#283618;">Approval Tabs</h3>
+                <p style="margin:0; color:#606C38; font-size:14px;">Approve leaves, expenses, and appraisals without leaving the dashboard. Smart workflow advancement, state-aware button labels, and instant KPI refresh after every action.</p>
+            </div>
+            <div style="background:rgba(255,255,255,0.55); border:1px solid rgba(40,54,24,0.08); border-radius:16px; padding:28px; backdrop-filter:blur(18px);">
+                <div style="width:44px; height:44px; background:#A0522D; border-radius:10px; display:flex; align-items:center; justify-content:center; color:#FEFAE0; font-size:22px; font-weight:700; margin-bottom:16px;">∞</div>
+                <h3 style="margin:0 0 8px; font-size:18px; font-weight:700; color:#283618;">Theme Customizer</h3>
+                <p style="margin:0; color:#606C38; font-size:14px;">Every color, gradient stop, glass opacity, blur intensity, border radius, and the dashboard logo — all editable from a single settings form. No code changes, no upgrades required.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============ FEATURE SECTION 1: KPI CARDS ============ -->
+<section style="padding:80px 30px; background:linear-gradient(180deg,#F5EFC9 0%,#FEFAE0 100%);">
+    <div style="max-width:1100px; margin:0 auto;">
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:center;">
+            <div>
+                <div style="color:#BC6C25; font-size:13px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; margin-bottom:12px;">01 — Metrics</div>
+                <h2 style="font-size:34px; font-weight:700; margin:0 0 20px; color:#283618; line-height:1.2;">Every metric your team needs, at a single glance</h2>
+                <p style="font-size:16px; color:#606C38; margin:0 0 16px;">Ten KPI cards pull live data from every HR module installed on your database. Attendance, leaves, payroll, expenses, contracts, performance reviews — each card has an animated counter, a contextual subtitle showing the breakdown, and a click-through drill-down to the filtered record list.</p>
+                <ul style="margin:24px 0 0; padding:0 0 0 20px; color:#283618; font-size:15px;">
+                    <li style="margin-bottom:10px;">Animated counters with smooth transitions</li>
+                    <li style="margin-bottom:10px;">Inline sparklines for attendance and growth trends</li>
+                    <li style="margin-bottom:10px;">Click-through to filtered list views (Create button hidden by default)</li>
+                    <li style="margin-bottom:10px;">Graceful hiding when optional modules (Payroll, Appraisal) are not installed</li>
+                </ul>
+            </div>
+            <div>
+                <img src="screenshot_kpi_cards.png" alt="KPI cards close-up" style="width:100%; border-radius:14px; box-shadow:0 16px 40px -16px rgba(40,54,24,0.25); border:1px solid rgba(40,54,24,0.08);"/>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============ FEATURE SECTION 2: CHARTS ============ -->
+<section style="padding:80px 30px; background:#FEFAE0;">
+    <div style="max-width:1100px; margin:0 auto;">
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:center;">
+            <div>
+                <img src="screenshot_charts.png" alt="Interactive charts" style="width:100%; border-radius:14px; box-shadow:0 16px 40px -16px rgba(40,54,24,0.25); border:1px solid rgba(40,54,24,0.08);"/>
+            </div>
+            <div>
+                <div style="color:#BC6C25; font-size:13px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; margin-bottom:12px;">02 — Visualizations</div>
+                <h2 style="font-size:34px; font-weight:700; margin:0 0 20px; color:#283618; line-height:1.2;">Eight charts that tell the story</h2>
+                <p style="font-size:16px; color:#606C38; margin:0 0 16px;">Powered by Chart.js 4.4 bundled locally — no external CDN calls. Every chart inherits your configured theme colors and adapts responsively to screen size. The department chart supports drill-through: click any bar to open the employees of that department.</p>
+                <ul style="margin:24px 0 0; padding:0 0 0 20px; color:#283618; font-size:15px;">
+                    <li style="margin-bottom:10px;">Attendance trend over the last 14 days</li>
+                    <li style="margin-bottom:10px;">Gender distribution (Odoo 19 <code style="background:rgba(96,108,56,0.12); padding:2px 6px; border-radius:4px; font-size:13px;">sex</code> field)</li>
+                    <li style="margin-bottom:10px;">Employees by department, leaves by type, growth, expenses</li>
+                    <li style="margin-bottom:10px;">Performance review pipeline and distribution</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============ FEATURE SECTION 3: APPROVALS ============ -->
+<section style="padding:80px 30px; background:linear-gradient(180deg,#F5EFC9 0%,#FEFAE0 100%);">
+    <div style="max-width:1100px; margin:0 auto;">
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:center;">
+            <div>
+                <div style="color:#BC6C25; font-size:13px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; margin-bottom:12px;">03 — Workflow</div>
+                <h2 style="font-size:34px; font-weight:700; margin:0 0 20px; color:#283618; line-height:1.2;">Approve requests without leaving the dashboard</h2>
+                <p style="font-size:16px; color:#606C38; margin:0 0 16px;">A dedicated Approvals Center with three tabs — Leaves, Expenses, and Appraisals — lets managers act on pending requests with one click. The dashboard understands each module's actual workflow and advances state correctly.</p>
+                <ul style="margin:24px 0 0; padding:0 0 0 20px; color:#283618; font-size:15px;">
+                    <li style="margin-bottom:10px;">Leaves: supports both single and double-validation flows</li>
+                    <li style="margin-bottom:10px;">Expenses: smart Draft → Submitted → Approved in one click</li>
+                    <li style="margin-bottom:10px;">Appraisals: state-aware buttons (Confirm / Mark Done / Reset)</li>
+                    <li style="margin-bottom:10px;">Respects standard Odoo access rights — no privilege escalation</li>
+                    <li style="margin-bottom:10px;">Auto-refresh of KPI counts after every action</li>
+                </ul>
+            </div>
+            <div>
+                <img src="screenshot_approvals.png" alt="Approvals Center with pending expenses" style="width:100%; border-radius:14px; box-shadow:0 16px 40px -16px rgba(40,54,24,0.25); border:1px solid rgba(40,54,24,0.08);"/>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============ FEATURE SECTION 4: SPOTLIGHT ============ -->
+<section style="padding:80px 30px; background:#FEFAE0;">
+    <div style="max-width:1100px; margin:0 auto;">
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:center;">
+            <div>
+                <img src="screenshot_spotlight.png" alt="Employee Spotlight section" style="width:100%; border-radius:14px; box-shadow:0 16px 40px -16px rgba(40,54,24,0.25); border:1px solid rgba(40,54,24,0.08);"/>
+            </div>
+            <div>
+                <div style="color:#BC6C25; font-size:13px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; margin-bottom:12px;">04 — Drill-down</div>
+                <h2 style="font-size:34px; font-weight:700; margin:0 0 20px; color:#283618; line-height:1.2;">A 360° view of any employee</h2>
+                <p style="font-size:16px; color:#606C38; margin:0 0 16px;">Toggle the Employee Spotlight and pick any team member from a searchable picker. See their profile, current contract version, manager hierarchy, leave balance, attendance, expenses, and latest payslip — all in one card.</p>
+                <ul style="margin:24px 0 0; padding:0 0 0 20px; color:#283618; font-size:15px;">
+                    <li style="margin-bottom:10px;">Real-time search by name, job, or department</li>
+                    <li style="margin-bottom:10px;">HR Version card with wage, contract dates, schedule</li>
+                    <li style="margin-bottom:10px;">One-click print of the latest payslip</li>
+                    <li style="margin-bottom:10px;">Per-employee leave, attendance, expense, payslip counts</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============ FEATURE SECTION 5: THEME ============ -->
+<section style="padding:80px 30px; background:linear-gradient(180deg,#F5EFC9 0%,#FEFAE0 100%);">
+    <div style="max-width:1100px; margin:0 auto;">
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:center;">
+            <div>
+                <div style="color:#BC6C25; font-size:13px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; margin-bottom:12px;">05 — Customization</div>
+                <h2 style="font-size:34px; font-weight:700; margin:0 0 20px; color:#283618; line-height:1.2;">Match your brand without touching code</h2>
+                <p style="font-size:16px; color:#606C38; margin:0 0 16px;">Seventeen theme fields cover every visual aspect of the dashboard — primary, secondary, and accent colors; a three-stop background gradient; six card category colors; text colors; glass opacity; blur intensity; and border radius. Upload your logo and watch the dashboard rebrand instantly.</p>
+                <ul style="margin:24px 0 0; padding:0 0 0 20px; color:#283618; font-size:15px;">
+                    <li style="margin-bottom:10px;">17 configurable theme fields, no SCSS edits required</li>
+                    <li style="margin-bottom:10px;">CSS variables applied at runtime — instant preview on reload</li>
+                    <li style="margin-bottom:10px;">Multiple configuration records — switch themes by activating</li>
+                    <li style="margin-bottom:10px;">Custom logo, dashboard title, and subtitle</li>
+                </ul>
+            </div>
+            <div>
+                <img src="screenshot_theme_config.png" alt="Theme configuration form" style="width:100%; border-radius:14px; box-shadow:0 16px 40px -16px rgba(40,54,24,0.25); border:1px solid rgba(40,54,24,0.08);"/>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============ FEATURE SECTION 6: i18n / RTL ============ -->
+<section style="padding:80px 30px; background:#FEFAE0;">
+    <div style="max-width:1100px; margin:0 auto;">
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:center;">
+            <div>
+                <img src="screenshot_rtl_arabic.png" alt="Dashboard in Arabic with RTL layout" style="width:100%; border-radius:14px; box-shadow:0 16px 40px -16px rgba(40,54,24,0.25); border:1px solid rgba(40,54,24,0.08);"/>
+            </div>
+            <div>
+                <div style="color:#BC6C25; font-size:13px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; margin-bottom:12px;">06 — Internationalization</div>
+                <h2 style="font-size:34px; font-weight:700; margin:0 0 20px; color:#283618; line-height:1.2;">Arabic + RTL out of the box</h2>
+                <p style="font-size:16px; color:#606C38; margin:0 0 16px;">A complete Arabic translation ships in the box (158 strings, validated with <code style="background:rgba(96,108,56,0.12); padding:2px 6px; border-radius:4px; font-size:13px;">msgfmt</code>). The SCSS includes a dedicated RTL block that flips directional properties, embeds numbers as LTR within Arabic text (financial best practice), and adjusts typography for Arabic script.</p>
+                <ul style="margin:24px 0 0; padding:0 0 0 20px; color:#283618; font-size:15px;">
+                    <li style="margin-bottom:10px;">158 translated strings covering every UI element</li>
+                    <li style="margin-bottom:10px;">Full RTL layout for Arabic, Hebrew, and other RTL languages</li>
+                    <li style="margin-bottom:10px;">LTR numbers within RTL text (correct financial display)</li>
+                    <li style="margin-bottom:10px;">Easy to add more languages — drop a new <code style="background:rgba(96,108,56,0.12); padding:2px 6px; border-radius:4px; font-size:13px;">.po</code> file</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============ MODULE COMPATIBILITY ============ -->
+<section style="padding:80px 30px; background:#283618; color:#FEFAE0;">
+    <div style="max-width:1100px; margin:0 auto;">
+        <h2 style="font-size:34px; font-weight:700; margin:0 0 12px; text-align:center;">Built specifically for Odoo 19 Enterprise</h2>
+        <p style="text-align:center; color:#DDA15E; max-width:720px; margin:0 auto 50px; font-size:16px;">This module uses Odoo 19's modern APIs throughout — OWL 3 components, the new RPC service, and the renamed HR models. It will not install on Odoo 17, 18, or earlier.</p>
+
+        <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:20px;">
+            <div style="background:rgba(254,250,224,0.08); border:1px solid rgba(254,250,224,0.15); border-radius:12px; padding:24px;">
+                <h4 style="margin:0 0 12px; color:#DDA15E; font-size:15px; font-weight:700;">REQUIRED</h4>
+                <ul style="margin:0; padding:0 0 0 18px; color:#FEFAE0; font-size:14px; line-height:1.8;">
+                    <li><code style="color:#DDA15E;">hr</code></li>
+                    <li><code style="color:#DDA15E;">hr_attendance</code></li>
+                    <li><code style="color:#DDA15E;">hr_holidays</code></li>
+                    <li><code style="color:#DDA15E;">hr_expense</code></li>
+                </ul>
+            </div>
+            <div style="background:rgba(254,250,224,0.08); border:1px solid rgba(254,250,224,0.15); border-radius:12px; padding:24px;">
+                <h4 style="margin:0 0 12px; color:#DDA15E; font-size:15px; font-weight:700;">OPTIONAL</h4>
+                <ul style="margin:0; padding:0 0 0 18px; color:#FEFAE0; font-size:14px; line-height:1.8;">
+                    <li><code style="color:#DDA15E;">hr_payroll</code> — enables Payslip KPIs</li>
+                    <li><code style="color:#DDA15E;">hr_appraisal</code> — enables Appraisal section</li>
+                </ul>
+                <p style="margin:14px 0 0; font-size:12px; color:rgba(254,250,224,0.7);">Sections hide gracefully when optional modules aren't installed.</p>
+            </div>
+            <div style="background:rgba(254,250,224,0.08); border:1px solid rgba(254,250,224,0.15); border-radius:12px; padding:24px;">
+                <h4 style="margin:0 0 12px; color:#DDA15E; font-size:15px; font-weight:700;">TECHNICAL</h4>
+                <ul style="margin:0; padding:0 0 0 18px; color:#FEFAE0; font-size:14px; line-height:1.8;">
+                    <li>Odoo 19.0 Enterprise</li>
+                    <li>Python 3.10+</li>
+                    <li>OWL 3 component framework</li>
+                    <li>Chart.js 4.4 (bundled)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============ WHAT'S INCLUDED ============ -->
+<section style="padding:80px 30px; background:#FEFAE0;">
+    <div style="max-width:1100px; margin:0 auto;">
+        <h2 style="font-size:34px; font-weight:700; margin:0 0 50px; text-align:center; color:#283618;">What's included</h2>
+
+        <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); gap:20px;">
+
+            <div style="background:rgba(255,255,255,0.55); border:1px solid rgba(40,54,24,0.08); border-radius:14px; padding:24px;">
+                <div style="display:flex; align-items:center; gap:12px; margin-bottom:14px;">
+                    <div style="width:36px; height:36px; background:#606C38; border-radius:8px; display:flex; align-items:center; justify-content:center; color:#FEFAE0; font-weight:700;">✓</div>
+                    <h4 style="margin:0; color:#283618; font-size:16px;">Source code</h4>
+                </div>
+                <p style="margin:0; color:#606C38; font-size:14px;">Full Python backend, OWL frontend, SCSS theme, and XML templates. No obfuscation, no minification.</p>
+            </div>
+
+            <div style="background:rgba(255,255,255,0.55); border:1px solid rgba(40,54,24,0.08); border-radius:14px; padding:24px;">
+                <div style="display:flex; align-items:center; gap:12px; margin-bottom:14px;">
+                    <div style="width:36px; height:36px; background:#BC6C25; border-radius:8px; display:flex; align-items:center; justify-content:center; color:#FEFAE0; font-weight:700;">✓</div>
+                    <h4 style="margin:0; color:#283618; font-size:16px;">Arabic translation</h4>
+                </div>
+                <p style="margin:0; color:#606C38; font-size:14px;">158 strings translated and validated. Drop new <code style="background:rgba(96,108,56,0.12); padding:1px 5px; border-radius:3px; font-size:12px;">.po</code> files for other languages.</p>
+            </div>
+
+            <div style="background:rgba(255,255,255,0.55); border:1px solid rgba(40,54,24,0.08); border-radius:14px; padding:24px;">
+                <div style="display:flex; align-items:center; gap:12px; margin-bottom:14px;">
+                    <div style="width:36px; height:36px; background:#DDA15E; border-radius:8px; display:flex; align-items:center; justify-content:center; color:#283618; font-weight:700;">✓</div>
+                    <h4 style="margin:0; color:#283618; font-size:16px;">Sample configuration</h4>
+                </div>
+                <p style="margin:0; color:#606C38; font-size:14px;">Default theme record auto-created on install. Earthy palette ready to use, or customize from settings.</p>
+            </div>
+
+            <div style="background:rgba(255,255,255,0.55); border:1px solid rgba(40,54,24,0.08); border-radius:14px; padding:24px;">
+                <div style="display:flex; align-items:center; gap:12px; margin-bottom:14px;">
+                    <div style="width:36px; height:36px; background:#A0522D; border-radius:8px; display:flex; align-items:center; justify-content:center; color:#FEFAE0; font-weight:700;">✓</div>
+                    <h4 style="margin:0; color:#283618; font-size:16px;">README documentation</h4>
+                </div>
+                <p style="margin:0; color:#606C38; font-size:14px;">Comprehensive setup guide, configuration reference, troubleshooting tips, and architecture notes.</p>
+            </div>
+
+            <div style="background:rgba(255,255,255,0.55); border:1px solid rgba(40,54,24,0.08); border-radius:14px; padding:24px;">
+                <div style="display:flex; align-items:center; gap:12px; margin-bottom:14px;">
+                    <div style="width:36px; height:36px; background:#283618; border-radius:8px; display:flex; align-items:center; justify-content:center; color:#FEFAE0; font-weight:700;">✓</div>
+                    <h4 style="margin:0; color:#283618; font-size:16px;">Chart.js library bundled</h4>
+                </div>
+                <p style="margin:0; color:#606C38; font-size:14px;">No external CDN calls. Chart.js 4.4 ships in the module — works offline, behind firewalls, and in air-gapped deployments.</p>
+            </div>
+
+            <div style="background:rgba(255,255,255,0.55); border:1px solid rgba(40,54,24,0.08); border-radius:14px; padding:24px;">
+                <div style="display:flex; align-items:center; gap:12px; margin-bottom:14px;">
+                    <div style="width:36px; height:36px; background:#8B7355; border-radius:8px; display:flex; align-items:center; justify-content:center; color:#FEFAE0; font-weight:700;">✓</div>
+                    <h4 style="margin:0; color:#283618; font-size:16px;">Access control</h4>
+                </div>
+                <p style="margin:0; color:#606C38; font-size:14px;">Respects standard Odoo HR groups. Approvals execute as the real user — no privilege escalation, no security shortcuts.</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- ============ LICENSE / CTA ============ -->
+<section style="padding:80px 30px; background:linear-gradient(135deg,#FEFAE0 0%,#F5EFC9 100%); text-align:center;">
+    <div style="max-width:760px; margin:0 auto;">
+        <h2 style="font-size:32px; font-weight:700; margin:0 0 16px; color:#283618;">Licensing &amp; Support</h2>
+        <p style="font-size:16px; color:#606C38; margin:0 0 32px;">Distributed under the <strong>Odoo Proprietary License v1.0 (OPL-1)</strong>. One purchase covers unlimited installations on a single Odoo database. Source code is included and may be modified for use; redistribution is not permitted.</p>
+
+        <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:16px; margin-top:30px; text-align:left;">
+            <div style="background:rgba(255,255,255,0.55); border:1px solid rgba(40,54,24,0.08); border-radius:12px; padding:20px;">
+                <h4 style="margin:0 0 8px; color:#283618; font-size:15px;">Source code access</h4>
+                <p style="margin:0; color:#606C38; font-size:13px;">Full source included. Modify freely for your own deployment.</p>
+            </div>
+            <div style="background:rgba(255,255,255,0.55); border:1px solid rgba(40,54,24,0.08); border-radius:12px; padding:20px;">
+                <h4 style="margin:0 0 8px; color:#283618; font-size:15px;">Version updates</h4>
+                <p style="margin:0; color:#606C38; font-size:13px;">All future 19.0.x patches and improvements at no additional cost.</p>
+            </div>
+            <div style="background:rgba(255,255,255,0.55); border:1px solid rgba(40,54,24,0.08); border-radius:12px; padding:20px;">
+                <h4 style="margin:0 0 8px; color:#283618; font-size:15px;">Technical support</h4>
+                <p style="margin:0; color:#606C38; font-size:13px;">Email support for installation and configuration questions.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<section style="padding:40px 30px; background:#283618; color:#DDA15E; text-align:center;">
+    <p style="margin:0; font-size:13px;">HR Dashboard for Odoo 19 Enterprise · Version 19.0.1.0.0 · Published by Msn</p>
+    <p style="margin:8px 0 0; font-size:12px; color:rgba(221,161,94,0.7);">Odoo and the Odoo logo are trademarks of Odoo S.A. This module is independently developed and not affiliated with Odoo S.A.</p>
+</section>
+
+</body>
+</html>

@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+
+    <t t-name="hr_dashboard.ApprovalsCenter">
+        <section class="hr-approvals glass">
+            <div class="hr-approvals-glow"/>
+
+            <header class="hr-approvals-head">
+                <div class="hr-approvals-title-block">
+                    <h3 class="hr-approvals-title">
+                        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                            <path d="M22 4L12 14.01l-3-3"/>
+                        </svg>
+                        Approvals Center
+                        <span class="hr-pending-badge" t-if="totalCount > 0" t-esc="totalCount"/>
+                    </h3>
+                    <p class="hr-approvals-sub">
+                        Approve or refuse pending requests from your team
+                    </p>
+                </div>
+
+                <div class="hr-approvals-tabs">
+                    <button t-att-class="{'hr-tab-btn': true, 'active': state.tab === 'leaves'}"
+                            t-on-click="() => this.onSwitchTab('leaves')">
+                        Leaves
+                        <span class="hr-tab-count" t-if="state.data.leaves.length"
+                              t-esc="state.data.leaves.length"/>
+                    </button>
+                    <button t-att-class="{'hr-tab-btn': true, 'active': state.tab === 'expenses'}"
+                            t-on-click="() => this.onSwitchTab('expenses')">
+                        Expenses
+                        <span class="hr-tab-count" t-if="state.data.expense_sheets.length"
+                              t-esc="state.data.expense_sheets.length"/>
+                    </button>
+                    <button t-if="state.data.has_appraisal_module"
+                            t-att-class="{'hr-tab-btn': true, 'active': state.tab === 'appraisals'}"
+                            t-on-click="() => this.onSwitchTab('appraisals')">
+                        Appraisals
+                        <span class="hr-tab-count" t-if="state.data.appraisals.length"
+                              t-esc="state.data.appraisals.length"/>
+                    </button>
+                </div>
+            </header>
+
+            <div t-if="state.loading" class="hr-approvals-empty">Loading…</div>
+
+            <!-- ============ Leaves Tab ============ -->
+            <div t-if="!state.loading and state.tab === 'leaves'" class="hr-approvals-list">
+                <div t-if="state.data.leaves.length === 0" class="hr-approvals-empty">
+                    <svg viewBox="0 0 24 24" width="40" height="40" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+                        <circle cx="12" cy="12" r="10"/>
+                        <path d="M9 12l2 2 4-4"/>
+                    </svg>
+                    <p>All caught up — no pending leave requests.</p>
+                </div>
+
+                <div t-foreach="state.data.leaves" t-as="lv" t-key="lv.id" class="hr-request-row">
+                    <img class="hr-req-avatar"
+                         t-att-src="lv.avatar || '/web/static/img/placeholder.png'"
+                         t-att-alt="lv.employee_name"
+                         t-on-click="() => this.openLeave(lv.id)"/>
+
+                    <div class="hr-req-main" t-on-click="() => this.openLeave(lv.id)">
+                        <div class="hr-req-top">
+                            <span class="hr-req-name" t-esc="lv.employee_name || 'Employee'"/>
+                            <span t-if="lv.department" class="hr-req-dept" t-esc="lv.department"/>
+                        </div>
+                        <div class="hr-req-meta">
+                            <span class="hr-req-type" t-esc="lv.leave_type || 'Leave'"/>
+                            <span class="hr-req-dot">·</span>
+                            <span t-esc="lv.date_from"/>
+                            <span class="hr-req-dot">→</span>
+                            <span t-esc="lv.date_to"/>
+                            <span class="hr-req-dot">·</span>
+                            <span class="hr-req-days">
+                                <t t-esc="fmtNumber(lv.number_of_days, 1)"/> day(s)
+                            </span>
+                        </div>
+                        <div t-if="lv.name" class="hr-req-reason">"<t t-esc="lv.name"/>"</div>
+                    </div>
+
+                    <div class="hr-req-actions">
+                        <button class="hr-btn-refuse"
+                                t-att-disabled="state.processingId === 'leave-' + lv.id"
+                                t-on-click="() => this.onRefuseLeave(lv.id)">
+                            <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+                                <path d="M18 6L6 18M6 6l12 12"/>
+                            </svg>
+                            Refuse
+                        </button>
+                        <button class="hr-btn-approve"
+                                t-att-disabled="state.processingId === 'leave-' + lv.id"
+                                t-on-click="() => this.onApproveLeave(lv.id)">
+                            <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+                                <path d="M20 6L9 17l-5-5"/>
+                            </svg>
+                            Approve
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ============ Expenses Tab ============ -->
+            <div t-if="!state.loading and state.tab === 'expenses'" class="hr-approvals-list">
+                <div t-if="!state.data.has_expense_module" class="hr-approvals-empty">
+                    <p>The Expenses module is not installed.</p>
+                </div>
+                <div t-elif="state.data.expense_sheets.length === 0" class="hr-approvals-empty">
+                    <svg viewBox="0 0 24 24" width="40" height="40" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+                        <circle cx="12" cy="12" r="10"/>
+                        <path d="M9 12l2 2 4-4"/>
+                    </svg>
+                    <p>No expense reports awaiting approval.</p>
+                </div>
+
+                <div t-foreach="state.data.expense_sheets" t-as="sh" t-key="sh.id" class="hr-request-row">
+                    <img class="hr-req-avatar"
+                         t-att-src="sh.avatar || '/web/static/img/placeholder.png'"
+                         t-att-alt="sh.employee_name"
+                         t-on-click="() => this.openExpenseSheet(sh.id)"/>
+
+                    <div class="hr-req-main" t-on-click="() => this.openExpenseSheet(sh.id)">
+                        <div class="hr-req-top">
+                            <span class="hr-req-name" t-esc="sh.employee_name || 'Employee'"/>
+                            <span t-if="sh.department" class="hr-req-dept" t-esc="sh.department"/>
+                        </div>
+                        <div class="hr-req-meta">
+                            <span class="hr-req-type" t-esc="sh.name || 'Expense Report'"/>
+                            <span class="hr-req-dot">·</span>
+                            <span class="hr-req-days">
+                                <t t-esc="sh.expense_count"/> line(s)
+                            </span>
+                            <span class="hr-req-dot">·</span>
+                            <span t-esc="sh.create_date"/>
+                        </div>
+                        <div class="hr-req-amount">
+                            <t t-esc="sh.currency"/><t t-esc="fmtNumber(sh.total_amount, 2)"/>
+                        </div>
+                    </div>
+
+                    <div class="hr-req-actions">
+                        <button class="hr-btn-refuse"
+                                t-att-disabled="state.processingId === 'expense-' + sh.id"
+                                t-on-click="() => this.onRefuseExpense(sh.id)">
+                            <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+                                <path d="M18 6L6 18M6 6l12 12"/>
+                            </svg>
+                            Refuse
+                        </button>
+                        <button class="hr-btn-approve"
+                                t-att-disabled="state.processingId === 'expense-' + sh.id"
+                                t-on-click="() => this.onApproveExpense(sh.id)">
+                            <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+                                <path d="M20 6L9 17l-5-5"/>
+                            </svg>
+                            Approve
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ============ Appraisals Tab ============ -->
+            <div t-if="!state.loading and state.tab === 'appraisals'" class="hr-approvals-list">
+                <div t-if="!state.data.has_appraisal_module" class="hr-approvals-empty">
+                    <p>The Appraisals module is not installed.</p>
+                </div>
+                <div t-elif="state.data.appraisals.length === 0" class="hr-approvals-empty">
+                    <svg viewBox="0 0 24 24" width="40" height="40" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+                        <circle cx="12" cy="12" r="10"/>
+                        <path d="M9 12l2 2 4-4"/>
+                    </svg>
+                    <p>No pending appraisals — all caught up.</p>
+                </div>
+
+                <div t-foreach="state.data.appraisals" t-as="ap" t-key="ap.id" class="hr-request-row">
+                    <img class="hr-req-avatar"
+                         t-att-src="ap.avatar || '/web/static/img/placeholder.png'"
+                         t-att-alt="ap.employee_name"
+                         t-on-click="() => this.openAppraisal(ap.id)"/>
+
+                    <div class="hr-req-main" t-on-click="() => this.openAppraisal(ap.id)">
+                        <div class="hr-req-top">
+                            <span class="hr-req-name" t-esc="ap.employee_name || 'Employee'"/>
+                            <span t-if="ap.department" class="hr-req-dept" t-esc="ap.department"/>
+                        </div>
+                        <div class="hr-req-meta">
+                            <span class="hr-req-type">
+                                <svg viewBox="0 0 24 24" width="11" height="11" fill="currentColor" style="display:inline; vertical-align:-1px; margin-right:4px;">
+                                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                                </svg>
+                                <t t-esc="ap.state_label || 'Pending'"/>
+                            </span>
+                            <span t-if="ap.manager" class="hr-req-dot">·</span>
+                            <span t-if="ap.manager">Manager: <t t-esc="ap.manager"/></span>
+                            <span t-if="ap.date_close" class="hr-req-dot">·</span>
+                            <span t-if="ap.date_close">Due: <strong t-esc="ap.date_close"/></span>
+                        </div>
+                    </div>
+
+                    <div class="hr-req-actions">
+                        <button class="hr-btn-refuse"
+                                t-att-disabled="state.processingId === 'appraisal-' + ap.id"
+                                t-on-click="() => this.onCancelAppraisal(ap.id)">
+                            <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+                                <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8M3 3v5h5"/>
+                            </svg>
+                            Reset
+                        </button>
+                        <button class="hr-btn-approve"
+                                t-att-disabled="state.processingId === 'appraisal-' + ap.id"
+                                t-on-click="() => this.onApproveAppraisal(ap.id)">
+                            <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+                                <path d="M20 6L9 17l-5-5"/>
+                            </svg>
+                            <t t-if="ap.state === '1_new' or ap.state === 'new'">Confirm</t>
+                            <t t-elif="ap.state === '2_pending' or ap.state === 'pending'">Mark Done</t>
+                            <t t-else="">Approve</t>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </t>
+
+</templates>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+
+    <t t-name="hr_dashboard.KpiCard">
+        <div class="hr-kpi-card glass" t-ref="card"
+             t-att-style="'--card-accent: var(' + props.colorVar + ');'"
+             t-on-click="() => props.onClick and props.onClick()">
+
+            <div class="hr-kpi-glow"/>
+            <div class="hr-kpi-shine"/>
+
+            <div class="hr-kpi-top">
+                <div class="hr-kpi-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                         stroke-linecap="round" stroke-linejoin="round">
+                        <path t-att-d="iconPath()"/>
+                    </svg>
+                </div>
+                <div t-if="props.trend" class="hr-kpi-trend"><t t-esc="props.trend"/></div>
+            </div>
+
+            <div class="hr-kpi-label"><t t-esc="props.label"/></div>
+            <div class="hr-kpi-value"><t t-esc="formattedValue()"/></div>
+
+            <svg t-if="props.sparkline and props.sparkline.length" class="hr-kpi-spark" t-ref="spark"
+                 viewBox="0 0 120 36" preserveAspectRatio="none"/>
+        </div>
+    </t>
+
+</templates>
