@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-    'name': 'Msn HR Dashboard',
+    'name': 'All in One HR Dashboard ',
     'version': '19.0.1.0.0',
     'category': 'Human Resources',
     'summary': 'Interactive HR dashboard with glassmorphism design, customizable colors and logo',
