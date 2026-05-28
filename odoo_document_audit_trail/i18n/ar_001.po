@@ -1,0 +1,1231 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* odoo_document_audit_trail
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0+e-20260329\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-05-28 15:32+0000\n"
+"PO-Revision-Date: 2026-05-28 15:32+0000\n"
+"Last-Translator: \n"
+"Language-Team: Arabic\n"
+"Language: ar_001\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 ? 4 : 5);\n"
+
+#. module: odoo_document_audit_trail
+#. odoo-python
+#: code:addons/odoo_document_audit_trail/models/audit_trail_entry.py:0
+msgid "'%(type)s' field signed by %(who)s"
+msgstr "تم توقيع حقل '%(type)s' بواسطة %(who)s"
+
+#. module: odoo_document_audit_trail
+#. odoo-python
+#: code:addons/odoo_document_audit_trail/models/audit_trail_entry.py:0
+msgid "'%(type)s' filled by %(who)s: %(val)s"
+msgstr "تم تعبئة حقل '%(type)s' بواسطة %(who)s: %(val)s"
+
+#. module: odoo_document_audit_trail
+#. odoo-python
+#: code:addons/odoo_document_audit_trail/models/audit_trail_entry.py:0
+msgid "(deleted)"
+msgstr "(محذوف)"
+
+#. module: odoo_document_audit_trail
+#. odoo-javascript
+#: code:addons/odoo_document_audit_trail/static/src/xml/audit_dashboard.xml:0
+msgid "1y"
+msgstr "سنة"
+
+#. module: odoo_document_audit_trail
+#. odoo-javascript
+#: code:addons/odoo_document_audit_trail/static/src/xml/audit_dashboard.xml:0
+msgid "30d"
+msgstr "30 يوم"
+
+#. module: odoo_document_audit_trail
+#. odoo-javascript
+#: code:addons/odoo_document_audit_trail/static/src/xml/audit_dashboard.xml:0
+msgid "7d"
+msgstr "7 أيام"
+
+#. module: odoo_document_audit_trail
+#. odoo-javascript
+#: code:addons/odoo_document_audit_trail/static/src/xml/audit_dashboard.xml:0
+msgid "90d"
+msgstr "90 يوم"
+
+#. module: odoo_document_audit_trail
+#: model_terms:ir.ui.view,arch_db:odoo_document_audit_trail.view_audit_trail_kanban
+msgid "<i class=\"fa fa-stream me-1\"/>Timeline"
+msgstr "<i class=\"fa fa-stream me-1\"/>الجدول الزمني"
+
+#. module: odoo_document_audit_trail
+#: model_terms:ir.ui.view,arch_db:odoo_document_audit_trail.res_config_settings_view_form
+msgid "<span> days</span>"
+msgstr "<span> يوم</span>"
+
+#. module: odoo_document_audit_trail
+#. odoo-python
+#: code:addons/odoo_document_audit_trail/models/audit_trail_entry.py:0
+msgid "A previous version was restored"
+msgstr "تمت استعادة نسخة سابقة"
+
+#. module: odoo_document_audit_trail
+#: model_terms:ir.ui.view,arch_db:odoo_document_audit_trail.view_audit_trail_entry_form
+msgid "Action"
+msgstr "إجراء"
+
+#. module: odoo_document_audit_trail
+#: model:ir.model.fields,field_description:odoo_document_audit_trail.field_audit_trail__entry_count
+msgid "Action Count"
+msgstr "عدد الإجراءات"
+
+#. module: odoo_document_audit_trail
+#. odoo-javascript
+#: code:addons/odoo_document_audit_trail/static/src/js/audit_dashboard.js:0
+#: model:ir.model.fields,field_description:odoo_document_audit_trail.field_audit_trail__entry_ids
+#: model_terms:ir.ui.view,arch_db:odoo_document_audit_trail.view_audit_trail_form
+msgid "Actions"
+msgstr "إجراءات"
+
+#. module: odoo_document_audit_trail
+#. odoo-javascript
+#: code:addons/odoo_document_audit_trail/static/src/xml/audit_dashboard.xml:0
+msgid "Actions (period)"
+msgstr "الإجراءات (خلال الفترة)"
+
+#. module: odoo_document_audit_trail
+#: model_terms:ir.actions.act_window,help:odoo_document_audit_trail.action_audit_trail
+msgid "Actions performed on documents will appear here."
+msgstr "ستظهر هنا الإجراءات المنفذة على المستندات."
+
+#. module: odoo_document_audit_trail
+#. odoo-javascript
+#: code:addons/odoo_document_audit_trail/static/src/xml/audit_dashboard.xml:0
+msgid "Active users"
+msgstr "المستخدمون النشطون"
+
+#. module: odoo_document_audit_trail
+#: model_terms:ir.ui.view,arch_db:odoo_document_audit_trail.view_audit_trail_entry_graph
+#: model_terms:ir.ui.view,arch_db:odoo_document_audit_trail.view_audit_trail_entry_pivot
+msgid "Activity"
+msgstr "النشاط"
+
+#. module: odoo_document_audit_trail
+#. odoo-javascript
+#: code:addons/odoo_document_audit_trail/static/src/xml/audit_dashboard.xml:0
+msgid "Activity across all documents · last"
+msgstr "النشاط عبر جميع المستندات · آخر"
+
+#. module: odoo_document_audit_trail
+#. odoo-javascript
+#: code:addons/odoo_document_audit_trail/static/src/xml/audit_dashboard.xml:0
+msgid "Activity over time"
+msgstr "النشاط عبر الزمن"
+
+#. module: odoo_document_audit_trail
+#. odoo-python
+#: code:addons/odoo_document_audit_trail/models/audit_trail_entry.py:0
+msgid "Added '%s' field to the document"
+msgstr "تمت إضافة حقل '%s' إلى المستند"
+
+#. module: odoo_document_audit_trail
+#: model:ir.ui.menu,name:odoo_document_audit_trail.menu_audit_trail_entries
+msgid "All Actions"
+msgstr "كل الإجراءات"
+
+#. module: odoo_document_audit_trail
+#. odoo-python
+#: code:addons/odoo_document_audit_trail/models/audit_trail_entry.py:0
+msgid "All signatures completed"
+msgstr "تم استكمال جميع التواقيع"
+
+#. module: odoo_document_audit_trail
+#. odoo-python
+#: code:addons/odoo_document_audit_trail/models/audit_trail_entry.py:0
+msgid "Archived"
+msgstr "مؤرشف"
+
+#. module: odoo_document_audit_trail
+#: model_terms:ir.ui.view,arch_db:odoo_document_audit_trail.view_audit_trail_entry_list
+msgid "Assign to me"
+msgstr "إسناد لي"
+
+#. module: odoo_document_audit_trail
+#: model:ir.model.fields,field_description:odoo_document_audit_trail.field_audit_trail_entry__assigned_user_id
+msgid "Assigned To"
+msgstr "مُسند إلى"
+
+#. module: odoo_document_audit_trail
+#: model_terms:ir.ui.view,arch_db:odoo_document_audit_trail.view_audit_trail_entry_search
+msgid "Assigned to Me"
+msgstr "المُسند إليّ"
+
+#. module: odoo_document_audit_trail
+#: model:ir.actions.client,name:odoo_document_audit_trail.action_audit_dashboard_client
+msgid "Audit Dashboard"
+msgstr "لوحة معلومات التدقيق"
+
+#. module: odoo_document_audit_trail
+#: model_terms:ir.ui.view,arch_db:odoo_document_audit_trail.view_audit_trail_entry_form
+msgid "Audit Log"
+msgstr "سجل التدقيق"
+
+#. module: odoo_document_audit_trail
+#: model:ir.model.fields,field_description:odoo_document_audit_trail.field_documents_document__audit_log_count
+msgid "Audit Log Count"
+msgstr "عدد سجلات التدقيق"
+
+#. module: odoo_document_audit_trail
+#: model:ir.model.fields,field_description:odoo_document_audit_trail.field_documents_document__audit_log_ids
+msgid "Audit Logs"
+msgstr "سجلات التدقيق"
+
+#. module: odoo_document_audit_trail
+#. odoo-javascript
+#. odoo-python
+#: code:addons/odoo_document_audit_trail/models/audit_trail_entry.py:0
+#: code:addons/odoo_document_audit_trail/models/documents_document.py:0
+#: code:addons/odoo_document_audit_trail/static/src/js/audit_dashboard.js:0
+#: model:ir.actions.act_window,name:odoo_document_audit_trail.action_audit_trail
+#: model_terms:ir.ui.view,arch_db:odoo_document_audit_trail.documents_document_view_list_audit
+#: model_terms:ir.ui.view,arch_db:odoo_document_audit_trail.res_config_settings_view_form
+#: model_terms:ir.ui.view,arch_db:odoo_document_audit_trail.view_audit_trail_entry_list
+#: model_terms:ir.ui.view,arch_db:odoo_document_audit_trail.view_audit_trail_entry_search
+msgid "Audit Trail"
+msgstr "سجل التدقيق"
+
+#. module: odoo_document_audit_trail
+#. odoo-javascript
+#: code:addons/odoo_document_audit_trail/static/src/xml/audit_dashboard.xml:0
+msgid "By operation"
+msgstr "حسب العملية"
+
+#. module: odoo_document_audit_trail
+#: model:ir.model.fields,field_description:odoo_document_audit_trail.field_audit_trail_entry__field_changes
+#: model_terms:ir.ui.view,arch_db:odoo_document_audit_trail.view_audit_trail_entry_form
+msgid "Changes"
+msgstr "التغييرات"
+
+#. module: odoo_document_audit_trail
+#: model:ir.model,name:odoo_document_audit_trail.model_res_config_settings
+msgid "Config Settings"
+msgstr "تهيئة الإعدادات"
+
+#. module: odoo_document_audit_trail
+#. odoo-javascript
+#: code:addons/odoo_document_audit_trail/static/src/xml/audit_dashboard.xml:0
+msgid "Could not load dashboard data."
+msgstr "تعذّر تحميل بيانات لوحة المعلومات."
+
+#. module: odoo_document_audit_trail
+#. odoo-python
+#: code:addons/odoo_document_audit_trail/models/audit_trail_entry.py:0
+msgid "Created"
+msgstr "تم الإنشاء"
+
+#. module: odoo_document_audit_trail
+#: model:ir.model.fields,field_description:odoo_document_audit_trail.field_audit_trail__create_uid
+#: model:ir.model.fields,field_description:odoo_document_audit_trail.field_audit_trail_entry__create_uid
+msgid "Created by"
+msgstr "أنشئ بواسطة"
+
+#. module: odoo_document_audit_trail
+#. odoo-python
+#: code:addons/odoo_document_audit_trail/models/audit_trail_entry.py:0
+msgid "Created from a split"
+msgstr "تم الإنشاء من عملية تقسيم"
+
+#. module: odoo_document_audit_trail
+#. odoo-python
+#: code:addons/odoo_document_audit_trail/models/audit_trail_entry.py:0
+msgid "Created from split of: %s"
+msgstr "تم الإنشاء من تقسيم: %s"
+
+#. module: odoo_document_audit_trail
+#: model:ir.model.fields,field_description:odoo_document_audit_trail.field_audit_trail__create_date
+#: model:ir.model.fields,field_description:odoo_document_audit_trail.field_audit_trail_entry__create_date
+msgid "Created on"
+msgstr "تاريخ الإنشاء"
+
+#. module: odoo_document_audit_trail
+#: model:ir.model.fields,field_description:odoo_document_audit_trail.field_audit_trail__document_id
+msgid "Current Document"
+msgstr "المستند الحالي"
+
+#. module: odoo_document_audit_trail
+#: model_terms:ir.ui.view,arch_db:odoo_document_audit_trail.res_config_settings_view_form
+msgid "Daily cron deletes logs older than this many days. 0 = keep forever."
+msgstr "تحذف المهمة اليومية السجلات الأقدم من هذا العدد من الأيام. القيمة 0 تعني الاحتفاظ دائماً."
+
+#. module: odoo_document_audit_trail
+#: model:ir.ui.menu,name:odoo_document_audit_trail.menu_audit_trail_dashboard
+msgid "Dashboard"
+msgstr "لوحة المعلومات"
+
+#. module: odoo_document_audit_trail
+#: model:ir.model.fields,field_description:odoo_document_audit_trail.field_audit_trail_entry__operation_date
+#: model_terms:ir.ui.view,arch_db:odoo_document_audit_trail.view_audit_trail_entry_search
+msgid "Date"
+msgstr "التاريخ"
+
+#. module: odoo_document_audit_trail
+#. odoo-python
+#: code:addons/odoo_document_audit_trail/models/audit_trail_entry.py:0
+msgid "Deleted"
+msgstr "محذوف"
+
+#. module: odoo_document_audit_trail
+#: model_terms:ir.ui.view,arch_db:odoo_document_audit_trail.view_audit_trail_search
+msgid "Deleted Documents"
+msgstr "المستندات المحذوفة"
+
+#. module: odoo_document_audit_trail
+#. odoo-javascript
+#: code:addons/odoo_document_audit_trail/static/src/xml/audit_dashboard.xml:0
+#: model_terms:ir.ui.view,arch_db:odoo_document_audit_trail.view_audit_trail_entry_search
+msgid "Deletions"
+msgstr "عمليات الحذف"
+
+#. module: odoo_document_audit_trail
+#: model:ir.model.fields,field_description:odoo_document_audit_trail.field_audit_trail__display_name
+#: model:ir.model.fields,field_description:odoo_document_audit_trail.field_documents_document__display_name
+#: model:ir.model.fields,field_description:odoo_document_audit_trail.field_res_config_settings__display_name
+#: model:ir.model.fields,field_description:odoo_document_audit_trail.field_sign_item__display_name
+#: model:ir.model.fields,field_description:odoo_document_audit_trail.field_sign_request__display_name
+#: model:ir.model.fields,field_description:odoo_document_audit_trail.field_sign_request_item__display_name
+msgid "Display Name"
+msgstr "اسم العرض"
+
+#. module: odoo_document_audit_trail
+#. odoo-python
+#: code:addons/odoo_document_audit_trail/models/audit_trail.py:0
+#: code:addons/odoo_document_audit_trail/models/audit_trail_entry.py:0
+#: model:ir.model,name:odoo_document_audit_trail.model_documents_document
+#: model:ir.model.fields,field_description:odoo_document_audit_trail.field_audit_trail__name
+#: model:ir.model.fields,field_description:odoo_document_audit_trail.field_audit_trail_entry__document_id
+#: model_terms:ir.ui.view,arch_db:odoo_document_audit_trail.view_audit_trail_entry_search
+msgid "Document"
+msgstr "المستند"
+
+#. module: odoo_document_audit_trail
+#: model:ir.ui.menu,name:odoo_document_audit_trail.menu_audit_trail_root
+msgid "Document Audit"
+msgstr "تدقيق المستندات"
+
+#. module: odoo_document_audit_trail
+#. odoo-javascript
+#: code:addons/odoo_document_audit_trail/static/src/xml/audit_dashboard.xml:0
+#: model:ir.model,name:odoo_document_audit_trail.model_audit_trail
+#: model:res.groups.privilege,name:odoo_document_audit_trail.privilege_audit_trail
+msgid "Document Audit Trail"
+msgstr "سجل تدقيق المستندات"
+
+#. module: odoo_document_audit_trail
+#: model:ir.model,name:odoo_document_audit_trail.model_audit_trail_entry
+msgid "Document Audit Trail Entry"
+msgstr "إدخال سجل تدقيق المستندات"
+
+#. module: odoo_document_audit_trail
+#: model:ir.actions.server,name:odoo_document_audit_trail.ir_cron_delete_old_audit_logs_ir_actions_server
+msgid "Document Audit Trail: Cleanup Old Logs"
+msgstr "سجل تدقيق المستندات: تنظيف السجلات القديمة"
+
+#. module: odoo_document_audit_trail
+#: model:res.groups,name:odoo_document_audit_trail.group_audit_trail_manager
+msgid "Document Audit: Manager"
+msgstr "تدقيق المستندات: مدير"
+
+#. module: odoo_document_audit_trail
+#: model:res.groups,name:odoo_document_audit_trail.group_audit_trail_user
+msgid "Document Audit: Read Own"
+msgstr "تدقيق المستندات: عرض الخاص"
+
+#. module: odoo_document_audit_trail
+#: model:ir.model.fields,field_description:odoo_document_audit_trail.field_audit_trail__document_active
+msgid "Document Exists"
+msgstr "المستند موجود"
+
+#. module: odoo_document_audit_trail
+#: model:ir.model.fields,field_description:odoo_document_audit_trail.field_audit_trail_entry__document_name
+msgid "Document Name"
+msgstr "اسم المستند"
+
+#. module: odoo_document_audit_trail
+#. odoo-javascript
+#. odoo-python
+#: code:addons/odoo_document_audit_trail/models/audit_trail_entry.py:0
+#: code:addons/odoo_document_audit_trail/static/src/js/audit_dashboard.js:0
+msgid "Document Timeline"
+msgstr "الجدول الزمني للمستند"
+
+#. module: odoo_document_audit_trail
+#: model:ir.model.fields,field_description:odoo_document_audit_trail.field_audit_trail_entry__trail_id
+#: model_terms:ir.ui.view,arch_db:odoo_document_audit_trail.view_audit_trail_form
+msgid "Document Trail"
+msgstr "سجل المستند"
+
+#. module: odoo_document_audit_trail
+#: model:ir.actions.act_window,name:odoo_document_audit_trail.action_audit_trail_dashboard
+#: model:ir.ui.menu,name:odoo_document_audit_trail.menu_audit_trail_documents
+#: model_terms:ir.ui.view,arch_db:odoo_document_audit_trail.view_audit_trail_list
+msgid "Document Trails"
+msgstr "سجلات المستندات"
+
+#. module: odoo_document_audit_trail
+#. odoo-python
+#: code:addons/odoo_document_audit_trail/models/audit_trail_entry.py:0
+msgid "Document archived"
+msgstr "تمت أرشفة المستند"
+
+#. module: odoo_document_audit_trail
+#. odoo-python
+#: code:addons/odoo_document_audit_trail/models/audit_trail_entry.py:0
+msgid "Document created"
+msgstr "تم إنشاء المستند"
+
+#. module: odoo_document_audit_trail
+#. odoo-python
+#: code:addons/odoo_document_audit_trail/models/audit_trail_entry.py:0
+#: code:addons/odoo_document_audit_trail/models/documents_document.py:0
+msgid "Document deleted"
+msgstr "تم حذف المستند"
+
+#. module: odoo_document_audit_trail
+#. odoo-python
+#: code:addons/odoo_document_audit_trail/models/audit_trail_entry.py:0
+msgid "Document downloaded"
+msgstr "تم تنزيل المستند"
+
+#. module: odoo_document_audit_trail
+#. odoo-python
+#: code:addons/odoo_document_audit_trail/models/audit_trail_entry.py:0
+msgid "Document locked"
+msgstr "تم قفل المستند"
+
+#. module: odoo_document_audit_trail
+#. odoo-python
+#: code:addons/odoo_document_audit_trail/models/audit_trail_entry.py:0
+msgid "Document replaced with a new version"
+msgstr "تم استبدال المستند بنسخة جديدة"
+
+#. module: odoo_document_audit_trail
+#. odoo-python
+#: code:addons/odoo_document_audit_trail/models/audit_trail_entry.py:0
+msgid "Document restored"
+msgstr "تمت استعادة المستند"
+
+#. module: odoo_document_audit_trail
+#. odoo-python
+#: code:addons/odoo_document_audit_trail/models/audit_trail_entry.py:0
+msgid "Document shared"
+msgstr "تمت مشاركة المستند"
+
+#. module: odoo_document_audit_trail
+#. odoo-python
+#: code:addons/odoo_document_audit_trail/models/audit_trail_entry.py:0
+msgid "Document split"
+msgstr "تم تقسيم المستند"
+
+#. module: odoo_document_audit_trail
+#. odoo-python
+#: code:addons/odoo_document_audit_trail/models/audit_trail_entry.py:0
+msgid "Document split into %s new document(s)"
+msgstr "تم تقسيم المستند إلى %s مستند جديد"
+
+#. module: odoo_document_audit_trail
+#. odoo-python
+#: code:addons/odoo_document_audit_trail/models/audit_trail_entry.py:0
+msgid "Document unlocked"
+msgstr "تم إلغاء قفل المستند"
+
+#. module: odoo_document_audit_trail
+#. odoo-python
+#: code:addons/odoo_document_audit_trail/models/audit_trail_entry.py:0
+msgid "Downloaded"
+msgstr "تم التنزيل"
+
+#. module: odoo_document_audit_trail
+#: model_terms:ir.actions.act_window,help:odoo_document_audit_trail.action_audit_trail_dashboard
+msgid ""
+"Each document with tracked activity appears here with its full timeline."
+msgstr ""
+
+#. module: odoo_document_audit_trail
+#: model:ir.model.fields,field_description:odoo_document_audit_trail.field_res_config_settings__document_audit_enabled
+#: model_terms:ir.ui.view,arch_db:odoo_document_audit_trail.res_config_settings_view_form
+msgid "Enable Document Audit Trail"
+msgstr "تفعيل سجل تدقيق المستندات"
+
+#. module: odoo_document_audit_trail
+#: model_terms:ir.ui.view,arch_db:odoo_document_audit_trail.view_audit_trail_search
+msgid "Existing Documents"
+msgstr "المستندات الموجودة"
+
+#. module: odoo_document_audit_trail
+#. odoo-python
+#: code:addons/odoo_document_audit_trail/models/sign_request.py:0
+msgid "Field"
+msgstr "حقل"
+
+#. module: odoo_document_audit_trail
+#. odoo-python
+#: code:addons/odoo_document_audit_trail/models/audit_trail_entry.py:0
+msgid "Field Signed"
+msgstr "تم توقيع الحقل"
+
+#. module: odoo_document_audit_trail
+#: model:ir.model.fields,field_description:odoo_document_audit_trail.field_audit_trail_entry__sign_item_type
+msgid "Field Type"
+msgstr "نوع الحقل"
+
+#. module: odoo_document_audit_trail
+#: model:ir.model.fields,field_description:odoo_document_audit_trail.field_audit_trail_entry__sign_item_value
+msgid "Field Value"
+msgstr "قيمة الحقل"
+
+#. module: odoo_document_audit_trail
+#: model:ir.model,name:odoo_document_audit_trail.model_sign_item
+msgid "Fields to be sign on Document"
+msgstr "الحقول المطلوب توقيعها في المستند"
+
+#. module: odoo_document_audit_trail
+#: model:ir.model.fields,field_description:odoo_document_audit_trail.field_audit_trail__first_activity
+msgid "First Action"
+msgstr "أول إجراء"
+
+#. module: odoo_document_audit_trail
+#: model_terms:ir.ui.view,arch_db:odoo_document_audit_trail.view_audit_trail_entry_list
+msgid "Flag for review"
+msgstr "وضع علامة للمراجعة"
+
+#. module: odoo_document_audit_trail
+#: model:ir.model.fields,field_description:odoo_document_audit_trail.field_audit_trail_entry__followup_state
+#: model_terms:ir.ui.view,arch_db:odoo_document_audit_trail.view_audit_trail_entry_form
+#: model_terms:ir.ui.view,arch_db:odoo_document_audit_trail.view_audit_trail_entry_search
+msgid "Follow-up"
+msgstr "المتابعة"
+
+#. module: odoo_document_audit_trail
+#. odoo-javascript
+#: code:addons/odoo_document_audit_trail/static/src/js/audit_dashboard.js:0
+#: model:ir.actions.act_window,name:odoo_document_audit_trail.action_audit_trail_followup
+#: model:ir.ui.menu,name:odoo_document_audit_trail.menu_audit_trail_followups
+msgid "Follow-ups"
+msgstr "المتابعات"
+
+#. module: odoo_document_audit_trail
+#: model:ir.model.fields,field_description:odoo_document_audit_trail.field_audit_trail__id
+#: model:ir.model.fields,field_description:odoo_document_audit_trail.field_audit_trail_entry__id
+#: model:ir.model.fields,field_description:odoo_document_audit_trail.field_documents_document__id
+#: model:ir.model.fields,field_description:odoo_document_audit_trail.field_res_config_settings__id
+#: model:ir.model.fields,field_description:odoo_document_audit_trail.field_sign_item__id
+#: model:ir.model.fields,field_description:odoo_document_audit_trail.field_sign_request__id
+#: model:ir.model.fields,field_description:odoo_document_audit_trail.field_sign_request_item__id
+msgid "ID"
+msgstr "المُعرف"
+
+#. module: odoo_document_audit_trail
+#: model:ir.model.fields,field_description:odoo_document_audit_trail.field_audit_trail_entry__ip_address
+msgid "IP Address"
+msgstr "عنوان IP"
+
+#. module: odoo_document_audit_trail
+#: model:ir.model.fields.selection,name:odoo_document_audit_trail.selection__audit_trail_entry__followup_state__in_progress
+msgid "In Progress"
+msgstr "قيد التنفيذ"
+
+#. module: odoo_document_audit_trail
+#: model_terms:ir.ui.view,arch_db:odoo_document_audit_trail.view_audit_trail_entry_search
+msgid "Last 7 Days"
+msgstr "آخر 7 أيام"
+
+#. module: odoo_document_audit_trail
+#: model:ir.model.fields,field_description:odoo_document_audit_trail.field_audit_trail__last_activity
+msgid "Last Action"
+msgstr "آخر إجراء"
+
+#. module: odoo_document_audit_trail
+#: model:ir.model.fields,field_description:odoo_document_audit_trail.field_audit_trail__write_uid
+#: model:ir.model.fields,field_description:odoo_document_audit_trail.field_audit_trail_entry__write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة"
+
+#. module: odoo_document_audit_trail
+#: model:ir.model.fields,field_description:odoo_document_audit_trail.field_audit_trail__write_date
+#: model:ir.model.fields,field_description:odoo_document_audit_trail.field_audit_trail_entry__write_date
+msgid "Last Updated on"
+msgstr "آخر تحديث في"
+
+#. module: odoo_document_audit_trail
+#: model:ir.model.fields,field_description:odoo_document_audit_trail.field_audit_trail__last_operation
+msgid "Latest Operation"
+msgstr "آخر عملية"
+
+#. module: odoo_document_audit_trail
+#. odoo-javascript
+#: code:addons/odoo_document_audit_trail/static/src/xml/audit_dashboard.xml:0
+msgid "Loading audit data…"
+msgstr "جارٍ تحميل بيانات التدقيق…"
+
+#. module: odoo_document_audit_trail
+#. odoo-python
+#: code:addons/odoo_document_audit_trail/models/audit_trail_entry.py:0
+msgid "Locked"
+msgstr "مقفل"
+
+#. module: odoo_document_audit_trail
+#: model_terms:ir.ui.view,arch_db:odoo_document_audit_trail.res_config_settings_view_form
+msgid "Log Retention"
+msgstr "الاحتفاظ بالسجل"
+
+#. module: odoo_document_audit_trail
+#: model:ir.model.fields,field_description:odoo_document_audit_trail.field_res_config_settings__document_audit_retention_days
+msgid "Log Retention (days)"
+msgstr "مدة الاحتفاظ بالسجل (أيام)"
+
+#. module: odoo_document_audit_trail
+#: model:ir.model.fields,help:odoo_document_audit_trail.field_res_config_settings__document_audit_retention_days
+msgid ""
+"Logs older than this are removed by the daily cron. 0 disables automatic "
+"cleanup."
+msgstr ""
+
+#. module: odoo_document_audit_trail
+#: model_terms:ir.ui.view,arch_db:odoo_document_audit_trail.res_config_settings_view_form
+msgid "Master switch. When off, no actions are recorded."
+msgstr "المفتاح الرئيسي. عند الإيقاف، لا يتم تسجيل أي إجراءات."
+
+#. module: odoo_document_audit_trail
+#. odoo-javascript
+#: code:addons/odoo_document_audit_trail/static/src/xml/audit_dashboard.xml:0
+msgid "Most active documents"
+msgstr "أكثر المستندات نشاطاً"
+
+#. module: odoo_document_audit_trail
+#. odoo-javascript
+#: code:addons/odoo_document_audit_trail/static/src/xml/audit_dashboard.xml:0
+msgid "Most active users"
+msgstr "أكثر المستخدمين نشاطاً"
+
+#. module: odoo_document_audit_trail
+#: model:ir.model.fields.selection,name:odoo_document_audit_trail.selection__audit_trail_entry__followup_state__open
+#: model_terms:ir.ui.view,arch_db:odoo_document_audit_trail.view_audit_trail_entry_search
+#: model_terms:ir.ui.view,arch_db:odoo_document_audit_trail.view_audit_trail_search
+msgid "Needs Review"
+msgstr "بحاجة لمراجعة"
+
+#. module: odoo_document_audit_trail
+#: model:ir.model.fields,field_description:odoo_document_audit_trail.field_audit_trail_entry__new_values
+msgid "New Values"
+msgstr "القيم الجديدة"
+
+#. module: odoo_document_audit_trail
+#. odoo-javascript
+#: code:addons/odoo_document_audit_trail/static/src/xml/audit_dashboard.xml:0
+msgid "No activity"
+msgstr "لا يوجد نشاط"
+
+#. module: odoo_document_audit_trail
+#: model_terms:ir.actions.act_window,help:odoo_document_audit_trail.action_audit_trail
+msgid "No audit records yet"
+msgstr "لا توجد سجلات تدقيق بعد"
+
+#. module: odoo_document_audit_trail
+#: model_terms:ir.actions.act_window,help:odoo_document_audit_trail.action_audit_trail_dashboard
+msgid "No document activity yet"
+msgstr "لا يوجد نشاط على المستندات بعد"
+
+#. module: odoo_document_audit_trail
+#. odoo-javascript
+#: code:addons/odoo_document_audit_trail/static/src/xml/audit_dashboard.xml:0
+msgid "No recent activity"
+msgstr "لا يوجد نشاط حديث"
+
+#. module: odoo_document_audit_trail
+#. odoo-python
+#: code:addons/odoo_document_audit_trail/models/audit_trail_entry.py:0
+msgid "No tracked changes"
+msgstr "لا توجد تغييرات متتبَّعة"
+
+#. module: odoo_document_audit_trail
+#: model:ir.model.fields.selection,name:odoo_document_audit_trail.selection__audit_trail_entry__followup_state__none
+msgid "Not Flagged"
+msgstr "بدون علامة"
+
+#. module: odoo_document_audit_trail
+#: model:ir.model.fields,field_description:odoo_document_audit_trail.field_audit_trail_entry__notes
+msgid "Notes"
+msgstr "ملاحظات"
+
+#. module: odoo_document_audit_trail
+#: model:ir.model.fields,field_description:odoo_document_audit_trail.field_audit_trail_entry__old_values
+msgid "Old Values"
+msgstr "القيم القديمة"
+
+#. module: odoo_document_audit_trail
+#: model_terms:ir.ui.view,arch_db:odoo_document_audit_trail.view_audit_trail_entry_form
+#: model_terms:ir.ui.view,arch_db:odoo_document_audit_trail.view_audit_trail_form
+msgid "Open Document"
+msgstr "فتح المستند"
+
+#. module: odoo_document_audit_trail
+#: model:ir.model.fields,field_description:odoo_document_audit_trail.field_audit_trail__open_followups
+msgid "Open Follow-ups"
+msgstr "متابعات مفتوحة"
+
+#. module: odoo_document_audit_trail
+#: model_terms:ir.ui.view,arch_db:odoo_document_audit_trail.view_audit_trail_entry_form
+msgid "Open Sign Request"
+msgstr "فتح طلب التوقيع"
+
+#. module: odoo_document_audit_trail
+#. odoo-javascript
+#: code:addons/odoo_document_audit_trail/static/src/xml/audit_dashboard.xml:0
+msgid "Open follow-ups"
+msgstr "متابعات مفتوحة"
+
+#. module: odoo_document_audit_trail
+#: model_terms:ir.ui.view,arch_db:odoo_document_audit_trail.view_audit_trail_list
+msgid "Open timeline"
+msgstr "فتح الجدول الزمني"
+
+#. module: odoo_document_audit_trail
+#: model:ir.model.fields,field_description:odoo_document_audit_trail.field_audit_trail_entry__operation_type
+#: model_terms:ir.ui.view,arch_db:odoo_document_audit_trail.view_audit_trail_entry_search
+msgid "Operation"
+msgstr "العملية"
+
+#. module: odoo_document_audit_trail
+#. odoo-python
+#: code:addons/odoo_document_audit_trail/models/audit_trail_entry.py:0
+msgid "Preview Closed"
+msgstr "تم إغلاق المعاينة"
+
+#. module: odoo_document_audit_trail
+#. odoo-python
+#: code:addons/odoo_document_audit_trail/models/audit_trail_entry.py:0
+msgid "Preview Opened"
+msgstr "تم فتح المعاينة"
+
+#. module: odoo_document_audit_trail
+#. odoo-python
+#: code:addons/odoo_document_audit_trail/models/audit_trail_entry.py:0
+msgid "Preview closed"
+msgstr "تم إغلاق المعاينة"
+
+#. module: odoo_document_audit_trail
+#. odoo-python
+#: code:addons/odoo_document_audit_trail/models/audit_trail_entry.py:0
+msgid "Preview opened"
+msgstr "تم فتح المعاينة"
+
+#. module: odoo_document_audit_trail
+#: model_terms:ir.ui.view,arch_db:odoo_document_audit_trail.view_audit_trail_entry_form
+msgid "Raw Data"
+msgstr "البيانات الخام"
+
+#. module: odoo_document_audit_trail
+#. odoo-javascript
+#: code:addons/odoo_document_audit_trail/static/src/xml/audit_dashboard.xml:0
+msgid "Recent activity"
+msgstr "النشاط الأخير"
+
+#. module: odoo_document_audit_trail
+#. odoo-python
+#: code:addons/odoo_document_audit_trail/models/audit_trail_entry.py:0
+msgid "Removed '%s' field from the document"
+msgstr "تمت إزالة حقل '%s' من المستند"
+
+#. module: odoo_document_audit_trail
+#. odoo-python
+#: code:addons/odoo_document_audit_trail/models/audit_trail_entry.py:0
+msgid "Replaced (New Version)"
+msgstr "تم الاستبدال (نسخة جديدة)"
+
+#. module: odoo_document_audit_trail
+#: model_terms:ir.ui.view,arch_db:odoo_document_audit_trail.view_audit_trail_entry_list
+msgid "Resolve"
+msgstr "حل"
+
+#. module: odoo_document_audit_trail
+#: model:ir.model.fields.selection,name:odoo_document_audit_trail.selection__audit_trail_entry__followup_state__resolved
+msgid "Resolved"
+msgstr "تم الحل"
+
+#. module: odoo_document_audit_trail
+#. odoo-python
+#: code:addons/odoo_document_audit_trail/models/audit_trail_entry.py:0
+msgid "Restored"
+msgstr "تمت الاستعادة"
+
+#. module: odoo_document_audit_trail
+#. odoo-javascript
+#: code:addons/odoo_document_audit_trail/static/src/xml/audit_dashboard.xml:0
+msgid "Retry"
+msgstr "إعادة المحاولة"
+
+#. module: odoo_document_audit_trail
+#: model:ir.model.fields,field_description:odoo_document_audit_trail.field_audit_trail_entry__review_note
+msgid "Review Note"
+msgstr "ملاحظة المراجعة"
+
+#. module: odoo_document_audit_trail
+#: model_terms:ir.ui.view,arch_db:odoo_document_audit_trail.view_audit_trail_entry_form
+msgid "Reviewer notes..."
+msgstr "ملاحظات المراجع..."
+
+#. module: odoo_document_audit_trail
+#. odoo-python
+#: code:addons/odoo_document_audit_trail/models/audit_trail_entry.py:0
+msgid "Shared"
+msgstr "تمت المشاركة"
+
+#. module: odoo_document_audit_trail
+#. odoo-python
+#: code:addons/odoo_document_audit_trail/models/audit_trail_entry.py:0
+#: model:ir.model.fields,field_description:odoo_document_audit_trail.field_audit_trail_entry__sign_request_id
+msgid "Sign Request"
+msgstr "طلب التوقيع"
+
+#. module: odoo_document_audit_trail
+#. odoo-python
+#: code:addons/odoo_document_audit_trail/models/audit_trail_entry.py:0
+msgid "Signature Completed"
+msgstr "اكتمل التوقيع"
+
+#. module: odoo_document_audit_trail
+#: model_terms:ir.ui.view,arch_db:odoo_document_audit_trail.view_audit_trail_entry_form
+msgid "Signature Detail"
+msgstr "تفاصيل التوقيع"
+
+#. module: odoo_document_audit_trail
+#: model:ir.model.fields,field_description:odoo_document_audit_trail.field_audit_trail_entry__sign_item_id
+msgid "Signature Field"
+msgstr "حقل التوقيع"
+
+#. module: odoo_document_audit_trail
+#. odoo-python
+#: code:addons/odoo_document_audit_trail/models/audit_trail_entry.py:0
+msgid "Signature Field Added"
+msgstr "تمت إضافة حقل توقيع"
+
+#. module: odoo_document_audit_trail
+#. odoo-python
+#: code:addons/odoo_document_audit_trail/models/audit_trail_entry.py:0
+msgid "Signature Field Removed"
+msgstr "تمت إزالة حقل توقيع"
+
+#. module: odoo_document_audit_trail
+#. odoo-python
+#: code:addons/odoo_document_audit_trail/models/sign_request.py:0
+#: model:ir.model,name:odoo_document_audit_trail.model_sign_request
+msgid "Signature Request"
+msgstr "طلب التوقيع"
+
+#. module: odoo_document_audit_trail
+#: model:ir.model,name:odoo_document_audit_trail.model_sign_request_item
+msgid "Signature Request Item"
+msgstr "عنصر طلب التوقيع"
+
+#. module: odoo_document_audit_trail
+#. odoo-python
+#: code:addons/odoo_document_audit_trail/models/audit_trail_entry.py:0
+msgid "Signature Requested"
+msgstr "تم طلب التوقيع"
+
+#. module: odoo_document_audit_trail
+#. odoo-javascript
+#: code:addons/odoo_document_audit_trail/static/src/xml/audit_dashboard.xml:0
+msgid "Signature events"
+msgstr "أحداث التوقيع"
+
+#. module: odoo_document_audit_trail
+#. odoo-python
+#: code:addons/odoo_document_audit_trail/models/audit_trail_entry.py:0
+msgid "Signature requested"
+msgstr "تم طلب التوقيع"
+
+#. module: odoo_document_audit_trail
+#: model_terms:ir.ui.view,arch_db:odoo_document_audit_trail.view_audit_trail_entry_search
+msgid "Signatures"
+msgstr "التواقيع"
+
+#. module: odoo_document_audit_trail
+#: model:ir.model.fields,field_description:odoo_document_audit_trail.field_audit_trail_entry__signer_id
+msgid "Signer"
+msgstr "الموقّع"
+
+#. module: odoo_document_audit_trail
+#. odoo-python
+#: code:addons/odoo_document_audit_trail/models/audit_trail_entry.py:0
+msgid "Split - Result"
+msgstr "تقسيم - الناتج"
+
+#. module: odoo_document_audit_trail
+#. odoo-python
+#: code:addons/odoo_document_audit_trail/models/audit_trail_entry.py:0
+msgid "Split - Source"
+msgstr "تقسيم - المصدر"
+
+#. module: odoo_document_audit_trail
+#: model:ir.model.fields,field_description:odoo_document_audit_trail.field_audit_trail_entry__display_name
+msgid "Summary"
+msgstr "الملخص"
+
+#. module: odoo_document_audit_trail
+#: model:ir.model.fields,help:odoo_document_audit_trail.field_audit_trail_entry__sign_item_value
+msgid "The value entered/signed in this field."
+msgstr "القيمة المُدخلة/الموقّعة في هذا الحقل."
+
+#. module: odoo_document_audit_trail
+#: model_terms:ir.ui.view,arch_db:odoo_document_audit_trail.view_audit_trail_form
+msgid "Timeline"
+msgstr "الجدول الزمني"
+
+#. module: odoo_document_audit_trail
+#. odoo-python
+#: code:addons/odoo_document_audit_trail/models/audit_trail.py:0
+msgid "Timeline: %s"
+msgstr "الجدول الزمني: %s"
+
+#. module: odoo_document_audit_trail
+#: model_terms:ir.ui.view,arch_db:odoo_document_audit_trail.view_audit_trail_entry_search
+msgid "Today"
+msgstr "اليوم"
+
+#. module: odoo_document_audit_trail
+#. odoo-javascript
+#: code:addons/odoo_document_audit_trail/static/src/xml/audit_dashboard.xml:0
+msgid "Total recorded"
+msgstr "إجمالي المسجَّل"
+
+#. module: odoo_document_audit_trail
+#: model:ir.model.fields,field_description:odoo_document_audit_trail.field_res_config_settings__audit_op_archive
+msgid "Track Archive/Restore"
+msgstr "تتبّع الأرشفة/الاستعادة"
+
+#. module: odoo_document_audit_trail
+#: model:ir.model.fields,field_description:odoo_document_audit_trail.field_res_config_settings__audit_op_create
+msgid "Track Creation"
+msgstr "تتبّع الإنشاء"
+
+#. module: odoo_document_audit_trail
+#: model:ir.model.fields,field_description:odoo_document_audit_trail.field_res_config_settings__audit_op_unlink
+msgid "Track Deletions"
+msgstr "تتبّع عمليات الحذف"
+
+#. module: odoo_document_audit_trail
+#: model:ir.model.fields,field_description:odoo_document_audit_trail.field_res_config_settings__audit_op_download
+msgid "Track Downloads"
+msgstr "تتبّع عمليات التنزيل"
+
+#. module: odoo_document_audit_trail
+#: model:ir.model.fields,field_description:odoo_document_audit_trail.field_res_config_settings__audit_op_sign_item_added
+msgid "Track Field Added"
+msgstr "تتبّع إضافة الحقول"
+
+#. module: odoo_document_audit_trail
+#: model:ir.model.fields,field_description:odoo_document_audit_trail.field_res_config_settings__audit_op_sign_item_removed
+msgid "Track Field Removed"
+msgstr "تتبّع إزالة الحقول"
+
+#. module: odoo_document_audit_trail
+#: model:ir.model.fields,field_description:odoo_document_audit_trail.field_res_config_settings__audit_op_sign_item_signed
+msgid "Track Field Signed"
+msgstr "تتبّع توقيع الحقول"
+
+#. module: odoo_document_audit_trail
+#: model:ir.model.fields,field_description:odoo_document_audit_trail.field_res_config_settings__audit_op_lock
+msgid "Track Lock"
+msgstr "تتبّع القفل"
+
+#. module: odoo_document_audit_trail
+#: model:ir.model.fields,field_description:odoo_document_audit_trail.field_res_config_settings__audit_op_preview_close
+msgid "Track Preview Close"
+msgstr "تتبّع إغلاق المعاينة"
+
+#. module: odoo_document_audit_trail
+#: model:ir.model.fields,field_description:odoo_document_audit_trail.field_res_config_settings__audit_op_preview_open
+msgid "Track Preview Open"
+msgstr "تتبّع فتح المعاينة"
+
+#. module: odoo_document_audit_trail
+#: model:ir.model.fields,field_description:odoo_document_audit_trail.field_res_config_settings__audit_op_replace
+msgid "Track Replace"
+msgstr "تتبّع الاستبدال"
+
+#. module: odoo_document_audit_trail
+#: model:ir.model.fields,field_description:odoo_document_audit_trail.field_res_config_settings__audit_op_unarchive
+msgid "Track Restore"
+msgstr "تتبّع الاستعادة"
+
+#. module: odoo_document_audit_trail
+#: model:ir.model.fields,field_description:odoo_document_audit_trail.field_res_config_settings__audit_op_share
+msgid "Track Sharing"
+msgstr "تتبّع المشاركة"
+
+#. module: odoo_document_audit_trail
+#: model:ir.model.fields,field_description:odoo_document_audit_trail.field_res_config_settings__audit_op_sign_completed
+msgid "Track Signature Completed"
+msgstr "تتبّع اكتمال التوقيع"
+
+#. module: odoo_document_audit_trail
+#: model:ir.model.fields,field_description:odoo_document_audit_trail.field_res_config_settings__audit_op_sign_request
+msgid "Track Signature Requested"
+msgstr "تتبّع طلب التوقيع"
+
+#. module: odoo_document_audit_trail
+#: model:ir.model.fields,field_description:odoo_document_audit_trail.field_res_config_settings__audit_op_split_source
+msgid "Track Split"
+msgstr "تتبّع التقسيم"
+
+#. module: odoo_document_audit_trail
+#: model:ir.model.fields,field_description:odoo_document_audit_trail.field_res_config_settings__audit_op_split_result
+msgid "Track Split Results"
+msgstr "تتبّع نواتج التقسيم"
+
+#. module: odoo_document_audit_trail
+#: model:ir.model.fields,field_description:odoo_document_audit_trail.field_res_config_settings__audit_op_unlock
+msgid "Track Unlock"
+msgstr "تتبّع إلغاء القفل"
+
+#. module: odoo_document_audit_trail
+#: model:ir.model.fields,field_description:odoo_document_audit_trail.field_res_config_settings__audit_op_write
+msgid "Track Updates"
+msgstr "تتبّع التحديثات"
+
+#. module: odoo_document_audit_trail
+#: model:ir.model.fields,field_description:odoo_document_audit_trail.field_res_config_settings__audit_op_restore_version
+msgid "Track Version Restore"
+msgstr "تتبّع استعادة النسخة"
+
+#. module: odoo_document_audit_trail
+#: model_terms:ir.ui.view,arch_db:odoo_document_audit_trail.res_config_settings_view_form
+msgid "Tracked Operations"
+msgstr "العمليات المتتبَّعة"
+
+#. module: odoo_document_audit_trail
+#: model_terms:ir.ui.view,arch_db:odoo_document_audit_trail.res_config_settings_view_form
+msgid "Turn individual operations on or off."
+msgstr "تشغيل أو إيقاف كل عملية على حدة."
+
+#. module: odoo_document_audit_trail
+#: model:ir.model.fields,help:odoo_document_audit_trail.field_audit_trail_entry__sign_item_type
+msgid ""
+"Type of the signature field: signature, initials, text, date, checkbox, etc."
+msgstr ""
+
+#. module: odoo_document_audit_trail
+#. odoo-python
+#: code:addons/odoo_document_audit_trail/models/audit_trail_entry.py:0
+msgid "Unable to parse changes"
+msgstr "تعذّر تحليل التغييرات"
+
+#. module: odoo_document_audit_trail
+#. odoo-python
+#: code:addons/odoo_document_audit_trail/models/audit_trail_entry.py:0
+msgid "Unknown"
+msgstr "غير معروف"
+
+#. module: odoo_document_audit_trail
+#. odoo-python
+#: code:addons/odoo_document_audit_trail/models/audit_trail_entry.py:0
+msgid "Unlocked"
+msgstr "غير مقفل"
+
+#. module: odoo_document_audit_trail
+#. odoo-python
+#: code:addons/odoo_document_audit_trail/models/audit_trail.py:0
+msgid "Untitled"
+msgstr "بدون عنوان"
+
+#. module: odoo_document_audit_trail
+#. odoo-python
+#: code:addons/odoo_document_audit_trail/models/audit_trail_entry.py:0
+msgid "Updated"
+msgstr "تم التحديث"
+
+#. module: odoo_document_audit_trail
+#: model:ir.model.fields,field_description:odoo_document_audit_trail.field_audit_trail_entry__user_id
+#: model_terms:ir.ui.view,arch_db:odoo_document_audit_trail.view_audit_trail_entry_search
+msgid "User"
+msgstr "المستخدم"
+
+#. module: odoo_document_audit_trail
+#. odoo-python
+#: code:addons/odoo_document_audit_trail/models/audit_trail_entry.py:0
+msgid "Version Restored"
+msgstr "تمت استعادة النسخة"
+
+#. module: odoo_document_audit_trail
+#: model_terms:ir.ui.view,arch_db:odoo_document_audit_trail.view_audit_trail_entry_form
+msgid "View Document Timeline"
+msgstr "عرض الجدول الزمني للمستند"
+
+#. module: odoo_document_audit_trail
+#: model_terms:ir.ui.view,arch_db:odoo_document_audit_trail.view_audit_trail_entry_form
+msgid "Who / When"
+msgstr "مَن / متى"
+
+#. module: odoo_document_audit_trail
+#: model:ir.model.fields,field_description:odoo_document_audit_trail.field_audit_trail_entry__folder_name
+msgid "Workspace / Folder"
+msgstr "مساحة العمل / المجلد"
+
+#. module: odoo_document_audit_trail
+#. odoo-python
+#: code:addons/odoo_document_audit_trail/models/sign_request.py:0
+msgid "[signature drawn]"
+msgstr "[تم رسم التوقيع]"
+
+#. module: odoo_document_audit_trail
+#: model_terms:ir.ui.view,arch_db:odoo_document_audit_trail.view_audit_trail_kanban
+msgid "actions"
+msgstr "إجراءات"
+
+#. module: odoo_document_audit_trail
+#. odoo-python
+#: code:addons/odoo_document_audit_trail/models/audit_trail_entry.py:0
+msgid "archive"
+msgstr ""
+
+#. module: odoo_document_audit_trail
+#. odoo-javascript
+#: code:addons/odoo_document_audit_trail/static/src/xml/audit_dashboard.xml:0
+msgid "days"
+msgstr "أيام"
+
+#. module: odoo_document_audit_trail
+#: model_terms:ir.ui.view,arch_db:odoo_document_audit_trail.view_audit_trail_kanban
+msgid "deleted"
+msgstr "محذوف"
+
+#. module: odoo_document_audit_trail
+#. odoo-python
+#: code:addons/odoo_document_audit_trail/models/documents_document.py:0
+msgid "document_id"
+msgstr ""
+
+#. module: odoo_document_audit_trail
+#. odoo-python
+#: code:addons/odoo_document_audit_trail/models/audit_trail_entry.py:0
+msgid "download"
+msgstr ""
+
+#. module: odoo_document_audit_trail
+#. odoo-python
+#: code:addons/odoo_document_audit_trail/models/audit_trail_entry.py:0
+msgid "field"
+msgstr ""
+
+#. module: odoo_document_audit_trail
+#. odoo-python
+#: code:addons/odoo_document_audit_trail/models/audit_trail_entry.py:0
+msgid "lock"
+msgstr ""
+
+#. module: odoo_document_audit_trail
+#. odoo-python
+#: code:addons/odoo_document_audit_trail/models/audit_trail_entry.py:0
+msgid "preview_close"
+msgstr ""
+
+#. module: odoo_document_audit_trail
+#. odoo-python
+#: code:addons/odoo_document_audit_trail/models/audit_trail_entry.py:0
+msgid "preview_open"
+msgstr ""
+
+#. module: odoo_document_audit_trail
+#. odoo-python
+#: code:addons/odoo_document_audit_trail/models/audit_trail_entry.py:0
+msgid "replace"
+msgstr ""
+
+#. module: odoo_document_audit_trail
+#. odoo-python
+#: code:addons/odoo_document_audit_trail/models/audit_trail_entry.py:0
+msgid "restore_version"
+msgstr ""
+
+#. module: odoo_document_audit_trail
+#: model_terms:ir.ui.view,arch_db:odoo_document_audit_trail.view_audit_trail_kanban
+msgid "review"
+msgstr "مراجعة"
+
+#. module: odoo_document_audit_trail
+#. odoo-python
+#: code:addons/odoo_document_audit_trail/models/audit_trail_entry.py:0
+msgid "share"
+msgstr ""
+
+#. module: odoo_document_audit_trail
+#. odoo-python
+#: code:addons/odoo_document_audit_trail/models/audit_trail_entry.py:0
+msgid "sign_completed"
+msgstr ""
+
+#. module: odoo_document_audit_trail
+#. odoo-python
+#: code:addons/odoo_document_audit_trail/models/audit_trail_entry.py:0
+msgid "sign_item_added"
+msgstr ""
+
+#. module: odoo_document_audit_trail
+#. odoo-python
+#: code:addons/odoo_document_audit_trail/models/audit_trail_entry.py:0
+msgid "sign_item_removed"
+msgstr ""
+
+#. module: odoo_document_audit_trail
+#. odoo-python
+#: code:addons/odoo_document_audit_trail/models/audit_trail_entry.py:0
+msgid "sign_item_signed"
+msgstr ""
+
+#. module: odoo_document_audit_trail
+#. odoo-python
+#: code:addons/odoo_document_audit_trail/models/audit_trail_entry.py:0
+msgid "sign_request"
+msgstr ""
+
+#. module: odoo_document_audit_trail
+#. odoo-python
+#: code:addons/odoo_document_audit_trail/models/audit_trail_entry.py:0
+msgid "split_result"
+msgstr ""
+
+#. module: odoo_document_audit_trail
+#. odoo-python
+#: code:addons/odoo_document_audit_trail/models/audit_trail_entry.py:0
+msgid "split_source"
+msgstr ""
+
+#. module: odoo_document_audit_trail
+#. odoo-python
+#: code:addons/odoo_document_audit_trail/models/audit_trail_entry.py:0
+msgid "unarchive"
+msgstr ""
+
+#. module: odoo_document_audit_trail
+#. odoo-python
+#: code:addons/odoo_document_audit_trail/models/audit_trail_entry.py:0
+msgid "unlink"
+msgstr ""
+
+#. module: odoo_document_audit_trail
+#. odoo-python
+#: code:addons/odoo_document_audit_trail/models/audit_trail_entry.py:0
+msgid "unlock"
+msgstr ""
+
+#. module: odoo_document_audit_trail
+#. odoo-python
+#: code:addons/odoo_document_audit_trail/models/audit_trail_entry.py:0
+msgid "write"
+msgstr ""

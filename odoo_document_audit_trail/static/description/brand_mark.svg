@@ -1,0 +1,44 @@
+<svg width="640" height="180" viewBox="0 0 640 180" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Document Audit Trail">
+  <defs>
+    <linearGradient id="dat-badge" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#2563eb"/>
+      <stop offset="1" stop-color="#38bdf8"/>
+    </linearGradient>
+    <linearGradient id="dat-clock" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fbbf24"/>
+      <stop offset="1" stop-color="#f59e0b"/>
+    </linearGradient>
+    <linearGradient id="dat-word" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1e293b"/>
+      <stop offset="1" stop-color="#334155"/>
+    </linearGradient>
+    <filter id="dat-shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#2563eb" flood-opacity="0.28"/>
+    </filter>
+  </defs>
+
+  <!-- Icon badge -->
+  <g filter="url(#dat-shadow)">
+    <rect x="14" y="30" width="120" height="120" rx="30" fill="url(#dat-badge)"/>
+  </g>
+
+  <!-- Document sheet -->
+  <g>
+    <path d="M48 58 h34 l16 16 v48 a4 4 0 0 1 -4 4 H48 a4 4 0 0 1 -4 -4 V62 a4 4 0 0 1 4 -4 z" fill="#ffffff"/>
+    <path d="M82 58 l16 16 h-16 z" fill="#cbd5e1"/>
+    <!-- text lines -->
+    <rect x="54" y="84"  width="38" height="5" rx="2.5" fill="#93c5fd"/>
+    <rect x="54" y="96"  width="30" height="5" rx="2.5" fill="#bfdbfe"/>
+    <rect x="54" y="108" width="34" height="5" rx="2.5" fill="#93c5fd"/>
+  </g>
+
+  <!-- History / clock badge -->
+  <g>
+    <circle cx="104" cy="116" r="24" fill="url(#dat-clock)" stroke="#ffffff" stroke-width="4"/>
+    <path d="M104 104 v12 l8 5" stroke="#1e293b" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  </g>
+
+  <!-- Wordmark -->
+  <text x="166" y="86" font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-size="42" font-weight="800" letter-spacing="-1" fill="url(#dat-word)">Document</text>
+  <text x="166" y="132" font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-size="42" font-weight="800" letter-spacing="-1" fill="#2563eb">Audit Trail</text>
+</svg>

@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- KANBAN: dashboard of document trails -->
+    <record id="view_audit_trail_kanban" model="ir.ui.view">
+        <field name="name">audit.trail.kanban</field>
+        <field name="model">audit.trail</field>
+        <field name="arch" type="xml">
+            <kanban class="o_audit_trail_kanban" create="false" sample="1">
+                <field name="name"/>
+                <field name="entry_count"/>
+                <field name="open_followups"/>
+                <field name="last_operation"/>
+                <field name="last_activity"/>
+                <field name="document_active"/>
+                <templates>
+                    <t t-name="card">
+                        <div class="oe_kanban_card oe_kanban_global_click p-2">
+                            <div class="d-flex justify-content-between">
+                                <strong class="text-truncate">
+                                    <field name="name"/>
+                                </strong>
+                                <span t-if="record.open_followups.raw_value &gt; 0"
+                                      class="badge text-bg-warning">
+                                    <field name="open_followups"/> review
+                                </span>
+                            </div>
+                            <div class="text-muted small mt-1">
+                                <i class="fa fa-history me-1"/>
+                                <field name="entry_count"/> actions
+                                <span t-if="!record.document_active.raw_value"
+                                      class="badge text-bg-secondary ms-1">deleted</span>
+                            </div>
+                            <div class="small mt-1 text-truncate">
+                                <field name="last_operation"/>
+                            </div>
+                            <div class="text-muted small">
+                                <field name="last_activity"/>
+                            </div>
+                            <div class="mt-2">
+                                <button name="action_open_timeline" type="object"
+                                        class="btn btn-sm btn-primary">
+                                    <i class="fa fa-stream me-1"/>Timeline
+                                </button>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <!-- LIST -->
+    <record id="view_audit_trail_list" model="ir.ui.view">
+        <field name="name">audit.trail.list</field>
+        <field name="model">audit.trail</field>
+        <field name="arch" type="xml">
+            <list string="Document Trails" create="false"
+                  default_order="last_activity desc"
+                  decoration-warning="open_followups &gt; 0">
+                <field name="name"/>
+                <field name="entry_count"/>
+                <field name="open_followups"/>
+                <field name="first_activity"/>
+                <field name="last_activity"/>
+                <field name="last_operation"/>
+                <field name="document_active"/>
+                <button name="action_open_timeline" type="object"
+                        icon="fa-stream" title="Open timeline"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- FORM -->
+    <record id="view_audit_trail_form" model="ir.ui.view">
+        <field name="name">audit.trail.form</field>
+        <field name="model">audit.trail</field>
+        <field name="arch" type="xml">
+            <form string="Document Trail" create="false">
+                <header>
+                    <button name="action_view_document" type="object"
+                            string="Open Document" class="btn-primary"
+                            invisible="not document_active"/>
+                </header>
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="action_open_timeline" type="object"
+                                class="oe_stat_button" icon="fa-stream">
+                            <field name="entry_count" widget="statinfo"
+                                   string="Actions"/>
+                        </button>
+                    </div>
+                    <div class="oe_title">
+                        <h1><field name="name" readonly="1"/></h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="document_id" readonly="1"/>
+                            <field name="document_active"/>
+                            <field name="open_followups"/>
+                        </group>
+                        <group>
+                            <field name="first_activity"/>
+                            <field name="last_activity"/>
+                            <field name="last_operation"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Timeline">
+                            <field name="entry_ids" readonly="1">
+                                <list default_order="operation_date desc"
+                                      decoration-danger="operation_type == 'unlink'">
+                                    <field name="operation_date"/>
+                                    <field name="operation_type"/>
+                                    <field name="user_id"/>
+                                    <field name="field_changes"/>
+                                    <field name="signer_id" optional="hide"/>
+                                    <field name="followup_state" widget="badge"/>
+                                </list>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- SEARCH -->
+    <record id="view_audit_trail_search" model="ir.ui.view">
+        <field name="name">audit.trail.search</field>
+        <field name="model">audit.trail</field>
+        <field name="arch" type="xml">
+            <search string="Document Trails">
+                <field name="name"/>
+                <filter name="has_followup" string="Needs Review"
+                        domain="[('open_followups','&gt;',0)]"/>
+                <filter name="active_docs" string="Existing Documents"
+                        domain="[('document_id','!=',False)]"/>
+                <filter name="deleted_docs" string="Deleted Documents"
+                        domain="[('document_id','=',False)]"/>
+            </search>
+        </field>
+    </record>
+
+    <!-- ACTION: dashboard -->
+    <record id="action_audit_trail_dashboard" model="ir.actions.act_window">
+        <field name="name">Document Trails</field>
+        <field name="res_model">audit.trail</field>
+        <field name="view_mode">kanban,list,form</field>
+        <field name="search_view_id" ref="view_audit_trail_search"/>
+        <field name="context">{'create': False}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">No document activity yet</p>
+            <p>Each document with tracked activity appears here with its full timeline.</p>
+        </field>
+    </record>
+
+</odoo>

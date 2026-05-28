@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- The Odoo 19 Documents app renders its form via a custom OWL
+         component (no inheritable form view), so the audit button is added
+         to the LIST view, using the real list view id
+         'documents.documents_view_list'. -->
+    <record id="documents_document_view_list_audit" model="ir.ui.view">
+        <field name="name">documents.document.list.audit</field>
+        <field name="model">documents.document</field>
+        <field name="inherit_id" ref="documents.documents_view_list"/>
+        <field name="priority">99</field>
+        <field name="arch" type="xml">
+            <xpath expr="//list" position="inside">
+                <field name="audit_log_count" column_invisible="1"/>
+                <button icon="fa-history" type="object"
+                        name="action_view_audit_logs"
+                        string="Audit Trail" class="p-0 mx-2 btn-link"
+                        invisible="audit_log_count == 0"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

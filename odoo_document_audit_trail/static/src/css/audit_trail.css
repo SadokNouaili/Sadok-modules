@@ -1,0 +1,6 @@
+/* Document Audit Trail - minor styling for the log views */
+.o_document_audit_changes {
+    white-space: pre-wrap;
+    font-family: var(--monospace-font, monospace);
+    font-size: 0.85rem;
+}

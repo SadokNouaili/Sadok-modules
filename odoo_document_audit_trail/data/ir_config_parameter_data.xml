@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="param_audit_enabled" model="ir.config_parameter">
+            <field name="key">doc.audit.trail.enabled</field>
+            <field name="value">True</field>
+        </record>
+        <record id="param_audit_retention" model="ir.config_parameter">
+            <field name="key">doc.audit.trail.retention_days</field>
+            <field name="value">0</field>
+        </record>
+    </data>
+</odoo>

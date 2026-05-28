@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+
+    <t t-name="odoo_document_audit_trail.Dashboard">
+        <div class="o_audit_dash" t-ref="root">
+
+            <!-- Loading -->
+            <t t-if="state.loading">
+                <div class="o_audit_loading">
+                    <div class="o_audit_spinner"></div>
+                    <p>Loading audit data…</p>
+                </div>
+            </t>
+
+            <!-- Error -->
+            <t t-elif="state.error">
+                <div class="o_audit_error">
+                    <i class="fa fa-exclamation-triangle"></i>
+                    <span>Could not load dashboard data.</span>
+                    <button class="btn btn-sm btn-primary" t-on-click="() => this.load()">Retry</button>
+                </div>
+            </t>
+
+            <!-- Dashboard -->
+            <t t-else="">
+                <!-- Header -->
+                <div class="o_audit_header">
+                    <div class="o_audit_title">
+                        <div class="o_audit_logo"><i class="fa fa-history"></i></div>
+                        <div>
+                            <h1>Document Audit Trail</h1>
+                            <p>Activity across all documents · last <t t-esc="state.days"/> days</p>
+                        </div>
+                    </div>
+                    <div class="o_audit_range">
+                        <button t-att-class="state.days === 7 ? 'active' : ''"
+                                t-on-click="() => this.setRange(7)">7d</button>
+                        <button t-att-class="state.days === 30 ? 'active' : ''"
+                                t-on-click="() => this.setRange(30)">30d</button>
+                        <button t-att-class="state.days === 90 ? 'active' : ''"
+                                t-on-click="() => this.setRange(90)">90d</button>
+                        <button t-att-class="state.days === 365 ? 'active' : ''"
+                                t-on-click="() => this.setRange(365)">1y</button>
+                    </div>
+                </div>
+
+                <!-- KPI cards -->
+                <div class="o_audit_kpis">
+                    <div class="o_audit_kpi kpi-blue" style="--i:0"
+                         t-on-click="() => this.openOperation(false)">
+                        <div class="kpi-ic"><i class="fa fa-bolt"></i></div>
+                        <div class="kpi-val" t-att-data-count="state.data.kpis.total">0</div>
+                        <div class="kpi-lbl">Actions (period)</div>
+                    </div>
+                    <div class="o_audit_kpi kpi-teal" style="--i:1">
+                        <div class="kpi-ic"><i class="fa fa-database"></i></div>
+                        <div class="kpi-val" t-att-data-count="state.data.kpis.total_all_time">0</div>
+                        <div class="kpi-lbl">Total recorded</div>
+                    </div>
+                    <div class="o_audit_kpi kpi-green" style="--i:2"
+                         t-on-click="() => this.openOperation('sign_item_signed')">
+                        <div class="kpi-ic"><i class="fa fa-signature"></i></div>
+                        <div class="kpi-val" t-att-data-count="state.data.kpis.signatures">0</div>
+                        <div class="kpi-lbl">Signature events</div>
+                    </div>
+                    <div class="o_audit_kpi kpi-red" style="--i:3"
+                         t-on-click="() => this.openOperation('unlink')">
+                        <div class="kpi-ic"><i class="fa fa-trash"></i></div>
+                        <div class="kpi-val" t-att-data-count="state.data.kpis.deletions">0</div>
+                        <div class="kpi-lbl">Deletions</div>
+                    </div>
+                    <div class="o_audit_kpi kpi-amber" style="--i:4"
+                         t-on-click="() => this.openFollowups()">
+                        <div class="kpi-ic"><i class="fa fa-flag"></i></div>
+                        <div class="kpi-val" t-att-data-count="state.data.kpis.open_followups">0</div>
+                        <div class="kpi-lbl">Open follow-ups</div>
+                    </div>
+                    <div class="o_audit_kpi kpi-violet" style="--i:5">
+                        <div class="kpi-ic"><i class="fa fa-users"></i></div>
+                        <div class="kpi-val" t-att-data-count="state.data.kpis.active_users">0</div>
+                        <div class="kpi-lbl">Active users</div>
+                    </div>
+                </div>
+
+                <!-- Charts row -->
+                <div class="o_audit_row">
+                    <div class="o_audit_panel o_audit_grow" style="--i:6">
+                        <div class="panel-head"><i class="fa fa-chart-bar"></i> Activity over time</div>
+                        <div class="panel-body chart-h">
+                            <canvas t-ref="barChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="o_audit_panel" style="--i:7">
+                        <div class="panel-head"><i class="fa fa-chart-pie"></i> By operation</div>
+                        <div class="panel-body chart-h">
+                            <canvas t-ref="opChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Lists row -->
+                <div class="o_audit_row">
+                    <!-- Top users -->
+                    <div class="o_audit_panel" style="--i:8">
+                        <div class="panel-head"><i class="fa fa-user"></i> Most active users</div>
+                        <div class="panel-body">
+                            <t t-if="!state.data.top_users.length">
+                                <div class="o_audit_empty">No activity</div>
+                            </t>
+                            <t t-foreach="state.data.top_users" t-as="u" t-key="u.name">
+                                <div class="o_audit_bar_row">
+                                    <span class="bar-label" t-esc="u.name"/>
+                                    <div class="bar-track">
+                                        <div class="bar-fill"
+                                             t-attf-style="width:{{ this.pct(u.count, this.maxUser()) }}%"></div>
+                                    </div>
+                                    <span class="bar-count" t-esc="u.count"/>
+                                </div>
+                            </t>
+                        </div>
+                    </div>
+
+                    <!-- Top documents -->
+                    <div class="o_audit_panel" style="--i:9">
+                        <div class="panel-head"><i class="fa fa-file"></i> Most active documents</div>
+                        <div class="panel-body">
+                            <t t-if="!state.data.top_documents.length">
+                                <div class="o_audit_empty">No activity</div>
+                            </t>
+                            <t t-foreach="state.data.top_documents" t-as="docu" t-key="docu.id">
+                                <div class="o_audit_bar_row clickable"
+                                     t-on-click="() => this.openTrail(docu.id)">
+                                    <span class="bar-label" t-esc="docu.name"/>
+                                    <div class="bar-track">
+                                        <div class="bar-fill green"
+                                             t-attf-style="width:{{ this.pct(docu.count, this.maxDoc()) }}%"></div>
+                                    </div>
+                                    <span class="bar-count" t-esc="docu.count"/>
+                                </div>
+                            </t>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent feed -->
+                <div class="o_audit_panel" style="--i:10">
+                    <div class="panel-head"><i class="fa fa-stream"></i> Recent activity</div>
+                    <div class="panel-body">
+                        <t t-if="!state.data.recent.length">
+                            <div class="o_audit_empty">No recent activity</div>
+                        </t>
+                        <div class="o_audit_feed">
+                            <t t-foreach="state.data.recent" t-as="r" t-key="r.id">
+                                <div class="feed-item" t-on-click="() => this.openEntry(r.id)">
+                                    <div t-attf-class="feed-ic op-{{ r.operation }}">
+                                        <i t-attf-class="fa {{ this.iconFor(r.operation) }}"></i>
+                                    </div>
+                                    <div class="feed-main">
+                                        <div class="feed-top">
+                                            <span class="feed-op" t-esc="r.operation_label"/>
+                                            <span class="feed-doc" t-esc="r.document"/>
+                                        </div>
+                                        <div class="feed-sub" t-esc="r.summary"/>
+                                    </div>
+                                    <div class="feed-meta">
+                                        <span t-esc="r.user"/>
+                                        <span class="feed-date" t-esc="r.date"/>
+                                    </div>
+                                </div>
+                            </t>
+                        </div>
+                    </div>
+                </div>
+
+            </t>
+        </div>
+    </t>
+
+</templates>

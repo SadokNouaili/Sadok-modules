@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="res_config_settings_view_form" model="ir.ui.view">
+        <field name="name">res.config.settings.document.audit</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="documents.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//block[1]" position="before">
+                <block title="Audit Trail" id="document_audit_block">
+                    <setting string="Enable Document Audit Trail"
+                             help="Master switch. When off, no actions are recorded.">
+                        <field name="document_audit_enabled"/>
+                    </setting>
+                    <setting string="Log Retention"
+                             help="Daily cron deletes logs older than this many days. 0 = keep forever."
+                             invisible="not document_audit_enabled">
+                        <field name="document_audit_retention_days"/>
+                        <span> days</span>
+                    </setting>
+                    <setting string="Tracked Operations"
+                             help="Turn individual operations on or off."
+                             invisible="not document_audit_enabled">
+                        <div class="content-group">
+                            <div><field name="audit_op_create"/><label for="audit_op_create"/></div>
+                            <div><field name="audit_op_write"/><label for="audit_op_write"/></div>
+                            <div><field name="audit_op_unlink"/><label for="audit_op_unlink"/></div>
+                            <div><field name="audit_op_archive"/><label for="audit_op_archive"/></div>
+                            <div><field name="audit_op_lock"/><label for="audit_op_lock"/></div>
+                            <div><field name="audit_op_download"/><label for="audit_op_download"/></div>
+                            <div><field name="audit_op_preview_open"/><label for="audit_op_preview_open"/></div>
+                            <div><field name="audit_op_share"/><label for="audit_op_share"/></div>
+                            <div><field name="audit_op_split_source"/><label for="audit_op_split_source"/></div>
+                            <div><field name="audit_op_replace"/><label for="audit_op_replace"/></div>
+                            <div><field name="audit_op_sign_request"/><label for="audit_op_sign_request"/></div>
+                            <div><field name="audit_op_sign_completed"/><label for="audit_op_sign_completed"/></div>
+                            <div><field name="audit_op_sign_item_added"/><label for="audit_op_sign_item_added"/></div>
+                            <div><field name="audit_op_sign_item_removed"/><label for="audit_op_sign_item_removed"/></div>
+                            <div><field name="audit_op_sign_item_signed"/><label for="audit_op_sign_item_signed"/></div>
+                        </div>
+                    </setting>
+                </block>
+            </xpath>
+        </field>
+    </record>
+</odoo>

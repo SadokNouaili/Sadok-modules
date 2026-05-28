@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem id="menu_audit_trail_root"
+              name="Document Audit"
+              sequence="95"
+              groups="group_audit_trail_user"/>
+
+    <menuitem id="menu_audit_trail_dashboard"
+              name="Dashboard"
+              parent="menu_audit_trail_root"
+              action="action_audit_dashboard_client"
+              sequence="5"
+              groups="group_audit_trail_user"/>
+
+    <menuitem id="menu_audit_trail_documents"
+              name="Document Trails"
+              parent="menu_audit_trail_root"
+              action="action_audit_trail_dashboard"
+              sequence="8"
+              groups="group_audit_trail_user"/>
+
+    <menuitem id="menu_audit_trail_entries"
+              name="All Actions"
+              parent="menu_audit_trail_root"
+              action="action_audit_trail"
+              sequence="10"
+              groups="group_audit_trail_user"/>
+
+    <menuitem id="menu_audit_trail_followups"
+              name="Follow-ups"
+              parent="menu_audit_trail_root"
+              action="action_audit_trail_followup"
+              sequence="20"
+              groups="group_audit_trail_manager"/>
+</odoo>
