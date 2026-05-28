@@ -253,7 +253,7 @@ Create a new file at `i18n/<language_code>.po` (for example `fr_FR.po` for Frenc
 
 ## License
 
-LGPL-3.0. See `LICENSE` for full text.
+OPL-1. See `LICENSE` for full text.
 
 ## Compatibility Notes
 
